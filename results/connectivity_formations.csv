@@ -1,0 +1,5 @@
+formation,components,hop_diameter,mean_degree
+circle,1,4.0,2.0
+line,1,4.0,3.25
+cluster,1,1.0,7.0
+split,2,,3.0

@@ -15,13 +15,14 @@ DT_CTRL = 0.032                         # control step (s)
 DT_PHYS = 0.004                         # MuJoCo step (s)
 SUBSTEPS = int(round(DT_CTRL/DT_PHYS))  # 8
 
-def build_xml(n=N):
+def build_xml(n=N, tau_max=None, chassis_mu=0.3):
+    tau_max = TAU_MAX if tau_max is None else tau_max
     bodies, acts = [], []
     for i in range(n):
         bodies.append(f"""
     <body name="r{i}" pos="{i*0.2-0.7} 0 {R_WHEEL}">
       <freejoint name="fj{i}"/>
-      <geom name="chassis{i}" type="cylinder" size="{ROBOT_R} 0.0265" pos="0 0 0.008" mass="0.15" contype="2" conaffinity="2" friction="0.3 0.005 0.0001" rgba="0.2 0.5 0.9 1"/>
+      <geom name="chassis{i}" type="cylinder" size="{ROBOT_R} 0.0265" pos="0 0 0.008" mass="0.15" contype="2" conaffinity="2" friction="{chassis_mu} 0.005 0.0001" rgba="0.2 0.5 0.9 1"/>
       <geom name="front{i}" type="box" size="0.004 0.012 0.004" pos="{ROBOT_R-0.004} 0 0.036" mass="0.0001" contype="0" conaffinity="0" rgba="1 0 0 1"/>
       <geom name="skidF{i}" type="sphere" size="0.005" pos="0.03 0 {-R_WHEEL+0.006}" mass="0.005" condim="1" friction="0 0 0" contype="1" conaffinity="0"/>
       <geom name="skidB{i}" type="sphere" size="0.005" pos="-0.03 0 {-R_WHEEL+0.006}" mass="0.005" condim="1" friction="0 0 0" contype="1" conaffinity="0"/>
@@ -34,8 +35,8 @@ def build_xml(n=N):
         <geom type="cylinder" size="{R_WHEEL} 0.002" euler="90 0 0" mass="0.01" friction="1.5 0.005 0.0001" contype="1" conaffinity="0" rgba="0.1 0.1 0.1 1"/>
       </body>
     </body>""")
-        acts.append(f'<velocity name="al{i}" joint="jl{i}" kv="0.05" forcerange="-{TAU_MAX} {TAU_MAX}" ctrlrange="{-W_WHEEL_MAX} {W_WHEEL_MAX}"/>')
-        acts.append(f'<velocity name="ar{i}" joint="jr{i}" kv="0.05" forcerange="-{TAU_MAX} {TAU_MAX}" ctrlrange="{-W_WHEEL_MAX} {W_WHEEL_MAX}"/>')
+        acts.append(f'<velocity name="al{i}" joint="jl{i}" kv="0.05" forcerange="-{tau_max} {tau_max}" ctrlrange="{-W_WHEEL_MAX} {W_WHEEL_MAX}"/>')
+        acts.append(f'<velocity name="ar{i}" joint="jr{i}" kv="0.05" forcerange="-{tau_max} {tau_max}" ctrlrange="{-W_WHEEL_MAX} {W_WHEEL_MAX}"/>')
     a, h = ARENA, 0.05
     return f"""<mujoco model="epuck_swarm">
   <option timestep="{DT_PHYS}" gravity="0 0 -9.81" integrator="implicit"/>
@@ -52,9 +53,9 @@ def build_xml(n=N):
 </mujoco>"""
 
 class SwarmEnv:
-    def __init__(self, n=N):
+    def __init__(self, n=N, tau_max=None, chassis_mu=0.3):
         self.n = n
-        self.model = mujoco.MjModel.from_xml_string(build_xml(n))
+        self.model = mujoco.MjModel.from_xml_string(build_xml(n, tau_max, chassis_mu))
         self.data = mujoco.MjData(self.model)
         self.qadr = [self.model.joint(f"fj{i}").qposadr[0] for i in range(n)]
         self.act_l = [self.model.actuator(f"al{i}").id for i in range(n)]

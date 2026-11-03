@@ -36,10 +36,10 @@ def slots(formation):
 def wrap(a):
     return (a + np.pi) % (2*np.pi) - np.pi
 
-def random_start(rng, min_sep=0.15):
+def random_start(rng, min_sep=0.15, half=0.9):
     """Random positions in the arena with a minimum separation, random headings."""
     while True:
-        p = rng.uniform(-0.9, 0.9, size=(N, 2))
+        p = rng.uniform(-half, half, size=(N, 2))
         d = np.linalg.norm(p[:, None]-p[None], axis=-1) + np.eye(N)*9
         if d.min() > min_sep:
             return p, rng.uniform(-np.pi, np.pi, N)
