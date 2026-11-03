@@ -16,7 +16,7 @@ A human gesture selects the formation. Only observers see the gesture; others mu
 - split: two 2 x 2 blocks, spacing 0.15 m, centred at x = -0.6 m and x = +0.6 m
 
 ## Episode
-- Start: random positions in [-0.9, 0.9]^2, minimum separation 0.15 m, random headings
+- Start: random positions in [-0.5, 0.5]^2 (1.0 m start box; the 1.8 m box is kept as a robustness test), minimum separation 0.15 m, random headings
 - Horizon T = 1100 steps (35.2 s). The expert needs up to 16.8 s, so the old 17.6 s horizon was too tight.
 - Episode seed s is shared by every policy (paired design). Training seeds 0-9999, test seeds 10000+.
 - Observers: round(obs x 8) robots, uniformly at random from the seed. obs in {100%, 50%, 25%} = 8, 4, 2 observers.
