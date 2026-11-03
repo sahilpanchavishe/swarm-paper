@@ -1,0 +1,224 @@
+d5_K3_s0: starting from d4 model; base 297000 samples
+
+  DEV check after round 0 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25             100.0           0.001           13        73.197  20
+50             100.0           0.001           13        73.201  20
+100            100.0           0.001           15        73.302  20
+
+round 1: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 363000  (88 s)
+  epoch  1 train 0.02364 (123 s)
+  epoch  6 train 0.02113 (289 s)
+  epoch 10 train 0.01825 (423 s)
+
+  DEV check after round 1 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25             100.0           0.001           10        73.389  20
+50             100.0           0.001            8        73.581  20
+100            100.0           0.001           11        73.174  20
+
+round 2: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 429000  (73 s)
+  epoch  1 train 0.02094 (112 s)
+  epoch  6 train 0.01931 (312 s)
+  epoch 10 train 0.01607 (474 s)
+
+  DEV check after round 2 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25             100.0           0.001            5        73.473  20
+50             100.0           0.001            4        73.509  20
+100            100.0           0.001            5        73.500  20
+
+round 3: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 495000  (73 s)
+  epoch  1 train 0.01764 (117 s)
+  epoch  6 train 0.01714 (342 s)
+  epoch 10 train 0.01382 (530 s)
+
+  DEV check after round 3 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25             100.0           0.001            4        73.801  20
+50             100.0           0.001            4        73.458  20
+100            100.0           0.001            4        73.803  20
+
+FINAL test evaluation: 120 episodes, seeds 10000+ ...
+
+d5_K3_s0 FINAL (test seeds 10000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              97.5           0.004            6        73.854  40
+50             100.0           0.001            7        73.718  40
+100            100.0           0.001            4        73.735  40
+d5_K1_s0: starting from d4 model; base 297000 samples
+
+  DEV check after round 0 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              50.0           0.061           18        73.046  20
+50              70.0           0.037           18        73.033  20
+100             60.0           0.039           17        73.043  20
+
+round 1: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 363000  (63 s)
+  epoch  1 train 0.06319 (77 s)
+  epoch  6 train 0.04530 (140 s)
+  epoch 10 train 0.04152 (191 s)
+
+  DEV check after round 1 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              75.0           0.021           18        73.251  20
+50              65.0           0.034           17        73.195  20
+100             80.0           0.012           16        72.991  20
+
+round 2: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 429000  (61 s)
+  epoch  1 train 0.06160 (80 s)
+  epoch  6 train 0.05105 (174 s)
+  epoch 10 train 0.04672 (248 s)
+
+  DEV check after round 2 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              75.0           0.030           19        72.908  20
+50              85.0           0.010           17        73.110  20
+100             90.0           0.008           16        73.192  20
+
+round 3: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 495000  (62 s)
+  epoch  1 train 0.06054 (83 s)
+  epoch  6 train 0.05406 (189 s)
+  epoch 10 train 0.04930 (272 s)
+
+  DEV check after round 3 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              80.0           0.016           18        73.097  20
+50              85.0           0.012           15        72.751  20
+100             90.0           0.011           16        73.100  20
+
+FINAL test evaluation: 120 episodes, seeds 10000+ ...
+
+d5_K1_s0 FINAL (test seeds 10000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              67.5           0.029           31        73.251  40
+50              72.5           0.025           34        72.800  40
+100             82.5           0.015           32        73.037  40
+d5_K0_s0: starting from d4 model; base 297000 samples
+
+  DEV check after round 0 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25               0.0           0.324           15        72.590  20
+50               0.0           0.235           19        72.695  20
+100             35.0           0.057           18        72.954  20
+
+round 1: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 363000  (74 s)
+  epoch  1 train 0.11247 (79 s)
+  epoch  6 train 0.10891 (97 s)
+  epoch 10 train 0.10746 (111 s)
+
+  DEV check after round 1 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25               0.0           0.342           17        73.197  20
+50               0.0           0.240           19        73.048  20
+100             35.0           0.077           19        73.043  20
+
+round 2: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 429000  (104 s)
+  epoch  1 train 0.15433 (108 s)
+  epoch  6 train 0.14853 (131 s)
+  epoch 10 train 0.14616 (149 s)
+
+  DEV check after round 2 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25               0.0           0.337           16        73.015  20
+50               0.0           0.266           19        73.118  20
+100             25.0           0.084           20        73.158  20
+
+round 3: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 495000  (108 s)
+  epoch  1 train 0.18047 (114 s)
+  epoch  6 train 0.17484 (142 s)
+  epoch 10 train 0.17190 (165 s)
+
+  DEV check after round 3 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25               0.0           0.335           16        73.243  20
+50               0.0           0.293           18        73.340  20
+100             20.0           0.105           18        72.776  20
+
+FINAL test evaluation: 120 episodes, seeds 10000+ ...
+
+d5_K0_s0 FINAL (test seeds 10000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25               0.0           0.327           30        73.148  40
+50               0.0           0.251           37        73.051  40
+100             20.0           0.101           36        73.030  40
+d5_K2_latched_s0: starting from d4 model; base 297000 samples
+
+  DEV check after round 0 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              95.0           0.004            3        73.881  20
+50              95.0           0.003            3        73.881  20
+100             95.0           0.003            3        73.881  20
+
+round 1: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 363000  (126 s)
+  epoch  1 train 0.01397 (153 s)
+  epoch  6 train 0.01369 (288 s)
+  epoch 10 train 0.01148 (398 s)
+
+  DEV check after round 1 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25             100.0           0.001            2        73.901  20
+50             100.0           0.001            2        73.901  20
+100            100.0           0.001            2        73.901  20
+
+round 2: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 429000  (101 s)
+  epoch  1 train 0.01236 (127 s)
+  epoch  6 train 0.01273 (269 s)
+  epoch 10 train 0.01043 (397 s)
+
+  DEV check after round 2 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25             100.0           0.001            1        73.995  20
+50             100.0           0.001            0        75.263  20
+100            100.0           0.001            0        75.263  20
+
+round 3: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 495000  (97 s)
+  epoch  1 train 0.01110 (135 s)
+  epoch  6 train 0.01186 (346 s)
+  epoch 10 train 0.00955 (505 s)
+
+  DEV check after round 3 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25             100.0           0.001            1        73.993  20
+50             100.0           0.001            1        73.993  20
+100            100.0           0.001            1        73.993  20
+
+FINAL test evaluation: 120 episodes, seeds 10000+ ...
+
+d5_K2_latched_s0 FINAL (test seeds 10000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25             100.0           0.001            0        74.082  40
+50             100.0           0.001            0        74.082  40
+100            100.0           0.001            0        74.082  40
