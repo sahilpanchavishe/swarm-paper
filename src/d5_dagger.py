@@ -1,0 +1,105 @@
+"""Day 5: DAgger. Roll out the CURRENT learner in MuJoCo, label every visited state with the oracle expert, add to the
+dataset, fine-tune, repeat. Fixes the distribution shift of plain behaviour cloning (the learner visits states the expert never did).
+Seed discipline (do not change): demos 0-1199, DAgger rollouts 1300-4299, per-round DEV checks 5000+, final TEST 10000+ (used once at the end).
+Usage: python d5_dagger.py --K 2 [--latched] [--seed 0] [--rounds 3] [--eps 240] [--epochs 10] [--dev 5] [--eval 10] [--workers 7]
+Needs runs/d4_K{K}[_latched]_s{seed}.pt and data/raw/d4_demos.npz (from Day 4).
+Writes runs/d5_K{K}[_latched]_s{seed}.pt, appends results/d5_dagger_log.csv (dev success per round) and results/d5_eval.csv (final test)."""
+import argparse, os, time
+from pathlib import Path
+from multiprocessing import Pool
+import numpy as np, pandas as pd, torch, torch.nn.functional as Fn
+import swarm_sim as S
+from d4_common import GNN, closed_loop_episode, reach, oracle_label, gesture_onehot, FORM_ID, T_STEPS, START_HALF, R_COMM, V_MAX, N
+from mj_env import SwarmEnv
+
+ROOT = Path(__file__).resolve().parent.parent
+SUB = 4
+_env = []
+
+def rollout(args):
+    """Learner drives; returns subsampled (positions, oracle labels, know flags) of every visited state."""
+    sd, K, latched, f, seed, obs_pct = args
+    torch.set_num_threads(1)
+    if not _env: _env.append(SwarmEnv())
+    env = _env[0]; model = GNN(K, latched); model.load_state_dict(sd); model.eval()
+    rng = np.random.default_rng(seed); p, th = S.random_start(rng, half=START_HALF)
+    obs = np.zeros(N, bool); obs[np.random.default_rng([seed, 99]).choice(N, {100: 8, 50: 4, 25: 2}[obs_pct], replace=False)] = True
+    env.reset(p, th); p, th = env.poses(); latch = obs.copy(); g = torch.tensor(gesture_onehot(FORM_ID[f]))[None]
+    P, Y, Kn = [], [], []
+    with torch.no_grad():
+        for t in range(T_STEPS):
+            if latched: latch = reach(S.comm_adjacency(p, R_COMM), latch, max(K, 1)); know = latch
+            else: know = obs
+            if t % SUB == 0: P.append(p.copy()); Y.append(oracle_label(p, f)); Kn.append(know.astype(np.float32))
+            u = model(torch.tensor(p, dtype=torch.float32)[None], g, torch.tensor(know, dtype=torch.float32)[None])[0].numpy() * V_MAX
+            v, w = S.to_unicycle(u, th); p, th = env.step(v, w)
+    return dict(P=np.array(P, np.float32), Y=np.array(Y, np.float32), K=np.array(Kn, np.float32), g=gesture_onehot(FORM_ID[f]))
+
+def summarize(df):
+    return df.groupby("obs_pct").agg(success_pct=("success", lambda s: 100 * s.mean()), mean_final_err=("final_err", "mean"),
+                                     contact_eps=("collision", "sum"), min_clear_mm=("min_clearance", lambda s: 1000 * s.min()), n=("success", "size"))
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--K", type=int, default=2); ap.add_argument("--latched", action="store_true"); ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--rounds", type=int, default=3); ap.add_argument("--eps", type=int, default=240); ap.add_argument("--epochs", type=int, default=10)
+    ap.add_argument("--dev", type=int, default=5); ap.add_argument("--eval", type=int, default=10)
+    ap.add_argument("--workers", type=int, default=max(1, (os.cpu_count() or 2) - 1)); ap.add_argument("--bs", type=int, default=256); ap.add_argument("--lr", type=float, default=5e-4)
+    a = ap.parse_args()
+    assert a.eps <= 600 and a.rounds <= 5, "keeps DAgger seeds inside 1300-4299"
+    torch.manual_seed(a.seed); np.random.seed(a.seed); torch.set_num_threads(max(1, (os.cpu_count() or 2) // 2))
+    tag = f"K{a.K}{'_latched' if a.latched else ''}_s{a.seed}"
+
+    # base demonstrations (same fixed train/val split as Day 4)
+    d = np.load(ROOT / "data" / "raw" / "d4_demos.npz"); P, Y, L, OBS, F = d["P"], d["Y"], d["L"], d["obs"], d["f"]; E, T = P.shape[:2]
+    perm = np.random.default_rng(1234).permutation(E); nval = max(1, E // 10); val_e, tr_e = perm[:nval], perm[nval:]
+    def flat(e):
+        k = np.repeat(OBS[e][:, None, :], T, axis=1)
+        if a.latched and a.K >= 1: k = k | L[e][..., min(a.K, 3) - 1]
+        return [torch.tensor(P[e].reshape(-1, N, 2)), torch.tensor(np.eye(4, dtype=np.float32)[np.repeat(F[e], T)]),
+                torch.tensor(k.astype(np.float32).reshape(-1, N)), torch.tensor(Y[e].reshape(-1, N, 2))]
+    data = flat(tr_e); Pva, Gva, Kva, Yva = flat(val_e)
+
+    model = GNN(a.K, a.latched); model.load_state_dict(torch.load(ROOT / "runs" / f"d4_{tag}.pt")); log = []
+    def dev_eval(r):
+        sd = {k: v.cpu() for k, v in model.state_dict().items()}
+        jobs = [(sd, a.K, a.latched, f, 5000 + s, pct) for pct in (100, 50, 25) for f in S.FORMATIONS for s in range(a.dev)]
+        with Pool(a.workers) as pool: rows = pool.map(closed_loop_episode, jobs, chunksize=2)
+        g = summarize(pd.DataFrame(rows)); print(f"\n  DEV check after round {r} ({len(jobs)} episodes, seeds 5000+):"); print(g.round(3).to_string(), flush=True)
+        for pct, row in g.iterrows(): log.append(dict(model=f"d5_{tag}", round=r, obs_pct=pct, **row.to_dict()))
+    print(f"d5_{tag}: starting from d4 model; base {len(data[0])} samples", flush=True); dev_eval(0)
+
+    for r in range(1, a.rounds + 1):
+        sd = {k: v.cpu() for k, v in model.state_dict().items()}; t0 = time.time()
+        jobs = [(sd, a.K, a.latched, S.FORMATIONS[i % 4], 1300 + (r - 1) * 600 + i, [100, 50, 25][(i // 4) % 3]) for i in range(a.eps)]
+        print(f"\nround {r}: rolling out the learner on {len(jobs)} training episodes ...", flush=True)
+        with Pool(a.workers) as pool: ro = pool.map(rollout, jobs, chunksize=2)
+        new = [torch.tensor(np.concatenate([x["P"] for x in ro])), torch.tensor(np.concatenate([np.repeat(x["g"][None], len(x["P"]), 0) for x in ro])),
+               torch.tensor(np.concatenate([x["K"] for x in ro])), torch.tensor(np.concatenate([x["Y"] for x in ro]))]
+        data = [torch.cat([o, n]) for o, n in zip(data, new)]
+        print(f"  +{len(new[0])} states from the learner's own trajectories, dataset now {len(data[0])}  ({time.time()-t0:.0f} s)", flush=True)
+        opt = torch.optim.Adam(model.parameters(), lr=a.lr); steps = a.epochs * (len(data[0]) // a.bs)
+        sched = torch.optim.lr_scheduler.OneCycleLR(opt, max_lr=a.lr, total_steps=steps); model.train()
+        for ep in range(a.epochs):
+            idx = torch.randperm(len(data[0])); tot = nb = 0
+            for i in range(0, len(idx) - a.bs + 1, a.bs):
+                b = idx[i:i + a.bs]
+                loss = Fn.smooth_l1_loss(model(data[0][b], data[1][b], data[2][b]), data[3][b], beta=0.1)
+                opt.zero_grad(); loss.backward(); torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0); opt.step(); sched.step(); tot += loss.item(); nb += 1
+            if ep % 5 == 0 or ep == a.epochs - 1: print(f"  epoch {ep+1:2d} train {tot/nb:.5f} ({time.time()-t0:.0f} s)", flush=True)
+        model.eval(); dev_eval(r)
+        torch.save(model.state_dict(), ROOT / "runs" / f"d5_{tag}.pt")
+
+    (ROOT / "results").mkdir(exist_ok=True)
+    pd.DataFrame(log).to_csv(ROOT / "results" / "d5_dagger_log.csv", mode="a", index=False, header=not (ROOT / "results" / "d5_dagger_log.csv").exists())
+    if a.eval > 0:
+        sd = {k: v.cpu() for k, v in model.state_dict().items()}
+        jobs = [(sd, a.K, a.latched, f, 10000 + s, pct) for pct in (100, 50, 25) for f in S.FORMATIONS for s in range(a.eval)]
+        print(f"\nFINAL test evaluation: {len(jobs)} episodes, seeds 10000+ ...", flush=True)
+        with Pool(a.workers) as pool: rows = pool.map(closed_loop_episode, jobs, chunksize=2)
+        df = pd.DataFrame(rows); df.insert(0, "model", f"d5_{tag}"); df["train_seed"] = a.seed
+        df.to_csv(ROOT / "results" / "d5_eval.csv", mode="a", index=False, header=not (ROOT / "results" / "d5_eval.csv").exists())
+        print(f"\nd5_{tag} FINAL (test seeds 10000+):"); print(summarize(df).round(3).to_string())
+
+if __name__ == "__main__":        # required on macOS (workers re-import this file)
+    main()
