@@ -36,3 +36,9 @@ Oracle (global token) | flooding-K for K in {0,1,2,3,inf} (token relayed K hops 
 - Paired Wilcoxon signed-rank on final error; McNemar on success; Holm correction across all comparisons.
 - Effect sizes with 95% bootstrap confidence intervals. Two-sided tests only.
 - No claim of "consistent" or "significant" without the corrected result.
+
+## Day 6 additions (frozen)
+- Main test: seeds 10000-10049 x 4 formations x observability 100/50/25 % (600 episodes per model), same seeds as Day 3 baselines. Day 5 final-test seeds 10000-10009 are inside this range; they were evaluated once and never used for tuning.
+- Contact = centre distance < 0.074 m. Overlap = centre distance < 0.069 m (5 mm or more). Both reported.
+- Paired by (formation, seed, observability). Wilcoxon signed-rank, Holm correction over the 16-comparison family in d6_analysis.py, bootstrap 95% CI. Primary: GNN K=2 vs K=1 at 25% observability.
+- Training seeds: 3 per K (seeds 0-2), NOT 5, because of compute time. State this as a limitation.
