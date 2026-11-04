@@ -100,17 +100,18 @@ def fig_success_vs_K(S, figs):
 
 def fig_main_bars(S, figs):
     pols = [p for p in ["oracle", "relay K1", "relay K2", "relay K3", "GNN K1", "GNN K2", "GNN K3", "GNN K2+latched"] if p in set(S.policy)]
-    fig, ax = plt.subplots(figsize=(9, 3.4)); w = 0.8 / len(pols)
+    fig, ax = plt.subplots(figsize=(9, 3.4)); w = 0.8 / len(pols); labelled = set()
     for j, pol in enumerate(pols):
         for i, pct in enumerate((100, 50, 25)):
             r = S[(S.policy == pol) & (S.obs_pct == pct)]
             if len(r):
                 r = r.iloc[0]
-                ax.bar(i + j * w, r.success_pct, w, color=COL[pol], label=pol if i == 0 else None,
+                ax.bar(i + j * w, r.success_pct, w, color=COL[pol], label=pol if pol not in labelled else None,
                        yerr=[[r.success_pct - r.ci95_lo], [r.ci95_hi - r.success_pct]], capsize=1.5, error_kw=dict(lw=0.7))
+                labelled.add(pol)
     ax.set_xticks([i + 0.4 - w / 2 for i in range(3)]); ax.set_xticklabels(["100%", "50%", "25%"])
     ax.set_xlabel("observability"); ax.set_ylabel("success (%)"); ax.set_ylim(0, 108)
-    ax.legend(ncol=4, fontsize=7, frameon=False, loc="lower left"); fig.tight_layout(); fig.savefig(figs / "figB_main_success.png", dpi=300); plt.close(fig)
+    ax.legend(ncol=4, fontsize=7, frameon=False, loc="upper center", bbox_to_anchor=(0.5, -0.2)); fig.tight_layout(); fig.savefig(figs / "figB_main_success.png", dpi=300, bbox_inches="tight"); plt.close(fig)
 
 
 def fig_token_coverage(figs):
