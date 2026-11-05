@@ -60,11 +60,11 @@ for lab, d, lo, hi in (("GNN vs memoryless relay, K=2 (25", 12.0, 7.2, 17.3), ("
     chk(lab + " diff", p(lab, "dsuccess_pct"), d); chk(lab + " lo", p(lab, "dsuccess_ci_lo"), lo); chk(lab + " hi", p(lab, "dsuccess_ci_hi"), hi)
 chk("K2 vs relay 25 holm p(final err)=0.011", p("GNN vs memoryless relay, K=2 (25", "p_final_err_holm"), 0.011, 0.0006)
 chk("K3 vs relay 25 p success<=0.0001", p("GNN vs memoryless relay, K=3 (25", "p_success_holm"), 0.0001, 0.00006)
-chk("K3 vs relay 25 p final err 0.17", p("GNN vs memoryless relay, K=3 (25", "p_final_err_holm"), 0.17, 0.006)
+chk("K3 vs relay 25 p final err 0.20", p("GNN vs memoryless relay, K=3 (25", "p_final_err_holm"), 0.20, 0.006)
 chk("K1 vs relay 50 p success 0.22", p("GNN vs memoryless relay, K=1 (50", "p_success_holm"), 0.22, 0.006)
 chk("K1 vs relay 50 p final 0.027", p("GNN vs memoryless relay, K=1 (50", "p_final_err_holm"), 0.027, 0.0006)
 chk("latched vs relay mem 50 diff", p("latched GNN vs relay with memory, K=2 (50", "dsuccess_pct"), 0.5)
-chk("latched 25", s("GNN K2+latched", 25), 100.0); chk("latched contact", s("GNN K2+latched", 25, "contact_pct"), 4.5)
+chk("latched 25", s("GNN K2+latched", 25), 100.0); chk("latched contact", s("GNN K2+latched", 25, "contact_pct"), 4.0)
 
 # 3.5 ablation (seed 0, 80 episodes per cell)
 a = A[A.obs_pct == 25].groupby(["model", "mode"]).agg(t=("success_true", "mean"), sh=("success_shown", "mean"), no=("nonobs_follow_shown", "mean")) * 100
@@ -84,7 +84,7 @@ for pol, bc, dg in (("K1", 39.3, 72.3), ("K2", 75.0, 97.5), ("K3", 94.2, 99.0)):
     chk(f"{pol} BC 25", tab.loc[(pol, "BC", 25), "s"], bc); chk(f"{pol} DAgger 25", tab.loc[(pol, "DAgger", 25), "s"], dg)
 chk("K2 contact BC", tab.loc[("K2", "BC", 25), "c"], 86.8); chk("K2 contact DAgger", tab.loc[("K2", "DAgger", 25), "c"], 51.7)
 chk("K3 contact BC", tab.loc[("K3", "BC", 25), "c"], 72.7); chk("K3 contact DAgger", tab.loc[("K3", "DAgger", 25), "c"], 13.3)
-chk("lat contact BC", tab.loc[("K2+latched", "BC", 25), "c"], 16.0); chk("lat contact DAgger", tab.loc[("K2+latched", "DAgger", 25), "c"], 4.5)
+chk("lat contact BC", tab.loc[("K2+latched", "BC", 25), "c"], 12.0); chk("lat contact DAgger", tab.loc[("K2+latched", "DAgger", 25), "c"], 4.0)
 chk("K0 BC 100", tab.loc[("K0", "BC", 100), "s"], 36.3); chk("K0 DAgger 100", tab.loc[("K0", "DAgger", 100), "s"], 17.0)
 chk("K0 BC 25", tab.loc[("K0", "BC", 25), "s"], 0.0); chk("K0 DAgger 25", tab.loc[("K0", "DAgger", 25), "s"], 0.0)
 
@@ -102,7 +102,7 @@ chk("relay K2 split", rk2["split"], 60.0); chk("relay K2 cluster", rk2["cluster"
 
 # 4 discussion
 chk("K3 vs K2 25 diff", p("K=3 vs K=2 (25", "dsuccess_pct"), 1.5); chk("K3 vs K2 25 holm success 0.031", p("K=3 vs K=2 (25", "p_success_holm"), 0.031, 0.0006)
-chk("K3 vs K2 25 holm final 0.37", p("K=3 vs K=2 (25", "p_final_err_holm"), 0.37, 0.006)
+chk("K3 vs K2 25 holm final 0.44", p("K=3 vs K=2 (25", "p_final_err_holm"), 0.44, 0.006)
 
 print(f"{n} numbers checked")
 if bad:
