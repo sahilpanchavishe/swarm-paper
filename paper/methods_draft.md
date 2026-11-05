@@ -17,7 +17,7 @@ All experiments run in MuJoCo (headless, version 3.17.0) on an arena of 2.2 m ×
 
 Policies output a desired planar velocity u. It is converted to a forward speed v and a turn rate ω by a heading controller: ω = k_ω · e_θ, where e_θ is the angle between the heading and the desired direction, and v = min(‖u‖, v_max) · clip(cos e_θ, 0, 1). The pair is then scaled so that both wheel speeds stay within the 6.28 rad/s limit. The heading gain is k_ω = 4.0 s⁻¹.
 
-**Model validation.** We compared the simulated robot with ideal unicycle kinematics in three tests (Table 3): driving straight at 0.10 m/s for 3 s, turning in place at 2 rad/s for 2 s, and an arc at 0.08 m/s with ω = 0.5 rad/s for 4 s. The simulated path lengths and yaw angles differ from the ideal ones by {−3.5 % (straight path), −3.2 % (spin yaw), −2.3 % (arc path) and −8.0 % (arc yaw)}. The shortfall comes mainly from motor start-up lag. **[CHECK numbers against paper/tables/table3_model_validation.md]** Torque and motor-gain settings were fixed after this check; a lower torque cap produced collisions in the expert controller and is reported as a limitation.
+**Model validation.** We compared the simulated robot with ideal unicycle kinematics in three tests (Table 3): driving straight at 0.10 m/s for 3 s, turning in place at 2 rad/s for 2 s, and an arc at 0.08 m/s with ω = 0.5 rad/s for 4 s. The simulated path lengths and yaw angles differ from the ideal ones by −3.5 % (straight path), −3.2 % (spin yaw), −2.3 % (arc path) and −8.0 % (arc yaw). The shortfall comes mainly from motor start-up lag. Torque and motor-gain settings were fixed after this check; a lower torque cap produced collisions in the expert controller and is reported as a limitation.
 
 ## 2.3 Formations
 
@@ -64,7 +64,7 @@ To show what a policy must add beyond simple token passing, we evaluate relay co
 
 **Training.** The training data are 1200 expert demonstrations (300 per formation). Demonstrations are driven by a mix of behaviours (episode index mod 4: oracle, and memoryless K-hop relay with K = 1, 2 and 3) so the dataset also covers states reached by robots that do not yet know the gesture. The *labels* are always the oracle expert's velocity with every robot informed, so the network learns to imitate "everyone informed" behaviour. States are stored every fourth control step. We split by episode (90 % train, 10 % validation). Behaviour cloning uses the smooth-L1 loss (β = 0.1), Adam, learning rate 2·10⁻³ with a one-cycle schedule, batch size 256 and 30 epochs.
 
-Behaviour cloning alone drifts into states the expert never visited. We therefore add **DAgger**: for three rounds, the current policy is rolled out on 240 training episodes, every visited state is relabelled by the oracle expert and added to the dataset, and the network is fine-tuned for 10 epochs at a learning rate of 5·10⁻⁴. Training seeds 0, 1 and 2 are used for each K {**[CHECK: confirm how many seeds finished; the protocol targets 3, not the 5 first planned, because of compute time]**}.
+Behaviour cloning alone drifts into states the expert never visited. We therefore add **DAgger**: for three rounds, the current policy is rolled out on 240 training episodes, every visited state is relabelled by the oracle expert and added to the dataset, and the network is fine-tuned for 10 epochs at a learning rate of 5·10⁻⁴. Training seeds 0, 1 and 2 are used for each K = 0 to 3. The latched variant was trained with seed 0 only.
 
 ## 2.9 Evaluation and statistics
 
