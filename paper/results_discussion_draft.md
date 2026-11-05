@@ -13,7 +13,7 @@ The oracle expert, with every robot informed, succeeds in 100 % of the 200 test 
 
 The relay baselines show how much the task depends on how far the gesture token travels (Table 1, Fig. A). At 25 % observability, the memoryless relay succeeds in 39.0 % of episodes for K = 1, 85.5 % for K = 2, 89.0 % for K = 3 and 89.5 % for K = 7. At 50 % observability it reaches 85.5 %, 97.0 %, 98.5 % and 98.5 % for the same hop counts. Relays that remember the token once received succeed in 100 % of episodes at 25 % observability and 99.5 % at 50 % for every K ≥ 1. No relay episode had contact. With no communication (K = 0) no relay episode succeeded at either level.
 
-The coverage of the communication graph explains the shape of these curves (Fig. C). Measured on random start configurations, a token from two observers reaches on average 76.3 % of the robots within one hop, 92.8 % within two hops and 96.0 % within three, and 96.7 % at the largest hop count we tested. All eight robots are reached in 12.8 %, 65.0 % and 80.8 % of starts for K = 1, 2 and 3. With four observers the figures are 94.6 %, 98.3 % and 98.5 % of robots, and 64.6 %, 88.6 % and 90.4 % of starts. **[CHECK: confirm in `src/connectivity.py` that coverage is computed on the initial positions; the file's docstring suggests so.]**
+The coverage of the communication graph explains the shape of these curves (Fig. C). Measured on random start configurations, a token from two observers reaches on average 76.3 % of the robots within one hop, 92.8 % within two hops and 96.0 % within three, and 96.7 % at the largest hop count we tested. All eight robots are reached in 12.8 %, 65.0 % and 80.8 % of starts for K = 1, 2 and 3. With four observers the figures are 94.6 %, 98.3 % and 98.5 % of robots, and 64.6 %, 88.6 % and 90.4 % of starts. 
 
 ### 3.2 Primary result: K = 2 against K = 1 at 25 % observability
 
@@ -47,8 +47,7 @@ At 100 % observability the three tests give the same pattern: no success with a 
 
 Plain behaviour cloning is clearly worse than DAgger (Table 5, Fig. F). At 25 % observability, success rises from 39.3 % to 72.3 % for K = 1, from 75.0 % to 97.5 % for K = 2 and from 94.2 % to 99.0 % for K = 3. Contact falls from 86.8 % to 51.7 % for K = 2 and from 72.7 % to 13.3 % for K = 3. The latched model succeeds in 100 % of episodes with both methods, and DAgger lowers its contact rate from 16.0 % to 4.5 %. These comparisons are descriptive and are not part of the pre-specified family of tests.
 
-One result goes the other way. For K = 0 at 100 % observability, success is 36.3 % with plain imitation and 17.0 % with DAgger, and it is 0.0 % with both at 25 %. We have no tested explanation. A K = 0 network cannot see its neighbours, but the oracle labels depend on neighbour positions through the repulsion term, so the labels it is asked to reproduce are partly unpredictable from its inputs. **[CHECK: this is a hypothesis; either test it or say only that K = 0 is a weak baseline.]**
-
+One result goes the other way. For K = 0 at 100 % observability, success is 36.3 % with plain imitation and 17.0 % with DAgger, and it is 0.0 % with both at 25 %. We have no tested explanation. A K = 0 network cannot see its neighbours, but the oracle labels depend on neighbour positions through the repulsion term, so the labels it is asked to reproduce are partly unpredictable from its inputs. 
 ### 3.7 Contact and final error
 
 Contact is the main weakness of the learned policies (Table 1, Fig. E). A contact is any centre distance below 0.074 m, which is the sum of two robot radii. At 25 % observability, contact occurs in 87.3 % of K = 1 episodes, 51.7 % of K = 2 episodes, 13.3 % of K = 3 episodes and 4.5 % of latched K = 2 episodes. The rates at 50 % and 100 % observability are similar (K = 2: 55.2 % and 52.2 %). The oracle and every relay had no contact.
@@ -82,7 +81,7 @@ At 25 % observability, K = 2 succeeds in 98.0 % (circle), 95.3 % (cluster), 96.7
 3. **Not a setting without global information.** Each robot knows its own world-frame position and its role. Only the choice of formation must be learned from neighbours.
 4. **Training seeds.** We used three training seeds for K = 0 to 3 and one for the latched model, not the five we first planned. The token ablation uses one seed. The seed-to-seed spread of K = 1 (66.5 % to 75.5 % at 25 % observability) shows that single-seed results can mislead.
 5. **Weak baselines.** The relay is deliberately simple (robots without the token hold still), and K = 0 lacks neighbour positions as well as the gesture, so it is not a clean no-communication baseline.
-6. **Start box.** Episodes start in a 1.0 m box so that the graph is usually connected. A wider start box was not evaluated, although the protocol keeps it as a robustness test. **[CHECK: remove this sentence if you run that test.]**
+6. **Start box.** Episodes start in a 1.0 m box so that the graph is usually connected. A wider start box was not evaluated, although the protocol keeps it as a robustness test. 
 7. **No noise or packet loss.** Positions and messages are exact, and communication is instantaneous within R_comm.
 8. **Contact.** The K = 2 policy has contact in about half of its episodes.
 9. **Multiple comparisons.** The 16 pre-specified comparisons are corrected with Holm's method, but the contact, formation and ablation results are descriptive.
