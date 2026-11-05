@@ -81,7 +81,7 @@ if bad:
     print("MISMATCHES (fix the text, not the data):"); [print("  " + b) for b in bad]
 
 # Part 2: numbers in the draft that no check mentions (heuristic)
-src = (HERE / "d8_check_numbers.py").read_text() + (HERE / "d9_check_numbers.py").read_text()
+src = "".join((HERE / f).read_text() for f in ("d8_check_numbers.py", "d9_check_numbers.py", "d10_check_new_text.py") if (HERE / f).exists())
 draft = (ROOT / "paper" / "results_discussion_draft.md").read_text().splitlines()
 pat = re.compile(r"(?<![\w.\-])(\d+\.\d+|\d+)(?= ?%| points| episodes| mm\b| m\b)")
 unchecked = []
