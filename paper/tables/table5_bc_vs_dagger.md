@@ -21,9 +21,9 @@
 | K2+latched | BC | 25 | 100.0 | 16.0 |
 | K2+latched | BC | 50 | 100.0 | 18.5 |
 | K2+latched | BC | 100 | 100.0 | 18.0 |
-| K2+latched | DAgger | 25 | 100.0 | 4.5 |
-| K2+latched | DAgger | 50 | 100.0 | 4.5 |
-| K2+latched | DAgger | 100 | 100.0 | 4.5 |
+| K2+latched | DAgger | 25 | 100.0 | 4.0 |
+| K2+latched | DAgger | 50 | 100.0 | 4.0 |
+| K2+latched | DAgger | 100 | 100.0 | 4.2 |
 | K3 | BC | 25 | 94.2 | 72.7 |
 | K3 | BC | 50 | 96.5 | 70.2 |
 | K3 | BC | 100 | 96.5 | 70.3 |
