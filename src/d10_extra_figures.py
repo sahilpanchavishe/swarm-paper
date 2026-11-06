@@ -1,6 +1,6 @@
-"""d11_extra_figures.py -- extra paper figures, made only from results/*.csv.
+"""d10_extra_figures.py -- extra paper figures, made only from results/*.csv.
 Outputs to paper/figs/: figG_training_curves, figH_dagger_rounds, figI_token_cutoff.
-Run from src/:  python d11_extra_figures.py
+Run from src/:  python d10_extra_figures.py
 """
 import re
 from pathlib import Path

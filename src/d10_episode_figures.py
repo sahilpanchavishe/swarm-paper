@@ -1,7 +1,7 @@
-"""d12_episode_figures.py -- relay-vs-GNN figure (from CSVs) plus formation snapshots and a
+"""d10_episode_figures.py -- relay-vs-GNN figure (from CSVs) plus formation snapshots and a
 trajectory panel (from one re-run closed-loop episode per formation, K=2, 25% observers).
 Outputs to paper/figs/: figL_relay_vs_gnn, figM_snapshots, figN_trajectory.
-Run from src/:  python d12_episode_figures.py
+Run from src/:  python d10_episode_figures.py
 """
 from pathlib import Path
 import numpy as np, pandas as pd, torch
