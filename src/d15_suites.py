@@ -27,6 +27,12 @@ for _k in ("conn1", "comp2_same", "comp2_split", "comp3_same"):
     SUITES15[f"d15_A_{_k}"] = dict(policies=A_POL, model_seeds=(0, 1, 2), seed0=50000, n=25, obs=(50, 25),
                                    cfgs=[plain(start_half=0.7, scenario=_k)])
 
+def vm(**kw): return plain(vmargin=1.0, **kw)      # velocity-dependent delay margin (revised rule, see protocol 3b)
+SUITES15["d15_filter_dist"]["cfgs"] = [plain(loss=0.3), plain(loss=0.5), plain(delay=5), vm(delay=5), plain(delay=10), vm(delay=10),
+                                       plain(noise=0.005), plain(noise=0.01)]
+SUITES15["d15_vm_dev"] = dict(policies=["GNN K2", "GNN K2+latched", "relayD K2+mem"], model_seeds=(0,), seed0=5000, n=10, obs=(50, 25),
+                              cfgs=[plain(delay=5), vm(delay=5), vm(delay=10)])
+
 if __name__ == "__main__":
     for d in (5, 10): print(f"delay {d}: margin {1000 * margin(delay=d):.1f} mm")
     for s in (0.005, 0.01): print(f"noise {1000 * s:.0f} mm: margin {1000 * margin(noise=s):.1f} mm")
