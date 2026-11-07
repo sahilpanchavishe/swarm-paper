@@ -1,0 +1,19 @@
+suite d15_A_conn1: 16 units, 0 already done, 16 to run = 3200 episodes, seeds 50000..50024, 7 workers
+[1/16] GNN K1|s0|dsafe=0.1|gamma=20.0|safety=True|scenario=conn1|start_half=0.7|n25|b50000: success  81.0%  contact   0.0%  (57 s; elapsed 1 min, about 14 min left)
+[2/16] GNN K1|s1|dsafe=0.1|gamma=20.0|safety=True|scenario=conn1|start_half=0.7|n25|b50000: success  75.5%  contact   0.0%  (68 s; elapsed 2 min, about 15 min left)
+[3/16] GNN K1|s2|dsafe=0.1|gamma=20.0|safety=True|scenario=conn1|start_half=0.7|n25|b50000: success  90.0%  contact   0.0%  (66 s; elapsed 3 min, about 14 min left)
+[4/16] GNN K2|s0|dsafe=0.1|gamma=20.0|safety=True|scenario=conn1|start_half=0.7|n25|b50000: success  96.0%  contact   0.0%  (64 s; elapsed 4 min, about 13 min left)
+[5/16] GNN K2|s1|dsafe=0.1|gamma=20.0|safety=True|scenario=conn1|start_half=0.7|n25|b50000: success  98.0%  contact   0.0%  (116 s; elapsed 6 min, about 14 min left)
+[6/16] GNN K2|s2|dsafe=0.1|gamma=20.0|safety=True|scenario=conn1|start_half=0.7|n25|b50000: success  97.5%  contact   0.0%  (117 s; elapsed 8 min, about 14 min left)
+[7/16] GNN K3|s0|dsafe=0.1|gamma=20.0|safety=True|scenario=conn1|start_half=0.7|n25|b50000: success  99.5%  contact   0.0%  (125 s; elapsed 10 min, about 13 min left)
+[8/16] GNN K3|s1|dsafe=0.1|gamma=20.0|safety=True|scenario=conn1|start_half=0.7|n25|b50000: success  98.0%  contact   0.0%  (110 s; elapsed 12 min, about 12 min left)
+[9/16] GNN K3|s2|dsafe=0.1|gamma=20.0|safety=True|scenario=conn1|start_half=0.7|n25|b50000: success  99.0%  contact   0.0%  (69 s; elapsed 13 min, about 10 min left)
+[10/16] GNN K2+latched|s0|dsafe=0.1|gamma=20.0|safety=True|scenario=conn1|start_half=0.7|n25|b50000: success 100.0%  contact   0.0%  (67 s; elapsed 14 min, about 9 min left)
+[11/16] GNN K2+latched|s1|dsafe=0.1|gamma=20.0|safety=True|scenario=conn1|start_half=0.7|n25|b50000: success 100.0%  contact   0.0%  (68 s; elapsed 15 min, about 7 min left)
+[12/16] GNN K2+latched|s2|dsafe=0.1|gamma=20.0|safety=True|scenario=conn1|start_half=0.7|n25|b50000: success 100.0%  contact   0.0%  (69 s; elapsed 17 min, about 6 min left)
+[13/16] relay K2+mem|sNone|dsafe=0.1|gamma=20.0|safety=True|scenario=conn1|start_half=0.7|n25|b50000: success 100.0%  contact   0.0%  (55 s; elapsed 18 min, about 4 min left)
+[14/16] relayD K2+mem|sNone|dsafe=0.1|gamma=20.0|safety=True|scenario=conn1|start_half=0.7|n25|b50000: success 100.0%  contact   0.0%  (56 s; elapsed 18 min, about 3 min left)
+[15/16] relay K2|sNone|dsafe=0.1|gamma=20.0|safety=True|scenario=conn1|start_half=0.7|n25|b50000: success  82.0%  contact   0.0%  (55 s; elapsed 19 min, about 1 min left)
+[16/16] relayD K2|sNone|dsafe=0.1|gamma=20.0|safety=True|scenario=conn1|start_half=0.7|n25|b50000: success  91.5%  contact   0.0%  (56 s; elapsed 20 min, about 0 min left)
+
+saved /Users/yshvrdhn/Developer/swarm-paper/results/d12_d15_A_conn1.csv
