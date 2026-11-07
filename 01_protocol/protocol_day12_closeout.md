@@ -1,3 +1,5 @@
+> **SUPERSEDED on 7 Nov 2026.** The confirmatory programme described below WAS run after this note was written: training seeds 3-4 for K=1, 2, 3, the capacity controls, the confirmatory block on seeds 20000-20049, the safety filter (selected on dev seeds, tie-break fixed before the final run) and the exploratory robustness tests. Raw results: results/d12_*.csv (commits e3bf5b3, 7a6fbc6, 591c1e3). The paper must use these results. The text below describes the state at the time of writing, 6 Nov 17:17, and is kept for the record.
+
 # Day 12 close-out: the confirmatory programme was not run
 
 The Day 12 addendum (`protocol_day12_addendum.md`, commit 9e26a84) planned a confirmatory evaluation on fresh seeds 20000-20049,
