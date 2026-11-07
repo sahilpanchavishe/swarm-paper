@@ -1,6 +1,6 @@
 # Protocol addendum, Day 15 (v3)
 Generated 07 Nov 2026 17:15, before any run of the suites below. Day 15 result files present at generation time: d15_stratified_existing.csv.
-DRAFT: read, edit and own every line. Items marked TODO(you) are yours to decide.
+Edited and owned by the authors. Notes marked [status] were added on 7 Nov 2026 and say when each study was specified relative to its run.
 
 ## 0. Status of earlier analyses
 - The stratification of the Day 12/14 runs by initial communication graph (results/d15_stratified_existing.csv) was post hoc and exploratory. It showed that relays with a default drift toward the formation centre succeed in disconnected starts, that hold-still relays do not, and that the memoryless GNN K=2 does about equally well in all strata. It motivated Study A.
@@ -15,7 +15,7 @@ DRAFT: read, edit and own every line. Items marked TODO(you) are yours to decide
 - Start box half-width 0.7 m (chosen because 2- and 3-component starts are common there, 32% and 33% of random draws). Communication radius 0.5 m.
 - Scenarios: conn1 (connected, random observers), comp2_same (2 components, all observers in one), comp2_split (2 components, observers in both), comp3_same (3 components, all observers in one). Observability 25% and 50%. Filter on.
 - Models: GNN K=1, K=2, K=3, K=2+latched (training seeds 0-2); relay K2+mem, relayD K2+mem, relay K2, relayD K2.
-- Predictions: (A1) relayD K2+mem reaches at least 99% collision-free success in every scenario. (A2) hold-still relay K2+mem is at least 20 points lower in comp2_same than in conn1. (A3) memoryless GNN K=2 is within 5 points of its conn1 value in every disconnected scenario. TODO(you): confirm or change these.
+- Predictions: (A1) relayD K2+mem reaches at least 99% collision-free success in every scenario. (A2) hold-still relay K2+mem is at least 20 points lower in comp2_same than in conn1. (A3) memoryless GNN K=2 is within 5 points of its conn1 value in every disconnected scenario. [status] A1-A3 were generated into this file before any Study A run and were not changed afterwards (see git history). Study A is confirmatory.
 - Paired comparisons per scenario and observability level: GNN K2 vs relayD K2+mem; latched vs relayD K2+mem; relayD K2+mem vs hold-still relay K2+mem; GNN K2 vs relay K2; latched vs memoryless GNN K2.
 
 ## 3. Study B: filter under link loss, delay and noise (confirmatory)
@@ -29,16 +29,16 @@ DRAFT: read, edit and own every line. Items marked TODO(you) are yours to decide
 | noise 5 mm | 30.0 | 130.0 |
 | noise 10 mm | 60.0 | 160.0 |
 
-- Dev gate (suite d15_margin_dev, seeds 5000-5009, one training seed): the margin rule is adopted if, for GNN K2, latched GNN K2 and relayD K2+mem, the margined filter has contact in at most 1% of episodes and collision-free success at least 5 points above or within 5 points below the plain filter. TODO(you): confirm the thresholds. If the gate fails, one revised rule may be defined on dev seeds only and recorded here before the final run. Otherwise the margin results are reported as a limitation.
+- Dev gate (suite d15_margin_dev, seeds 5000-5009, one training seed): the margin rule is adopted if, for GNN K2, latched GNN K2 and relayD K2+mem, the margined filter has contact in at most 1% of episodes and collision-free success at least 5 points above or within 5 points below the plain filter. [status] Thresholds kept as written. The gate failed, see 3b and 3c. If the gate fails, one revised rule may be defined on dev seeds only and recorded here before the final run. Otherwise the margin results are reported as a limitation.
 - Final conditions: link loss 0.3 and 0.5 (plain filter); delay 5 and 10 steps and noise 5 and 10 mm (plain and margined). Models: GNN K2, K3, K2+latched, relayD K2+mem.
-- Predictions: (B1) under link loss the plain filter keeps contact at or below 1% and collision-free success within 5 points of the clean filtered value. (B2) under delay and noise the margined filter has less contact than the plain filter and at most 1% contact. (B3) the margin costs at most 5 points of success. TODO(you): confirm.
+- Predictions: (B1) under link loss the plain filter keeps contact at or below 1% and collision-free success within 5 points of the clean filtered value. [status] B2 and B3 are void because both margin rules failed on dev (3c). Study B started at about 23:30 on 7 Nov, before these status notes were committed, and the first delay results were visible in its log. Study B is therefore reported as exploratory, and B1 is an expectation, not a pre-specified test. Expectation for delay: high contact at 5 and 10 steps, as in the dev runs (40-90%).
 
 ## 4. Study C: token cut-off redo
 To be specified in addendum v3.1 once the implementation is read. It will include cut times, five training seeds and a positions-only classifier probe, on seed block 60000+.
 
 ## 5. Study D: command change (confirmatory replication)
 - Exploratory run on seeds 30000+ is the reference. This is a fresh replication on seeds 70000-70024, with and without the filter. Configuration unchanged: switch at step 550, horizon 1650.
-- Predictions: TODO(you): write two or three sentences from paper/tables/t14_6_change.md before running.
+- Predictions: [status] No predictions were written before this run and its results were seen before this note. Study D is reported as an exploratory replication, not a confirmatory one. Reference: paper/tables/t14_6_change.md.
 
 ## 6. Suites and seed blocks
 | suite | units | episodes | seeds |
@@ -75,5 +75,5 @@ Primary: GNN K2 (training seeds 0-4) and GNN K2+latched (seeds 0-2); cut times 0
 Secondary: GNN K1 and K3 (seeds 0-2); cut times 0, 300, 700, 1100; both variants.
 Position-only readout: a parameter-free nearest-template classifier (the formation whose slot set the swarm is closest to), recorded at the cut and at the end. A learned probe is not part of the confirmatory design; positions at the cut are saved so one can be added later as exploratory.
 Reported (descriptive, with the range over training seeds): success after removal, success conditional on the template readout being right or wrong at the cut, and the share of failures that end nearest to the formation the policy builds when never informed.
-Predictions: TODO(you): write 3 or 4 sentences in your own words, for example about (C1) success when the flag is removed from step 0 being near chance, (C2) success after a late flagoff cut staying clearly above chance but clearly below the never-cut control, and (C3) the flagon variant failing at every cut before the end. Use thresholds you can defend from the exploratory reference above.
+Predictions (written on 7 Nov 2026 before the Study C run started, committed before its first episode): (C1) flagoff at t_cut=0 gives at most 35% success for every model (chance is 25%). (C2) for GNN K2, flagoff at t_cut 300 to 700 gives success above 50% and at least 10 points below the never-cut control (t_cut=1100). (C3) flagon gives at most 15% success at every t_cut before 1100. The thresholds come from the exploratory reference above.
 Interpretation rule: if success after removal tracks how well the template readout identifies the formation, spatial cues explain it, and the paper does not claim implicit communication. If it does not, say so and call it unexplained.
