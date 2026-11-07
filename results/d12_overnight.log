@@ -1,0 +1,802 @@
+seeds34: 6 model(s) to train: K=2 seed=3, K=1 seed=3, K=3 seed=3, K=2 seed=4, K=1 seed=4, K=3 seed=4
+
+===== [1/6] K=2 seed=3  (elapsed 0 min) =====
+d4_K2_s3: 1080 train / 120 val episodes, 297000 / 33000 graph samples
+  epoch   1  train 0.10795  val mse 0.05024  val rmse 40.81 mm/s  (20 s)
+  epoch   6  train 0.04755  val mse 0.03422  val rmse 33.68 mm/s  (120 s)
+  epoch  11  train 0.03742  val mse 0.03115  val rmse 32.13 mm/s  (221 s)
+  epoch  16  train 0.03155  val mse 0.02761  val rmse 30.25 mm/s  (322 s)
+  epoch  21  train 0.02678  val mse 0.02381  val rmse 28.09 mm/s  (423 s)
+  epoch  26  train 0.02391  val mse 0.02284  val rmse 27.51 mm/s  (525 s)
+  epoch  30  train 0.02307  val mse 0.02280  val rmse 27.49 mm/s  (606 s)
+d5_K2_s3: starting from d4 model; base 297000 samples
+
+  DEV check after round 0 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              85.0           0.012           17        73.240  20
+50              85.0           0.015           16        73.246  20
+100             80.0           0.021           16        72.998  20
+
+round 1: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 363000  (63 s)
+  epoch  1 train 0.04129 (85 s)
+  epoch  6 train 0.02901 (199 s)
+  epoch 10 train 0.02633 (291 s)
+
+  DEV check after round 1 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              95.0           0.004           16        73.051  20
+50             100.0           0.002           16        72.969  20
+100            100.0           0.001           16        73.313  20
+
+round 2: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 429000  (64 s)
+  epoch  1 train 0.03399 (90 s)
+  epoch  6 train 0.03034 (227 s)
+  epoch 10 train 0.02724 (359 s)
+
+  DEV check after round 2 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25             100.0           0.001           14        73.072  20
+50             100.0           0.001           15        73.310  20
+100            100.0           0.001           14        73.502  20
+
+round 3: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 495000  (63 s)
+  epoch  1 train 0.03051 (99 s)
+  epoch  6 train 0.02940 (296 s)
+  epoch 10 train 0.02612 (457 s)
+
+  DEV check after round 3 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25             100.0           0.001           11        73.390  20
+50             100.0           0.001           10        73.195  20
+100            100.0           0.001           11        73.483  20
+
+===== [2/6] K=1 seed=3  (elapsed 30 min) =====
+d4_K1_s3: 1080 train / 120 val episodes, 297000 / 33000 graph samples
+  epoch   1  train 0.11006  val mse 0.05655  val rmse 43.30 mm/s  (11 s)
+  epoch   6  train 0.05542  val mse 0.03780  val rmse 35.40 mm/s  (68 s)
+  epoch  11  train 0.03973  val mse 0.03500  val rmse 34.06 mm/s  (127 s)
+  epoch  16  train 0.03451  val mse 0.03216  val rmse 32.65 mm/s  (185 s)
+  epoch  21  train 0.03080  val mse 0.03173  val rmse 32.43 mm/s  (243 s)
+  epoch  26  train 0.02874  val mse 0.03044  val rmse 31.77 mm/s  (301 s)
+  epoch  30  train 0.02818  val mse 0.03031  val rmse 31.70 mm/s  (360 s)
+d5_K1_s3: starting from d4 model; base 297000 samples
+
+  DEV check after round 0 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              45.0           0.049           19        72.689  20
+50              75.0           0.021           18        73.042  20
+100             50.0           0.044           17        72.890  20
+
+round 1: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 363000  (93 s)
+  epoch  1 train 0.06601 (107 s)
+  epoch  6 train 0.04447 (175 s)
+  epoch 10 train 0.04090 (241 s)
+
+  DEV check after round 1 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              50.0           0.053           19        73.020  20
+50              75.0           0.015           15        72.886  20
+100             75.0           0.029           17        73.139  20
+
+round 2: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 429000  (96 s)
+  epoch  1 train 0.06391 (114 s)
+  epoch  6 train 0.05383 (206 s)
+  epoch 10 train 0.04946 (283 s)
+
+  DEV check after round 2 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              65.0           0.035           19        73.159  20
+50              60.0           0.038           16        73.256  20
+100             60.0           0.044           15        73.094  20
+
+round 3: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 495000  (84 s)
+  epoch  1 train 0.06690 (104 s)
+  epoch  6 train 0.05821 (209 s)
+  epoch 10 train 0.05342 (294 s)
+
+  DEV check after round 3 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              55.0           0.038           18        73.321  20
+50              65.0           0.032           17        73.263  20
+100             75.0           0.025           17        73.287  20
+
+===== [3/6] K=3 seed=3  (elapsed 51 min) =====
+d4_K3_s3: 1080 train / 120 val episodes, 297000 / 33000 graph samples
+  epoch   1  train 0.11220  val mse 0.05399  val rmse 42.30 mm/s  (28 s)
+  epoch   6  train 0.04378  val mse 0.03402  val rmse 33.58 mm/s  (178 s)
+  epoch  11  train 0.03561  val mse 0.03061  val rmse 31.85 mm/s  (328 s)
+  epoch  16  train 0.02925  val mse 0.02272  val rmse 27.44 mm/s  (475 s)
+  epoch  21  train 0.02297  val mse 0.01849  val rmse 24.76 mm/s  (624 s)
+  epoch  26  train 0.01845  val mse 0.01679  val rmse 23.59 mm/s  (786 s)
+  epoch  30  train 0.01708  val mse 0.01659  val rmse 23.45 mm/s  (932 s)
+d5_K3_s3: starting from d4 model; base 297000 samples
+
+  DEV check after round 0 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25             100.0           0.001           10        73.323  20
+50             100.0           0.001            8        73.478  20
+100            100.0           0.001            7        73.490  20
+
+round 1: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 363000  (104 s)
+  epoch  1 train 0.01995 (139 s)
+  epoch  6 train 0.01899 (314 s)
+  epoch 10 train 0.01630 (454 s)
+
+  DEV check after round 1 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25             100.0           0.001            8        73.412  20
+50             100.0           0.001            6        73.580  20
+100            100.0           0.001            6        73.455  20
+
+round 2: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 429000  (96 s)
+  epoch  1 train 0.01872 (136 s)
+  epoch  6 train 0.01826 (342 s)
+  epoch 10 train 0.01527 (507 s)
+
+  DEV check after round 2 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25             100.0           0.001            6        73.523  20
+50             100.0           0.001            5        73.496  20
+100            100.0           0.001            5        73.331  20
+
+round 3: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 495000  (100 s)
+  epoch  1 train 0.01668 (148 s)
+  epoch  6 train 0.01683 (419 s)
+  epoch 10 train 0.01370 (636 s)
+
+  DEV check after round 3 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25             100.0           0.001            2        73.391  20
+50             100.0           0.001            4        73.642  20
+100            100.0           0.001            4        73.426  20
+
+===== [4/6] K=2 seed=4  (elapsed 95 min) =====
+d4_K2_s4: 1080 train / 120 val episodes, 297000 / 33000 graph samples
+  epoch   1  train 0.10614  val mse 0.04852  val rmse 40.10 mm/s  (19 s)
+  epoch   6  train 0.04944  val mse 0.03891  val rmse 35.91 mm/s  (121 s)
+  epoch  11  train 0.03718  val mse 0.03094  val rmse 32.03 mm/s  (224 s)
+  epoch  16  train 0.03171  val mse 0.03026  val rmse 31.67 mm/s  (327 s)
+  epoch  21  train 0.02695  val mse 0.02603  val rmse 29.38 mm/s  (429 s)
+  epoch  26  train 0.02412  val mse 0.02404  val rmse 28.23 mm/s  (533 s)
+  epoch  30  train 0.02327  val mse 0.02387  val rmse 28.13 mm/s  (615 s)
+d5_K2_s4: starting from d4 model; base 297000 samples
+
+  DEV check after round 0 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              85.0           0.007           18        72.843  20
+50              80.0           0.020           17        72.812  20
+100             90.0           0.013           16        72.794  20
+
+round 1: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 363000  (98 s)
+  epoch  1 train 0.04283 (125 s)
+  epoch  6 train 0.02903 (265 s)
+  epoch 10 train 0.02610 (376 s)
+
+  DEV check after round 1 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25             100.0           0.001           14        73.112  20
+50             100.0           0.001           16        72.923  20
+100             95.0           0.008           16        73.017  20
+
+round 2: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 429000  (102 s)
+  epoch  1 train 0.03319 (132 s)
+  epoch  6 train 0.02876 (289 s)
+  epoch 10 train 0.02518 (416 s)
+
+  DEV check after round 2 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              95.0           0.003           14        73.362  20
+50             100.0           0.001           12        73.360  20
+100             95.0           0.008           13        73.538  20
+
+round 3: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 495000  (94 s)
+  epoch  1 train 0.02805 (127 s)
+  epoch  6 train 0.02591 (1884 s)
+  epoch 10 train 0.02190 (2024 s)
+
+  DEV check after round 3 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25             100.0           0.001           10        73.490  20
+50              95.0           0.003           10        73.329  20
+100            100.0           0.001            9        73.299  20
+
+===== [5/6] K=1 seed=4  (elapsed 154 min) =====
+d4_K1_s4: 1080 train / 120 val episodes, 297000 / 33000 graph samples
+  epoch   1  train 0.11252  val mse 0.05398  val rmse 42.30 mm/s  (11 s)
+  epoch   6  train 0.05453  val mse 0.03518  val rmse 34.15 mm/s  (66 s)
+  epoch  11  train 0.04001  val mse 0.03462  val rmse 33.87 mm/s  (130 s)
+  epoch  16  train 0.03469  val mse 0.03073  val rmse 31.91 mm/s  (200 s)
+  epoch  21  train 0.03088  val mse 0.03112  val rmse 32.12 mm/s  (267 s)
+  epoch  26  train 0.02857  val mse 0.02963  val rmse 31.34 mm/s  (333 s)
+  epoch  30  train 0.02799  val mse 0.02907  val rmse 31.04 mm/s  (388 s)
+d5_K1_s4: starting from d4 model; base 297000 samples
+
+  DEV check after round 0 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              40.0           0.054           18        72.909  20
+50              60.0           0.038           18        73.171  20
+100             60.0           0.055           17        72.967  20
+
+round 1: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 363000  (80 s)
+  epoch  1 train 0.06437 (93 s)
+  epoch  6 train 0.04381 (157 s)
+  epoch 10 train 0.03986 (208 s)
+
+  DEV check after round 1 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              55.0           0.061           18        73.104  20
+50              70.0           0.047           17        73.201  20
+100             55.0           0.042           17        72.829  20
+
+round 2: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 429000  (58 s)
+  epoch  1 train 0.06128 (73 s)
+  epoch  6 train 0.04937 (148 s)
+  epoch 10 train 0.04527 (208 s)
+
+  DEV check after round 2 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              70.0           0.032           18        73.121  20
+50              60.0           0.025           17        73.152  20
+100             55.0           0.040           16        73.179  20
+
+round 3: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 495000  (58 s)
+  epoch  1 train 0.06039 (76 s)
+  epoch  6 train 0.05269 (165 s)
+  epoch 10 train 0.04807 (236 s)
+
+  DEV check after round 3 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              70.0           0.020           17        72.904  20
+50              65.0           0.030           17        73.412  20
+100             80.0           0.015           15        72.894  20
+
+===== [6/6] K=3 seed=4  (elapsed 173 min) =====
+d4_K3_s4: 1080 train / 120 val episodes, 297000 / 33000 graph samples
+  epoch   1  train 0.10592  val mse 0.04922  val rmse 40.39 mm/s  (28 s)
+  epoch   6  train 0.04472  val mse 0.03339  val rmse 33.27 mm/s  (169 s)
+  epoch  11  train 0.03620  val mse 0.02813  val rmse 30.53 mm/s  (313 s)
+  epoch  16  train 0.03021  val mse 0.02491  val rmse 28.73 mm/s  (459 s)
+  epoch  21  train 0.02552  val mse 0.02313  val rmse 27.69 mm/s  (609 s)
+  epoch  26  train 0.02267  val mse 0.02283  val rmse 27.51 mm/s  (778 s)
+  epoch  30  train 0.02176  val mse 0.02269  val rmse 27.43 mm/s  (917 s)
+d5_K3_s4: starting from d4 model; base 297000 samples
+
+  DEV check after round 0 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              80.0           0.026           15        73.029  20
+50              80.0           0.026           16        73.197  20
+100             90.0           0.013           17        73.174  20
+
+round 1: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 363000  (66 s)
+  epoch  1 train 0.04066 (99 s)
+  epoch  6 train 0.02841 (265 s)
+  epoch 10 train 0.02550 (399 s)
+
+  DEV check after round 1 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              90.0           0.013           16        73.288  20
+50              95.0           0.003           14        73.194  20
+100             95.0           0.003           17        73.077  20
+
+round 2: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 429000  (68 s)
+  epoch  1 train 0.03509 (107 s)
+  epoch  6 train 0.03025 (305 s)
+  epoch 10 train 0.02704 (467 s)
+
+  DEV check after round 2 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              95.0           0.004           13        73.140  20
+50              90.0           0.006           16        73.168  20
+100            100.0           0.001           17        73.164  20
+
+round 3: rolling out the learner on 240 training episodes ...
+  +66000 states from the learner's own trajectories, dataset now 495000  (66 s)
+  epoch  1 train 0.03253 (110 s)
+  epoch  6 train 0.03051 (337 s)
+  epoch 10 train 0.02700 (520 s)
+
+  DEV check after round 3 (60 episodes, seeds 5000+):
+         success_pct  mean_final_err  contact_eps  min_clear_mm   n
+obs_pct                                                            
+25              95.0           0.007           16        73.092  20
+50              95.0           0.004           17        73.041  20
+100            100.0           0.001           16        73.432  20
+
+ALL DONE in 213 min
+controls: 9 model(s) to train: wide1 seed=0, shared2 seed=0, mlpwide seed=0, wide1 seed=1, shared2 seed=1, mlpwide seed=1, wide1 seed=2, shared2 seed=2, mlpwide seed=2
+
+===== [1/9] wide1 seed=0  (elapsed 0 min) =====
+d12_wide1_s0: arch=wide K=1 parameters=64586 | 1080 demo episodes, 297000 samples
+  BC epoch  1/30  train 0.10553  (17 s)
+  BC epoch  6/30  train 0.05476  (102 s)
+  BC epoch 11/30  train 0.03930  (191 s)
+  BC epoch 16/30  train 0.03379  (278 s)
+  BC epoch 21/30  train 0.02957  (363 s)
+  BC epoch 26/30  train 0.02738  (450 s)
+  BC epoch 30/30  train 0.02674  (519 s)
+round 1: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 363000  (59 s)
+  DAgger r1 epoch  1/10  train 0.06140  (599 s)
+  DAgger r1 epoch  6/10  train 0.04154  (707 s)
+  DAgger r1 epoch 10/10  train 0.03776  (793 s)
+round 2: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 429000  (185 s)
+  DAgger r2 epoch  1/10  train 0.05905  (1004 s)
+  DAgger r2 epoch  6/10  train 0.04630  (1131 s)
+  DAgger r2 epoch 10/10  train 0.04180  (1232 s)
+round 3: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 495000  (57 s)
+  DAgger r3 epoch  1/10  train 0.05412  (1317 s)
+  DAgger r3 epoch  6/10  train 0.04821  (1460 s)
+  DAgger r3 epoch 10/10  train 0.04365  (1576 s)
+
+saved runs/d12_wide1_s0.pt  (total 26 min)
+
+===== [2/9] shared2 seed=0  (elapsed 26 min) =====
+d12_shared2_s0: arch=shared K=2 parameters=44034 | 1080 demo episodes, 297000 samples
+  BC epoch  1/30  train 0.10748  (20 s)
+  BC epoch  6/30  train 0.04968  (115 s)
+  BC epoch 11/30  train 0.03809  (211 s)
+  BC epoch 16/30  train 0.03169  (309 s)
+  BC epoch 21/30  train 0.02664  (404 s)
+  BC epoch 26/30  train 0.02333  (500 s)
+  BC epoch 30/30  train 0.02240  (578 s)
+round 1: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 363000  (60 s)
+  DAgger r1 epoch  1/10  train 0.03266  (660 s)
+  DAgger r1 epoch  6/10  train 0.02541  (791 s)
+  DAgger r1 epoch 10/10  train 0.02299  (900 s)
+round 2: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 429000  (59 s)
+  DAgger r2 epoch  1/10  train 0.02618  (990 s)
+  DAgger r2 epoch  6/10  train 0.02444  (1149 s)
+  DAgger r2 epoch 10/10  train 0.02150  (1277 s)
+round 3: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 495000  (60 s)
+  DAgger r3 epoch  1/10  train 0.02313  (1371 s)
+  DAgger r3 epoch  6/10  train 0.02160  (1552 s)
+  DAgger r3 epoch 10/10  train 0.01848  (1704 s)
+
+saved runs/d12_shared2_s0.pt  (total 28 min)
+
+===== [3/9] mlpwide seed=0  (elapsed 55 min) =====
+d12_mlpwide_s0: arch=wide K=0 parameters=65122 | 1080 demo episodes, 297000 samples
+  BC epoch  1/30  train 0.10840  (5 s)
+  BC epoch  6/30  train 0.06984  (29 s)
+  BC epoch 11/30  train 0.05660  (52 s)
+  BC epoch 16/30  train 0.05193  (76 s)
+  BC epoch 21/30  train 0.04876  (100 s)
+  BC epoch 26/30  train 0.04715  (123 s)
+  BC epoch 30/30  train 0.04666  (142 s)
+round 1: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 363000  (55 s)
+  DAgger r1 epoch  1/10  train 0.11140  (203 s)
+  DAgger r1 epoch  6/10  train 0.10389  (232 s)
+  DAgger r1 epoch 10/10  train 0.10074  (257 s)
+round 2: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 429000  (57 s)
+  DAgger r2 epoch  1/10  train 0.14784  (323 s)
+  DAgger r2 epoch  6/10  train 0.13882  (364 s)
+  DAgger r2 epoch 10/10  train 0.13449  (396 s)
+round 3: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 495000  (56 s)
+  DAgger r3 epoch  1/10  train 0.17349  (461 s)
+  DAgger r3 epoch  6/10  train 0.16471  (506 s)
+  DAgger r3 epoch 10/10  train 0.15934  (542 s)
+
+saved runs/d12_mlpwide_s0.pt  (total 9 min)
+
+===== [4/9] wide1 seed=1  (elapsed 64 min) =====
+d12_wide1_s1: arch=wide K=1 parameters=64586 | 1080 demo episodes, 297000 samples
+  BC epoch  1/30  train 0.10761  (15 s)
+  BC epoch  6/30  train 0.05221  (91 s)
+  BC epoch 11/30  train 0.03950  (167 s)
+  BC epoch 16/30  train 0.03393  (244 s)
+  BC epoch 21/30  train 0.02913  (321 s)
+  BC epoch 26/30  train 0.02662  (399 s)
+  BC epoch 30/30  train 0.02596  (462 s)
+round 1: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 363000  (58 s)
+  DAgger r1 epoch  1/10  train 0.05726  (538 s)
+  DAgger r1 epoch  6/10  train 0.03792  (631 s)
+  DAgger r1 epoch 10/10  train 0.03463  (707 s)
+round 2: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 429000  (58 s)
+  DAgger r2 epoch  1/10  train 0.05426  (786 s)
+  DAgger r2 epoch  6/10  train 0.04348  (895 s)
+  DAgger r2 epoch 10/10  train 0.03988  (983 s)
+round 3: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 495000  (60 s)
+  DAgger r3 epoch  1/10  train 0.05271  (1068 s)
+  DAgger r3 epoch  6/10  train 0.04603  (1195 s)
+  DAgger r3 epoch 10/10  train 0.04203  (1298 s)
+
+saved runs/d12_wide1_s1.pt  (total 22 min)
+
+===== [5/9] shared2 seed=1  (elapsed 86 min) =====
+d12_shared2_s1: arch=shared K=2 parameters=44034 | 1080 demo episodes, 297000 samples
+  BC epoch  1/30  train 0.10471  (19 s)
+  BC epoch  6/30  train 0.04985  (112 s)
+  BC epoch 11/30  train 0.03813  (209 s)
+  BC epoch 16/30  train 0.03248  (325 s)
+  BC epoch 21/30  train 0.02826  (443 s)
+  BC epoch 26/30  train 0.02566  (560 s)
+  BC epoch 30/30  train 0.02498  (654 s)
+round 1: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 363000  (62 s)
+  DAgger r1 epoch  1/10  train 0.05328  (741 s)
+  DAgger r1 epoch  6/10  train 0.03386  (877 s)
+  DAgger r1 epoch 10/10  train 0.03095  (988 s)
+round 2: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 429000  (61 s)
+  DAgger r2 epoch  1/10  train 0.04353  (1082 s)
+  DAgger r2 epoch  6/10  train 0.03614  (1248 s)
+  DAgger r2 epoch 10/10  train 0.03283  (1382 s)
+round 3: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 495000  (62 s)
+  DAgger r3 epoch  1/10  train 0.03950  (1478 s)
+  DAgger r3 epoch  6/10  train 0.03484  (1657 s)
+  DAgger r3 epoch 10/10  train 0.03098  (1802 s)
+
+saved runs/d12_shared2_s1.pt  (total 30 min)
+
+===== [6/9] mlpwide seed=1  (elapsed 116 min) =====
+d12_mlpwide_s1: arch=wide K=0 parameters=65122 | 1080 demo episodes, 297000 samples
+  BC epoch  1/30  train 0.10508  (5 s)
+  BC epoch  6/30  train 0.07019  (29 s)
+  BC epoch 11/30  train 0.05709  (53 s)
+  BC epoch 16/30  train 0.05216  (77 s)
+  BC epoch 21/30  train 0.04918  (101 s)
+  BC epoch 26/30  train 0.04752  (124 s)
+  BC epoch 30/30  train 0.04702  (143 s)
+round 1: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 363000  (57 s)
+  DAgger r1 epoch  1/10  train 0.11082  (206 s)
+  DAgger r1 epoch  6/10  train 0.10350  (237 s)
+  DAgger r1 epoch 10/10  train 0.10045  (262 s)
+round 2: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 429000  (61 s)
+  DAgger r2 epoch  1/10  train 0.14698  (330 s)
+  DAgger r2 epoch  6/10  train 0.13908  (365 s)
+  DAgger r2 epoch 10/10  train 0.13476  (393 s)
+round 3: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 495000  (63 s)
+  DAgger r3 epoch  1/10  train 0.17270  (465 s)
+  DAgger r3 epoch  6/10  train 0.16383  (507 s)
+  DAgger r3 epoch 10/10  train 0.15849  (541 s)
+
+saved runs/d12_mlpwide_s1.pt  (total 9 min)
+
+===== [7/9] wide1 seed=2  (elapsed 125 min) =====
+d12_wide1_s2: arch=wide K=1 parameters=64586 | 1080 demo episodes, 297000 samples
+  BC epoch  1/30  train 0.11151  (16 s)
+  BC epoch  6/30  train 0.05147  (92 s)
+  BC epoch 11/30  train 0.03897  (171 s)
+  BC epoch 16/30  train 0.03341  (249 s)
+  BC epoch 21/30  train 0.02890  (327 s)
+  BC epoch 26/30  train 0.02653  (405 s)
+  BC epoch 30/30  train 0.02589  (468 s)
+round 1: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 363000  (65 s)
+  DAgger r1 epoch  1/10  train 0.05727  (550 s)
+  DAgger r1 epoch  6/10  train 0.03699  (654 s)
+  DAgger r1 epoch 10/10  train 0.03382  (741 s)
+round 2: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 429000  (70 s)
+  DAgger r2 epoch  1/10  train 0.05232  (835 s)
+  DAgger r2 epoch  6/10  train 0.04212  (961 s)
+  DAgger r2 epoch 10/10  train 0.03823  (1061 s)
+round 3: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 495000  (72 s)
+  DAgger r3 epoch  1/10  train 0.04904  (1161 s)
+  DAgger r3 epoch  6/10  train 0.04376  (1306 s)
+  DAgger r3 epoch 10/10  train 0.03961  (1422 s)
+
+saved runs/d12_wide1_s2.pt  (total 24 min)
+
+===== [8/9] shared2 seed=2  (elapsed 149 min) =====
+d12_shared2_s2: arch=shared K=2 parameters=44034 | 1080 demo episodes, 297000 samples
+  BC epoch  1/30  train 0.11674  (19 s)
+  BC epoch  6/30  train 0.04667  (113 s)
+  BC epoch 11/30  train 0.03842  (207 s)
+  BC epoch 16/30  train 0.03230  (302 s)
+  BC epoch 21/30  train 0.02757  (397 s)
+  BC epoch 26/30  train 0.02472  (492 s)
+  BC epoch 30/30  train 0.02398  (568 s)
+round 1: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 363000  (86 s)
+  DAgger r1 epoch  1/10  train 0.04449  (676 s)
+  DAgger r1 epoch  6/10  train 0.02940  (788 s)
+  DAgger r1 epoch 10/10  train 0.02689  (879 s)
+round 2: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 429000  (85 s)
+  DAgger r2 epoch  1/10  train 0.03432  (990 s)
+  DAgger r2 epoch  6/10  train 0.02939  (1124 s)
+  DAgger r2 epoch 10/10  train 0.02633  (1235 s)
+round 3: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 495000  (84 s)
+  DAgger r3 epoch  1/10  train 0.02892  (1354 s)
+  DAgger r3 epoch  6/10  train 0.02667  (1545 s)
+  DAgger r3 epoch 10/10  train 0.02333  (1698 s)
+
+saved runs/d12_shared2_s2.pt  (total 28 min)
+
+===== [9/9] mlpwide seed=2  (elapsed 177 min) =====
+d12_mlpwide_s2: arch=wide K=0 parameters=65122 | 1080 demo episodes, 297000 samples
+  BC epoch  1/30  train 0.10837  (5 s)
+  BC epoch  6/30  train 0.06865  (29 s)
+  BC epoch 11/30  train 0.05653  (53 s)
+  BC epoch 16/30  train 0.05174  (77 s)
+  BC epoch 21/30  train 0.04881  (101 s)
+  BC epoch 26/30  train 0.04734  (124 s)
+  BC epoch 30/30  train 0.04689  (144 s)
+round 1: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 363000  (56 s)
+  DAgger r1 epoch  1/10  train 0.11094  (206 s)
+  DAgger r1 epoch  6/10  train 0.10442  (236 s)
+  DAgger r1 epoch 10/10  train 0.10155  (263 s)
+round 2: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 429000  (59 s)
+  DAgger r2 epoch  1/10  train 0.14884  (329 s)
+  DAgger r2 epoch  6/10  train 0.13970  (366 s)
+  DAgger r2 epoch 10/10  train 0.13526  (395 s)
+round 3: rolling out the learner on 240 training episodes ...
+  +66000 learner states, dataset 495000  (57 s)
+  DAgger r3 epoch  1/10  train 0.17316  (461 s)
+  DAgger r3 epoch  6/10  train 0.16466  (509 s)
+  DAgger r3 epoch 10/10  train 0.15937  (547 s)
+
+saved runs/d12_mlpwide_s2.pt  (total 9 min)
+
+ALL DONE in 186 min
+suite confirm: 36 units, 0 already done, 36 to run = 18400 episodes, seeds 20000..20049, 7 workers
+[1/36] GNN K0|s0|clean|n50|b20000: success   3.5%  contact  95.5%  (145 s; elapsed 2 min, about 72 min left)
+[2/36] GNN K0|s1|clean|n50|b20000: success   5.5%  contact  94.3%  (166 s; elapsed 5 min, about 74 min left)
+[3/36] GNN K0|s2|clean|n50|b20000: success   4.3%  contact  95.7%  (181 s; elapsed 8 min, about 76 min left)
+[4/36] GNN K1|s0|clean|n50|b20000: success  78.7%  contact  89.7%  (202 s; elapsed 12 min, about 77 min left)
+[5/36] GNN K1|s1|clean|n50|b20000: success  68.5%  contact  93.5%  (200 s; elapsed 15 min, about 76 min left)
+[6/36] GNN K1|s2|clean|n50|b20000: success  80.5%  contact  89.0%  (200 s; elapsed 18 min, about 75 min left)
+[7/36] GNN K1|s3|clean|n50|b20000: success  65.2%  contact  92.5%  (216 s; elapsed 22 min, about 74 min left)
+[8/36] GNN K1|s4|clean|n50|b20000: success  71.5%  contact  92.8%  (225 s; elapsed 26 min, about 73 min left)
+[9/36] GNN K2|s0|clean|n50|b20000: success  97.8%  contact  55.7%  (215 s; elapsed 29 min, about 70 min left)
+[10/36] GNN K2|s1|clean|n50|b20000: success  99.0%  contact  48.5%  (177 s; elapsed 32 min, about 66 min left)
+[11/36] GNN K2|s2|clean|n50|b20000: success  97.3%  contact  65.0%  (167 s; elapsed 35 min, about 62 min left)
+[12/36] GNN K2|s3|clean|n50|b20000: success  99.3%  contact  68.3%  (161 s; elapsed 38 min, about 58 min left)
+[13/36] GNN K2|s4|clean|n50|b20000: success  99.7%  contact  50.3%  (172 s; elapsed 40 min, about 55 min left)
+[14/36] GNN K3|s0|clean|n50|b20000: success  99.5%  contact  13.5%  (220 s; elapsed 44 min, about 53 min left)
+[15/36] GNN K3|s1|clean|n50|b20000: success  99.8%  contact  20.0%  (218 s; elapsed 48 min, about 50 min left)
+suite confirm: 36 units, 15 already done, 21 to run = 9400 episodes, seeds 20000..20049, 7 workers
+[1/21] GNN K3|s2|clean|n50|b20000: success  99.7%  contact  10.5%  (224 s; elapsed 4 min, about 55 min left)
+[2/21] GNN K3|s3|clean|n50|b20000: success 100.0%  contact  16.3%  (235 s; elapsed 8 min, about 52 min left)
+[3/21] GNN K3|s4|clean|n50|b20000: success  95.5%  contact  85.3%  (232 s; elapsed 12 min, about 49 min left)
+[4/21] GNN K2+latched|s0|clean|n50|b20000: success 100.0%  contact   2.7%  (220 s; elapsed 15 min, about 44 min left)
+[5/21] GNN K2+latched|s1|clean|n50|b20000: success 100.0%  contact   3.3%  (167 s; elapsed 18 min, about 38 min left)
+[6/21] GNN K2+latched|s2|clean|n50|b20000: success 100.0%  contact   4.2%  (168 s; elapsed 21 min, about 33 min left)
+[7/21] oracle|sNone|clean|n50|b20000: success 100.0%  contact   0.5%  (44 s; elapsed 22 min, about 32 min left)
+[8/21] relay K0|sNone|clean|n50|b20000: success   0.0%  contact   0.0%  (83 s; elapsed 23 min, about 28 min left)
+[9/21] relay K1|sNone|clean|n50|b20000: success  62.7%  contact   0.8%  (84 s; elapsed 24 min, about 25 min left)
+[10/21] relay K1+mem|sNone|clean|n50|b20000: success  99.8%  contact   0.5%  (85 s; elapsed 26 min, about 23 min left)
+[11/21] relay K2|sNone|clean|n50|b20000: success  92.2%  contact   0.5%  (85 s; elapsed 27 min, about 20 min left)
+[12/21] relay K2+mem|sNone|clean|n50|b20000: success  99.8%  contact   0.5%  (92 s; elapsed 29 min, about 18 min left)
+[13/21] relay K3|sNone|clean|n50|b20000: success  94.0%  contact   0.5%  (93 s; elapsed 30 min, about 16 min left)
+[14/21] relay K3+mem|sNone|clean|n50|b20000: success  99.8%  contact   0.5%  (95 s; elapsed 32 min, about 13 min left)
+[15/21] relay K7|sNone|clean|n50|b20000: success  94.2%  contact   0.5%  (94 s; elapsed 33 min, about 11 min left)
+[16/21] relay K7+mem|sNone|clean|n50|b20000: success  99.8%  contact   0.5%  (99 s; elapsed 35 min, about 9 min left)
+[17/21] relayD K0|sNone|clean|n50|b20000: success   0.0%  contact   0.0%  (97 s; elapsed 37 min, about 8 min left)
+[18/21] relayD K1|sNone|clean|n50|b20000: success  71.5%  contact   0.5%  (98 s; elapsed 38 min, about 6 min left)
+[19/21] relayD K2|sNone|clean|n50|b20000: success  91.0%  contact   0.5%  (106 s; elapsed 40 min, about 4 min left)
+[20/21] relayD K3|sNone|clean|n50|b20000: success  94.5%  contact   0.5%  (122 s; elapsed 42 min, about 2 min left)
+[21/21] relayD K7|sNone|clean|n50|b20000: success  94.8%  contact   0.5%  (129 s; elapsed 44 min, about 0 min left)
+
+saved /Users/yshvrdhn/Developer/swarm-paper/results/d12_confirm.csv
+suite capacity: 9 units, 0 already done, 9 to run = 5400 episodes, seeds 20000..20049, 7 workers
+[1/9] GNN K1-wide|s0|clean|n50|b20000: success  81.0%  contact  89.8%  (221 s; elapsed 4 min, about 29 min left)
+[2/9] GNN K1-wide|s1|clean|n50|b20000: success  78.0%  contact  91.8%  (211 s; elapsed 7 min, about 25 min left)
+[3/9] GNN K1-wide|s2|clean|n50|b20000: success  84.7%  contact  89.5%  (235 s; elapsed 11 min, about 22 min left)
+[4/9] GNN K2-shared|s0|clean|n50|b20000: success  99.8%  contact  23.8%  (242 s; elapsed 15 min, about 19 min left)
+[5/9] GNN K2-shared|s1|clean|n50|b20000: success  97.3%  contact  81.5%  (182 s; elapsed 18 min, about 15 min left)
+[6/9] GNN K2-shared|s2|clean|n50|b20000: success  98.7%  contact  38.3%  (179 s; elapsed 21 min, about 11 min left)
+[7/9] GNN K0-wide|s0|clean|n50|b20000: success   2.7%  contact  94.2%  (168 s; elapsed 24 min, about 7 min left)
+[8/9] GNN K0-wide|s1|clean|n50|b20000: success   1.7%  contact  94.5%  (172 s; elapsed 27 min, about 3 min left)
+[9/9] GNN K0-wide|s2|clean|n50|b20000: success   2.8%  contact  92.5%  (168 s; elapsed 30 min, about 0 min left)
+
+saved /Users/yshvrdhn/Developer/swarm-paper/results/d12_capacity.csv
+suite safety_dev: 12 units, 0 already done, 12 to run = 960 episodes, seeds 5000..5009, 7 workers
+[1/12] GNN K2|s0|clean|n10|b5000: success  95.0%  contact  53.8%  (27 s; elapsed 0 min, about 5 min left)
+[2/12] GNN K2|s0|dsafe=0.085|gamma=5|safety=True|n10|b5000: success  96.2%  contact   1.2%  (27 s; elapsed 1 min, about 5 min left)
+[3/12] GNN K2|s0|safety=True|n10|b5000: success  97.5%  contact   0.0%  (29 s; elapsed 1 min, about 4 min left)
+[4/12] GNN K2|s0|gamma=20|safety=True|n10|b5000: success  96.2%  contact   0.0%  (27 s; elapsed 2 min, about 4 min left)
+[5/12] GNN K2|s0|dsafe=0.1|safety=True|n10|b5000: success  96.2%  contact   0.0%  (32 s; elapsed 2 min, about 3 min left)
+[6/12] GNN K2|s0|dsafe=0.1|gamma=20|safety=True|n10|b5000: success  98.8%  contact   0.0%  (33 s; elapsed 3 min, about 3 min left)
+[7/12] GNN K3|s0|clean|n10|b5000: success  98.8%  contact  15.0%  (29 s; elapsed 3 min, about 2 min left)
+[8/12] GNN K3|s0|dsafe=0.085|gamma=5|safety=True|n10|b5000: success 100.0%  contact   1.2%  (30 s; elapsed 4 min, about 2 min left)
+[9/12] GNN K3|s0|safety=True|n10|b5000: success  98.8%  contact   0.0%  (33 s; elapsed 4 min, about 1 min left)
+[10/12] GNN K3|s0|gamma=20|safety=True|n10|b5000: success  98.8%  contact   0.0%  (32 s; elapsed 5 min, about 1 min left)
+[11/12] GNN K3|s0|dsafe=0.1|safety=True|n10|b5000: success 100.0%  contact   0.0%  (31 s; elapsed 6 min, about 1 min left)
+[12/12] GNN K3|s0|dsafe=0.1|gamma=20|safety=True|n10|b5000: success  98.8%  contact   0.0%  (31 s; elapsed 6 min, about 0 min left)
+
+saved /Users/yshvrdhn/Developer/swarm-paper/results/d12_safety_dev.csv
+suite robust: 104 units, 0 already done, 104 to run = 16640 episodes, seeds 30000..30019, 7 workers
+[1/104] GNN K2|s0|clean|n20|b30000: success  96.2%  contact  60.0%  (74 s; elapsed 1 min, about 128 min left)
+[2/104] GNN K2|s0|loss=0.1|n20|b30000: success  98.1%  contact  67.5%  (56 s; elapsed 2 min, about 111 min left)
+[3/104] GNN K2|s0|loss=0.3|n20|b30000: success  98.8%  contact  73.8%  (54 s; elapsed 3 min, about 104 min left)
+[4/104] GNN K2|s0|loss=0.5|n20|b30000: success  92.5%  contact  90.0%  (53 s; elapsed 4 min, about 99 min left)
+[5/104] GNN K2|s0|delay=5|n20|b30000: success  96.9%  contact  81.9%  (53 s; elapsed 5 min, about 96 min left)
+[6/104] GNN K2|s0|delay=10|n20|b30000: success  99.4%  contact  93.8%  (62 s; elapsed 6 min, about 96 min left)
+[7/104] GNN K2|s0|noise=0.005|n20|b30000: success  98.1%  contact  66.9%  (61 s; elapsed 7 min, about 96 min left)
+[8/104] GNN K2|s0|noise=0.01|n20|b30000: success  99.4%  contact  69.4%  (60 s; elapsed 8 min, about 95 min left)
+[9/104] GNN K2|s1|clean|n20|b30000: success  98.8%  contact  46.2%  (52 s; elapsed 9 min, about 93 min left)
+[10/104] GNN K2|s1|loss=0.1|n20|b30000: success  98.8%  contact  53.8%  (50 s; elapsed 10 min, about 90 min left)
+[11/104] GNN K2|s1|loss=0.3|n20|b30000: success 100.0%  contact  74.4%  (55 s; elapsed 11 min, about 89 min left)
+[12/104] GNN K2|s1|loss=0.5|n20|b30000: success  93.1%  contact  90.6%  (61 s; elapsed 12 min, about 88 min left)
+[13/104] GNN K2|s1|delay=5|n20|b30000: success  99.4%  contact  77.5%  (56 s; elapsed 12 min, about 87 min left)
+[14/104] GNN K2|s1|delay=10|n20|b30000: success  99.4%  contact  94.4%  (56 s; elapsed 13 min, about 86 min left)
+[15/104] GNN K2|s1|noise=0.005|n20|b30000: success  98.8%  contact  50.0%  (53 s; elapsed 14 min, about 85 min left)
+[16/104] GNN K2|s1|noise=0.01|n20|b30000: success  98.8%  contact  57.5%  (49 s; elapsed 15 min, about 83 min left)
+[17/104] GNN K2|s2|clean|n20|b30000: success  96.9%  contact  64.4%  (51 s; elapsed 16 min, about 82 min left)
+[18/104] GNN K2|s2|loss=0.1|n20|b30000: success  99.4%  contact  70.0%  (52 s; elapsed 17 min, about 80 min left)
+[19/104] GNN K2|s2|loss=0.3|n20|b30000: success  99.4%  contact  80.6%  (49 s; elapsed 18 min, about 79 min left)
+[20/104] GNN K2|s2|loss=0.5|n20|b30000: success  89.4%  contact  93.1%  (49 s; elapsed 18 min, about 77 min left)
+[21/104] GNN K2|s2|delay=5|n20|b30000: success  98.8%  contact  83.8%  (49 s; elapsed 19 min, about 76 min left)
+[22/104] GNN K2|s2|delay=10|n20|b30000: success  98.1%  contact  91.9%  (49 s; elapsed 20 min, about 75 min left)
+[23/104] GNN K2|s2|noise=0.005|n20|b30000: success  97.5%  contact  67.5%  (48 s; elapsed 21 min, about 73 min left)
+[24/104] GNN K2|s2|noise=0.01|n20|b30000: success  98.8%  contact  70.0%  (50 s; elapsed 22 min, about 72 min left)
+[25/104] GNN K3|s0|clean|n20|b30000: success  99.4%  contact  10.6%  (57 s; elapsed 23 min, about 72 min left)
+[26/104] GNN K3|s0|loss=0.1|n20|b30000: success  99.4%  contact  18.1%  (64 s; elapsed 24 min, about 71 min left)
+[27/104] GNN K3|s0|loss=0.3|n20|b30000: success 100.0%  contact  53.8%  (60 s; elapsed 25 min, about 70 min left)
+[28/104] GNN K3|s0|loss=0.5|n20|b30000: success  97.5%  contact  87.5%  (59 s; elapsed 26 min, about 70 min left)
+[29/104] GNN K3|s0|delay=5|n20|b30000: success  99.4%  contact  77.5%  (60 s; elapsed 27 min, about 69 min left)
+[30/104] GNN K3|s0|delay=10|n20|b30000: success  99.4%  contact  95.6%  (58 s; elapsed 28 min, about 68 min left)
+[31/104] GNN K3|s0|noise=0.005|n20|b30000: success 100.0%  contact  19.4%  (57 s; elapsed 29 min, about 67 min left)
+[32/104] GNN K3|s0|noise=0.01|n20|b30000: success 100.0%  contact  30.0%  (54 s; elapsed 29 min, about 66 min left)
+[33/104] GNN K3|s1|clean|n20|b30000: success  99.4%  contact  17.5%  (54 s; elapsed 30 min, about 65 min left)
+[34/104] GNN K3|s1|loss=0.1|n20|b30000: success 100.0%  contact  25.6%  (54 s; elapsed 31 min, about 64 min left)
+[35/104] GNN K3|s1|loss=0.3|n20|b30000: success  99.4%  contact  59.4%  (54 s; elapsed 32 min, about 63 min left)
+[36/104] GNN K3|s1|loss=0.5|n20|b30000: success  96.9%  contact  81.2%  (55 s; elapsed 33 min, about 63 min left)
+[37/104] GNN K3|s1|delay=5|n20|b30000: success  99.4%  contact  76.9%  (55 s; elapsed 34 min, about 62 min left)
+[38/104] GNN K3|s1|delay=10|n20|b30000: success 100.0%  contact  93.1%  (55 s; elapsed 35 min, about 61 min left)
+[39/104] GNN K3|s1|noise=0.005|n20|b30000: success 100.0%  contact  18.8%  (53 s; elapsed 36 min, about 60 min left)
+[40/104] GNN K3|s1|noise=0.01|n20|b30000: success 100.0%  contact  33.8%  (53 s; elapsed 37 min, about 59 min left)
+[41/104] GNN K3|s2|clean|n20|b30000: success  98.1%  contact   3.1%  (54 s; elapsed 38 min, about 58 min left)
+[42/104] GNN K3|s2|loss=0.1|n20|b30000: success  98.8%  contact  10.0%  (54 s; elapsed 39 min, about 57 min left)
+[43/104] GNN K3|s2|loss=0.3|n20|b30000: success  98.8%  contact  44.4%  (55 s; elapsed 39 min, about 56 min left)
+[44/104] GNN K3|s2|loss=0.5|n20|b30000: success  94.4%  contact  85.0%  (54 s; elapsed 40 min, about 55 min left)
+[45/104] GNN K3|s2|delay=5|n20|b30000: success  99.4%  contact  70.0%  (54 s; elapsed 41 min, about 54 min left)
+[46/104] GNN K3|s2|delay=10|n20|b30000: success  97.5%  contact  94.4%  (54 s; elapsed 42 min, about 53 min left)
+[47/104] GNN K3|s2|noise=0.005|n20|b30000: success  98.8%  contact  12.5%  (52 s; elapsed 43 min, about 52 min left)
+[48/104] GNN K3|s2|noise=0.01|n20|b30000: success  98.8%  contact  20.0%  (53 s; elapsed 44 min, about 51 min left)
+[49/104] GNN K2+latched|s0|clean|n20|b30000: success 100.0%  contact   2.5%  (52 s; elapsed 45 min, about 50 min left)
+[50/104] GNN K2+latched|s0|loss=0.1|n20|b30000: success 100.0%  contact   5.0%  (52 s; elapsed 46 min, about 49 min left)
+[51/104] GNN K2+latched|s0|loss=0.3|n20|b30000: success 100.0%  contact  42.5%  (53 s; elapsed 47 min, about 48 min left)
+[52/104] GNN K2+latched|s0|loss=0.5|n20|b30000: success 100.0%  contact  79.4%  (56 s; elapsed 47 min, about 47 min left)
+[53/104] GNN K2+latched|s0|delay=5|n20|b30000: success  98.8%  contact  71.2%  (64 s; elapsed 49 min, about 47 min left)
+[54/104] GNN K2+latched|s0|delay=10|n20|b30000: success  97.5%  contact  93.8%  (71 s; elapsed 50 min, about 46 min left)
+[55/104] GNN K2+latched|s0|noise=0.005|n20|b30000: success 100.0%  contact  10.6%  (83 s; elapsed 51 min, about 46 min left)
+[56/104] GNN K2+latched|s0|noise=0.01|n20|b30000: success 100.0%  contact  25.0%  (98 s; elapsed 53 min, about 45 min left)
+[57/104] GNN K2+latched|s1|clean|n20|b30000: success 100.0%  contact   5.0%  (66 s; elapsed 54 min, about 44 min left)
+[58/104] GNN K2+latched|s1|loss=0.1|n20|b30000: success 100.0%  contact   6.2%  (64 s; elapsed 55 min, about 44 min left)
+[59/104] GNN K2+latched|s1|loss=0.3|n20|b30000: success 100.0%  contact  41.9%  (74 s; elapsed 56 min, about 43 min left)
+[60/104] GNN K2+latched|s1|loss=0.5|n20|b30000: success 100.0%  contact  84.4%  (74 s; elapsed 57 min, about 42 min left)
+[61/104] GNN K2+latched|s1|delay=5|n20|b30000: success 100.0%  contact  65.6%  (71 s; elapsed 59 min, about 41 min left)
+[62/104] GNN K2+latched|s1|delay=10|n20|b30000: success  98.8%  contact  96.2%  (69 s; elapsed 60 min, about 40 min left)
+[63/104] GNN K2+latched|s1|noise=0.005|n20|b30000: success 100.0%  contact   3.8%  (53 s; elapsed 61 min, about 39 min left)
+[64/104] GNN K2+latched|s1|noise=0.01|n20|b30000: success 100.0%  contact  24.4%  (52 s; elapsed 61 min, about 38 min left)
+[65/104] GNN K2+latched|s2|clean|n20|b30000: success  98.8%  contact   6.9%  (52 s; elapsed 62 min, about 37 min left)
+[66/104] GNN K2+latched|s2|loss=0.1|n20|b30000: success 100.0%  contact   6.2%  (52 s; elapsed 63 min, about 36 min left)
+[67/104] GNN K2+latched|s2|loss=0.3|n20|b30000: success 100.0%  contact  40.6%  (52 s; elapsed 64 min, about 35 min left)
+[68/104] GNN K2+latched|s2|loss=0.5|n20|b30000: success 100.0%  contact  77.5%  (54 s; elapsed 65 min, about 34 min left)
+[69/104] GNN K2+latched|s2|delay=5|n20|b30000: success 100.0%  contact  70.0%  (55 s; elapsed 66 min, about 33 min left)
+[70/104] GNN K2+latched|s2|delay=10|n20|b30000: success  98.8%  contact  96.2%  (55 s; elapsed 67 min, about 32 min left)
+[71/104] GNN K2+latched|s2|noise=0.005|n20|b30000: success 100.0%  contact  13.8%  (52 s; elapsed 68 min, about 31 min left)
+[72/104] GNN K2+latched|s2|noise=0.01|n20|b30000: success 100.0%  contact  21.9%  (53 s; elapsed 69 min, about 30 min left)
+[73/104] relay K2+mem|sNone|clean|n20|b30000: success 100.0%  contact   0.0%  (41 s; elapsed 69 min, about 29 min left)
+[74/104] relay K2+mem|sNone|loss=0.1|n20|b30000: success 100.0%  contact   0.0%  (40 s; elapsed 70 min, about 28 min left)
+[75/104] relay K2+mem|sNone|loss=0.3|n20|b30000: success 100.0%  contact   0.0%  (39 s; elapsed 71 min, about 27 min left)
+[76/104] relay K2+mem|sNone|loss=0.5|n20|b30000: success 100.0%  contact   0.0%  (40 s; elapsed 71 min, about 26 min left)
+[77/104] relay K2+mem|sNone|delay=5|n20|b30000: success  98.8%  contact  75.0%  (39 s; elapsed 72 min, about 25 min left)
+[78/104] relay K2+mem|sNone|delay=10|n20|b30000: success  96.2%  contact  93.1%  (39 s; elapsed 72 min, about 24 min left)
+[79/104] relay K2+mem|sNone|noise=0.005|n20|b30000: success 100.0%  contact   2.5%  (37 s; elapsed 73 min, about 23 min left)
+[80/104] relay K2+mem|sNone|noise=0.01|n20|b30000: success 100.0%  contact  12.5%  (37 s; elapsed 74 min, about 22 min left)
+[81/104] relay K3+mem|sNone|clean|n20|b30000: success 100.0%  contact   0.0%  (37 s; elapsed 74 min, about 21 min left)
+[82/104] relay K3+mem|sNone|loss=0.1|n20|b30000: success 100.0%  contact   0.0%  (37 s; elapsed 75 min, about 20 min left)
+[83/104] relay K3+mem|sNone|loss=0.3|n20|b30000: success 100.0%  contact   0.0%  (37 s; elapsed 76 min, about 19 min left)
+[84/104] relay K3+mem|sNone|loss=0.5|n20|b30000: success 100.0%  contact   0.0%  (37 s; elapsed 76 min, about 18 min left)
+[85/104] relay K3+mem|sNone|delay=5|n20|b30000: success  98.8%  contact  74.4%  (37 s; elapsed 77 min, about 17 min left)
+[86/104] relay K3+mem|sNone|delay=10|n20|b30000: success  95.0%  contact  93.1%  (38 s; elapsed 77 min, about 16 min left)
+[87/104] relay K3+mem|sNone|noise=0.005|n20|b30000: success 100.0%  contact   2.5%  (40 s; elapsed 78 min, about 15 min left)
+[88/104] relay K3+mem|sNone|noise=0.01|n20|b30000: success 100.0%  contact  12.5%  (42 s; elapsed 79 min, about 14 min left)
+[89/104] relay K2|sNone|clean|n20|b30000: success  92.5%  contact   0.0%  (45 s; elapsed 80 min, about 13 min left)
+[90/104] relay K2|sNone|loss=0.1|n20|b30000: success  91.9%  contact   0.0%  (41 s; elapsed 80 min, about 12 min left)
+[91/104] relay K2|sNone|loss=0.3|n20|b30000: success  86.2%  contact   0.0%  (38 s; elapsed 81 min, about 12 min left)
+[92/104] relay K2|sNone|loss=0.5|n20|b30000: success  68.8%  contact   0.0%  (37 s; elapsed 81 min, about 11 min left)
+[93/104] relay K2|sNone|delay=5|n20|b30000: success  90.6%  contact  73.8%  (40 s; elapsed 82 min, about 10 min left)
+[94/104] relay K2|sNone|delay=10|n20|b30000: success  88.1%  contact  91.2%  (37 s; elapsed 83 min, about 9 min left)
+[95/104] relay K2|sNone|noise=0.005|n20|b30000: success  91.2%  contact   2.5%  (41 s; elapsed 83 min, about 8 min left)
+[96/104] relay K2|sNone|noise=0.01|n20|b30000: success  91.2%  contact  12.5%  (45 s; elapsed 84 min, about 7 min left)
+[97/104] relayD K2|sNone|clean|n20|b30000: success  90.6%  contact   0.0%  (46 s; elapsed 85 min, about 6 min left)
+[98/104] relayD K2|sNone|loss=0.1|n20|b30000: success  89.4%  contact   0.0%  (47 s; elapsed 86 min, about 5 min left)
+[99/104] relayD K2|sNone|loss=0.3|n20|b30000: success  82.5%  contact   0.0%  (47 s; elapsed 87 min, about 4 min left)
+[100/104] relayD K2|sNone|loss=0.5|n20|b30000: success  73.8%  contact   0.0%  (45 s; elapsed 87 min, about 3 min left)
+[101/104] relayD K2|sNone|delay=5|n20|b30000: success  88.8%  contact  76.2%  (39 s; elapsed 88 min, about 3 min left)
+[102/104] relayD K2|sNone|delay=10|n20|b30000: success  85.6%  contact  95.0%  (39 s; elapsed 89 min, about 2 min left)
+[103/104] relayD K2|sNone|noise=0.005|n20|b30000: success  88.1%  contact   2.5%  (38 s; elapsed 89 min, about 1 min left)
+[104/104] relayD K2|sNone|noise=0.01|n20|b30000: success  86.9%  contact  12.5%  (42 s; elapsed 90 min, about 0 min left)
+
+saved /Users/yshvrdhn/Developer/swarm-paper/results/d12_robust.csv
+suite widebox: 11 units, 0 already done, 11 to run = 2200 episodes, seeds 30000..30024, 7 workers
+[1/11] GNN K2|s0|start_half=0.9|n25|b30000: success  91.5%  contact  47.5%  (69 s; elapsed 1 min, about 12 min left)
+[2/11] GNN K2|s1|start_half=0.9|n25|b30000: success  97.5%  contact  40.5%  (76 s; elapsed 2 min, about 11 min left)
+[3/11] GNN K2|s2|start_half=0.9|n25|b30000: success  96.0%  contact  56.5%  (65 s; elapsed 4 min, about 9 min left)
+[4/11] GNN K3|s0|start_half=0.9|n25|b30000: success  97.5%  contact  16.5%  (70 s; elapsed 5 min, about 8 min left)
+[5/11] GNN K3|s1|start_half=0.9|n25|b30000: success  97.0%  contact  10.5%  (75 s; elapsed 6 min, about 7 min left)
+[6/11] GNN K3|s2|start_half=0.9|n25|b30000: success  97.5%  contact  10.0%  (69 s; elapsed 7 min, about 6 min left)
+[7/11] GNN K2+latched|s0|start_half=0.9|n25|b30000: success  99.5%  contact   1.0%  (68 s; elapsed 8 min, about 5 min left)
+[8/11] GNN K2+latched|s1|start_half=0.9|n25|b30000: success 100.0%  contact   4.5%  (70 s; elapsed 9 min, about 4 min left)
+[9/11] GNN K2+latched|s2|start_half=0.9|n25|b30000: success  99.5%  contact   7.0%  (69 s; elapsed 11 min, about 2 min left)
+[10/11] relay K2+mem|sNone|start_half=0.9|n25|b30000: success  41.5%  contact   0.0%  (51 s; elapsed 11 min, about 1 min left)
+[11/11] relay K7+mem|sNone|start_half=0.9|n25|b30000: success  42.0%  contact   0.0%  (50 s; elapsed 12 min, about 0 min left)
+
+saved /Users/yshvrdhn/Developer/swarm-paper/results/d12_widebox.csv
+suite change: 20 units, 0 already done, 20 to run = 3900 episodes, seeds 30000..30024, 7 workers
+[1/20] oracle|sNone|change=True|n25|b30000: success 100.0%  contact   0.0%  (39 s; elapsed 1 min, about 24 min left)
+[2/20] relay K2|sNone|change=True|n25|b30000: success  93.0%  contact   0.0%  (76 s; elapsed 2 min, about 23 min left)
+[3/20] relay K2+naive|sNone|change=True|n25|b30000: success   0.0%  contact   0.0%  (79 s; elapsed 3 min, about 22 min left)
+[4/20] relay K2+ver|sNone|change=True|n25|b30000: success  98.0%  contact   0.0%  (79 s; elapsed 5 min, about 21 min left)
+[5/20] relay K3+ver|sNone|change=True|n25|b30000: success  98.0%  contact   0.0%  (79 s; elapsed 6 min, about 20 min left)
+[6/20] GNN K1|s0|change=True|n25|b30000: success  74.0%  contact  97.5%  (98 s; elapsed 7 min, about 19 min left)
+[7/20] GNN K1|s1|change=True|n25|b30000: success  59.5%  contact  98.0%  (97 s; elapsed 9 min, about 18 min left)
+[8/20] GNN K1|s2|change=True|n25|b30000: success  71.5%  contact  98.0%  (99 s; elapsed 11 min, about 17 min left)
+[9/20] GNN K2|s0|change=True|n25|b30000: success  89.5%  contact  80.0%  (106 s; elapsed 13 min, about 16 min left)
+[10/20] GNN K2|s1|change=True|n25|b30000: success  93.5%  contact  68.0%  (109 s; elapsed 14 min, about 15 min left)
+[11/20] GNN K2|s2|change=True|n25|b30000: success  91.5%  contact  85.0%  (104 s; elapsed 16 min, about 14 min left)
+[12/20] GNN K3|s0|change=True|n25|b30000: success  91.0%  contact  20.5%  (107 s; elapsed 18 min, about 12 min left)
+[13/20] GNN K3|s1|change=True|n25|b30000: success  92.0%  contact  32.0%  (106 s; elapsed 20 min, about 11 min left)
+[14/20] GNN K3|s2|change=True|n25|b30000: success  91.0%  contact  16.0%  (105 s; elapsed 21 min, about 10 min left)
+[15/20] GNN K2+latched/naive|s0|change=True|n25|b30000: success   0.0%  contact   3.0%  (108 s; elapsed 23 min, about 8 min left)
+[16/20] GNN K2+latched/naive|s1|change=True|n25|b30000: success   0.0%  contact   5.5%  (110 s; elapsed 25 min, about 6 min left)
+[17/20] GNN K2+latched/naive|s2|change=True|n25|b30000: success   0.0%  contact   6.5%  (107 s; elapsed 27 min, about 5 min left)
+[18/20] GNN K2+latched/ver|s0|change=True|n25|b30000: success  98.0%  contact  10.0%  (102 s; elapsed 28 min, about 3 min left)
+[19/20] GNN K2+latched/ver|s1|change=True|n25|b30000: success  98.0%  contact  12.5%  (102 s; elapsed 30 min, about 2 min left)
+[20/20] GNN K2+latched/ver|s2|change=True|n25|b30000: success  98.0%  contact  14.0%  (103 s; elapsed 32 min, about 0 min left)
+
+saved /Users/yshvrdhn/Developer/swarm-paper/results/d12_change.csv
