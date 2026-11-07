@@ -36,6 +36,8 @@ SUITES = {
                    model_seeds=(0, 1, 2), seed0=30000, n=20, cfgs=ROBUST_CFGS, obs=(50, 25)),
     "widebox": dict(policies=["GNN K2", "GNN K3", "GNN K2+latched", "relay K2+mem", "relay K7+mem"], model_seeds=(0, 1, 2), seed0=30000, n=25,
                     cfgs=[dict(start_half=0.9)], obs=(50, 25)),
+    "widebox_safe": dict(policies=["GNN K2", "GNN K3", "GNN K2+latched", "relayD K2+mem"], model_seeds=(0, 1, 2), seed0=30000, n=25,
+                         cfgs=[dict(start_half=0.9, safety=True)], obs=(50, 25)),
     "change": dict(policies=["oracle", "relay K2", "relay K2+naive", "relay K2+ver", "relay K3+ver", "GNN K1", "GNN K2", "GNN K3",
                              "GNN K2+latched/naive", "GNN K2+latched/ver"],
                    model_seeds=(0, 1, 2), seed0=30000, n=25, cfgs=[dict(change=True)], obs=(50, 25)),

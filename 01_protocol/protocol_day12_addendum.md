@@ -50,3 +50,9 @@ reproduces Day 3/6/9 results (reported by `d12_eval.py repro`). Training data re
 
 ## 5a. Safety-filter selection outcome (written before safety_final)
 On the dev seeds at 25 % observability the mean collision-free success of K=2 and K=3 was 97.5 for both (dsafe, gamma) = (0.10, 10) and (0.10, 20); the written rule does not separate them. Tie-break, fixed here before any confirmatory safety run: lower mean near-contact steps on the dev seeds, which selects (0.10, 20).
+
+## 5b. Post-hoc exploratory follow-up (7 Nov, about 13:15, written before the run finished)
+Motivated by the contact asymmetry seen in the unfiltered wide-box results: the wide-box suite re-run with the filter fixed on the dev seeds (dsafe 0.10, gamma 20) on seeds 30000-30024. Nothing is tuned. Exploratory.
+
+## 5b. Post-hoc exploratory follow-up (7 Nov, written after the run completed)
+Motivated by the contact asymmetry seen in the earlier unfiltered wide-box results. The wide-box suite was re-run with the filter parameters fixed on the dev seeds (dsafe 0.10, gamma 20) on seeds 30000-30024. Nothing was tuned on these results. Exploratory; no confirmatory claim rests on it.
