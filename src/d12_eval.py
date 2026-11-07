@@ -43,6 +43,9 @@ SUITES = {
                    model_seeds=(0, 1, 2), seed0=30000, n=25, cfgs=[dict(change=True)], obs=(50, 25)),
 }
 
+from d15_suites import SUITES15
+SUITES.update(SUITES15)
+
 def parse_token(tok):
     """Policy name -> spec dict. 'relay K2+mem' and 'relay K2+ver' are the same latest-wins rule; '+naive' keeps the first token it received.
     'relayD' = uninformed robots head to the mean slot instead of holding still. 'GNN K2+latched/naive' = latched GNN fed per-robot stale tokens."""

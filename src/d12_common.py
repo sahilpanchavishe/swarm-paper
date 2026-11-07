@@ -106,10 +106,16 @@ def run_episode(args):
     model = None
     if kind == "gnn":
         model = make_model(pol["arch"], K, pol["latched"]); model.load_state_dict(pol["sd"]); model.eval()
-    rng = np.random.default_rng(seed); p, th = S.random_start(rng, half=cfg["start_half"])
+    obs_sc = None
+    if cfg.get("scenario"):
+        from d15_scenarios import make_scenario
+        p, th, obs_sc = make_scenario(seed, cfg["scenario"], obs_pct, half=cfg["start_half"])
+    else:
+        rng = np.random.default_rng(seed); p, th = S.random_start(rng, half=cfg["start_half"])
     fi = FORM_ID[f]; fi1 = fi
     if cfg["change"]: fi1 = (fi + 1 + int(np.random.default_rng([seed, 55]).integers(0, 3))) % 4
     obs = np.zeros(N, bool); obs[np.random.default_rng([seed, 99]).choice(N, {100: 8, 50: 4, 25: 2}[obs_pct], replace=False)] = True
+    if obs_sc is not None: obs = obs_sc
     rl, rn = np.random.default_rng([seed, 77]), np.random.default_rng([seed, 78])
     T = cfg["T_change"] if cfg["change"] else cfg["T"]
     env.reset(p, th); p, th = env.poses(); init_comp = n_components(S.comm_adjacency(p, R_COMM))
@@ -149,6 +155,6 @@ def run_episode(args):
                collision=bool(minc.min() < CONTACT), min_clearance=float(minc.min()), contact_steps=int((minc < CONTACT).sum()),
                near_steps=int((minc < NEAR).sum()), t_converge_s=((bad[-1] + 1 if len(bad) else 0) * S.DT) if ok else np.nan,
                informed_final=float(np.mean(know)), init_comp=init_comp,
-               **{c: cfg[c] for c in COND_COLS})
+               **{c: cfg[c] for c in COND_COLS}, **({"scenario": cfg["scenario"]} if cfg.get("scenario") else {}))
     if cfg["change"]: row.update(err_pre_switch=float(e_old[cfg["t_switch"] - 1]), old_final_err=float(e_old[-1]), new_formation=FORMS[fi1])
     return row
