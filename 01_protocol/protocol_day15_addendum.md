@@ -53,3 +53,10 @@ To be specified in addendum v3.1 once the implementation is read. It will includ
 
 ## 7. Deviations
 Anything not listed here, or changed after a run, is exploratory and labelled so in the paper.
+
+## 3b. Dev outcome and revision (written after the dev check, before the revised rule was run)
+Dev check (d15_margin_dev, seeds 5000-5009, 1 training seed, 80 episodes per row). Success / contact, plain filter vs static margin:
+delay 10: GNN K2 91.2/83.8 vs 42.5/0.0; latched 92.5/90.0 vs 43.8/0.0; relayD K2+mem 95.0/78.8 vs 46.2/0.0.
+noise 10 mm: GNN K2 98.8/2.5 vs 71.2/0.0; latched 100/2.5 vs 76.2/0.0; relayD K2+mem 100/1.2 vs 66.2/0.0.
+The gate in section 3 was worded in terms of collision-free success, which the static margin technically met under delay only because the plain filter's collision-free success was 10-21%. The intended criterion was success (prediction B3), and the static margin fails it by about 50 points. We treat the static margin as failed. It is reported as an exploratory dev result: it removes contact by blocking the formation.
+Decisions: (1) noise: plain filter only, no margin. (2) delay: one revised rule, chosen before it is run. Pair margin = delay * DT * (|u_i| + |u_j|), the distance the two robots can close during the delay at their commanded speeds; barrier radius dsafe + margin, so robots settling into formation need almost no extra spacing. No tuned constants. (3) The revised rule is checked on dev seeds (suite d15_vm_dev). It is adopted for the final run if contact is at most 1% and success is at most 5 points below the plain filter. Otherwise delay is reported as an open limitation and the final delay runs use the plain filter only.
