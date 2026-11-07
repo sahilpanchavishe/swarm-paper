@@ -49,7 +49,7 @@ The expert is a potential-field controller with every robot informed of the form
 
 u_i = k_att (s_i − p_i) + Σ_j f_rep(d_ij) d̂_ij + k_tan Σ_j f_rep(d_ij) d̂_ij^⊥
 
-where d_ij = ‖p_i − p_j‖, d̂_ij = (p_i − p_j)/d_ij, d̂^⊥ is d̂ rotated by 90°, and f_rep(d) = k_rep (1/d − 1/r_inf) / d² for d < r_inf and 0 otherwise. We use k_att = 2.8 s⁻¹, k_rep = 5·10⁻³, r_inf = 0.12 m and k_tan = 0.5. The potential-field "force" is treated directly as a velocity command because the model is kinematic at the policy level, so k_att has units of s⁻¹ and no force units are used. The expert reaches the 0.025 m success threshold in 100 % of the test episodes in 100% of test episodes, with contact in 0.5% of them (Table 1, row "oracle").
+where d_ij = ‖p_i − p_j‖, d̂_ij = (p_i − p_j)/d_ij, d̂^⊥ is d̂ rotated by 90°, and f_rep(d) = k_rep (1/d − 1/r_inf) / d² for d < r_inf and 0 otherwise. We use k_att = 2.8 s⁻¹, k_rep = 5·10⁻³, r_inf = 0.12 m and k_tan = 0.5. The potential-field "force" is treated directly as a velocity command because the model is kinematic at the policy level, so k_att has units of s⁻¹ and no force units are used. The expert reaches the 0.025 m success threshold in 100% of the test episodes, with contact in 0.5% of them (Table 1, row "oracle").
 
 ## 2.7 No-learning baselines (relays)
 
