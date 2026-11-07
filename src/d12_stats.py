@@ -55,6 +55,8 @@ def compare(d, label, a, b, pct):
     Ea, Eb = wide(d, a, pct, "final_err"), wide(d, b, pct, "final_err")
     if Sa is None or Sb is None: return None
     idx = Sa.index.intersection(Sb.index); Sa, Sb, Ea, Eb = Sa.loc[idx], Sb.loc[idx], Ea.loc[idx], Eb.loc[idx]
+    if Sa.shape[1] > 1 and Sb.shape[1] > 1:      # Day 14 fix: pooled difference and CI use ONLY the training seeds both sides have
+        common = sorted(set(Sa.columns) & set(Sb.columns)); Sa, Sb, Ea, Eb = Sa[common], Sb[common], Ea[common], Eb[common]
     prs = pair_columns(Sa, Sb)
     p_s = [mcnemar_exact(Sa[ca].values, Sb[cb].values) for ca, cb in prs]
     p_e = [wilcoxon_p(Ea[ca].values, Eb[cb].values) for ca, cb in prs]
