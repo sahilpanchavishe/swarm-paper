@@ -1,3 +1,5 @@
+> **SUPERSEDED on 7 Nov 2026** by paper/tables/t14_*.csv, which are built from the Day 12 / Day 14 results (training seeds 0-4, confirmatory seeds 20000-20049). This table uses the Day 6 data. Do not cite it in the paper.
+
 | Policy | Obs. | Episodes | Success % [95 % CI] | Contact % | Collision-free success % | Median min. distance (mm) |
 |---|---|---|---|---|---|---|
 | oracle | 100 % | 200 | 100.0 [100.0, 100.0] | 0.0 | 100.0 | 89.0 |

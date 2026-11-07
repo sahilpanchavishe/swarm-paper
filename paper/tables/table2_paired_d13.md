@@ -1,3 +1,5 @@
+> **SUPERSEDED on 7 Nov 2026** by paper/tables/t14_*.csv, which are built from the Day 12 / Day 14 results (training seeds 0-4, confirmatory seeds 20000-20049). This table uses the Day 6 data. Do not cite it in the paper.
+
 | Comparison | Δ success, points [95 % CI] | Per-seed Δ (seeds 0, 1, 2) | Holm p (success) | Δ final error (mm) | Holm p (final error) |
 |---|---|---|---|---|---|
 | PRIMARY: K=2 vs K=1 (25% obs) | 25.2 [18.2, 32.7] | 22.0, 31.0, 22.5 | <0.0001 | -22.0 | <0.0001 |
