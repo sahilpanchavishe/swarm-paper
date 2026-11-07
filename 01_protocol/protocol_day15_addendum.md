@@ -67,3 +67,13 @@ delay 5, plain: GNN K2 95.0/40.0, latched 100/51.2, relayD K2+mem 96.2/13.8. Vel
 delay 10, plain (from d15_margin_dev): 91.2/83.8, 92.5/90.0, 95.0/78.8. Velocity-dependent margin: 48.8/0, 53.8/0, 12.5/0.
 The adoption rule in 3b (contact at most 1%, success at most 5 points below plain) is not met: success falls by 27 to 83 points. Both margin rules remove contact only by blocking the formation. No further rule is tried on dev seeds.
 Decisions: the final B run uses the plain filter only, under link loss 0.3 and 0.5, delay 5 and 10 steps, noise 5 and 10 mm. Predictions B2 and B3 are void. Prediction B1 stays. Delay safety is reported as an open limitation, with the dev results above described as exploratory (one training seed).
+
+## 4b. Study C specification (supersedes section 4; written before any run on the 60000 block)
+Exploratory reference: d9_token_cutoff.csv (seeds 10000+, start box 0.5, 25% observability). That run found about 24% success when the flag and token were removed from step 0 (chance for four formations), about 72-73% when removed at step 300 or 700 (error at the cut 33 mm and 4 mm), and about 6% when only the token was blanked with the observer flag left on.
+Design: fresh seeds 60000-60019 (4 formations, 80 episodes per model and condition), 25% observability, start box 0.5, no safety filter, horizon 1100 steps.
+Primary: GNN K2 (training seeds 0-4) and GNN K2+latched (seeds 0-2); cut times 0, 100, 200, 300, 500, 700, 1100; variants flagoff and flagon.
+Secondary: GNN K1 and K3 (seeds 0-2); cut times 0, 300, 700, 1100; both variants.
+Position-only readout: a parameter-free nearest-template classifier (the formation whose slot set the swarm is closest to), recorded at the cut and at the end. A learned probe is not part of the confirmatory design; positions at the cut are saved so one can be added later as exploratory.
+Reported (descriptive, with the range over training seeds): success after removal, success conditional on the template readout being right or wrong at the cut, and the share of failures that end nearest to the formation the policy builds when never informed.
+Predictions: TODO(you): write 3 or 4 sentences in your own words, for example about (C1) success when the flag is removed from step 0 being near chance, (C2) success after a late flagoff cut staying clearly above chance but clearly below the never-cut control, and (C3) the flagon variant failing at every cut before the end. Use thresholds you can defend from the exploratory reference above.
+Interpretation rule: if success after removal tracks how well the template readout identifies the formation, spatial cues explain it, and the paper does not claim implicit communication. If it does not, say so and call it unexplained.
