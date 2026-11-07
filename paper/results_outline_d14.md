@@ -14,7 +14,7 @@ Rule for every sentence: cite a table row. CONFIRMATORY = seeds 20000-20049, pro
 ## 3.3 Not a parameter-count effect (CONFIRMATORY, t14_2, t14_7; training seeds 0-2 only)
 - 25% obs, matched seeds: K=1 69.3%, K=1 widened to K=2's size 73.0% (+3.7, CI -5.2 to 12.5, not significant), K=2 97.5%, K=2 with one shared weight set (K=1's size) 97.5%, wide no-message network 0%.
 - K=2 vs wide K=1: +24.5 (Holm < 0.0001). K=2 vs shared K=2: 0.0.
-- Limitation to state: 3 training seeds, so the smallest per-seed p is 0.0625.
+- Limitation to state: a per-seed p of 0.0625 comes from 5 discordant episodes all in one direction (exact McNemar), so it reflects the number of episodes, not the number of training seeds.
 
 ## 3.4 Part of the gain is not token passing (CONFIRMATORY, t14_7)
 - At 100% obs every robot already knows the command, yet K=2 beats K=1 by 18.7 points. Claim "a second hop of neighbour information helps", not "two hops spread the command".
