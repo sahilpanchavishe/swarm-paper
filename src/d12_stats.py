@@ -42,11 +42,16 @@ def pair_columns(Wa, Wb):
     if len(ca) == 1: return [(ca[0], c) for c in cb]
     common = sorted(set(ca) & set(cb)); return [(c, c) for c in common]
 
-def two_level_boot(Sa, Sb, rng):
+def two_level_boot(Sa, Sb, rng, joint=False):
+    """Two-level bootstrap of the mean difference. Level 1: test scenarios (shared by both models).
+    Level 2: training seeds. joint=True -> both models use the SAME resampled seed indices (columns must be the same seeds,
+    same order). joint=False -> each side resamples its own seeds (a single-column side, e.g. a relay, is unaffected)."""
     n = len(Sa); out = np.empty(NBOOT)
+    if joint: assert Sa.shape[1] == Sb.shape[1]
     for r in range(NBOOT):
         i = rng.integers(0, n, n)
-        ja = rng.integers(0, Sa.shape[1], Sa.shape[1]); jb = rng.integers(0, Sb.shape[1], Sb.shape[1])
+        ja = rng.integers(0, Sa.shape[1], Sa.shape[1])
+        jb = ja if joint else rng.integers(0, Sb.shape[1], Sb.shape[1])
         out[r] = Sa[i][:, ja].mean() - Sb[i][:, jb].mean()
     return np.percentile(out, [2.5, 97.5])
 
@@ -61,9 +66,13 @@ def compare(d, label, a, b, pct):
     p_s = [mcnemar_exact(Sa[ca].values, Sb[cb].values) for ca, cb in prs]
     p_e = [wilcoxon_p(Ea[ca].values, Eb[cb].values) for ca, cb in prs]
     per_seed = [100 * (Sa[ca].mean() - Sb[cb].mean()) for ca, cb in prs]
-    lo, hi = two_level_boot(Sa.values.astype(float), Sb.values.astype(float), np.random.default_rng(0))
+    joint = Sa.shape[1] > 1 and Sb.shape[1] > 1
+    if joint: assert list(Sa.columns) == list(Sb.columns)
+    A_, B_ = Sa.values.astype(float), Sb.values.astype(float)
+    lo, hi = two_level_boot(A_, B_, np.random.default_rng(0), joint=joint)
+    lo_i, hi_i = two_level_boot(A_, B_, np.random.default_rng(0), joint=False)   # sensitivity: independent seed resampling
     return dict(comparison=label, A=a, B=b, obs_pct=pct, n_scenarios=len(idx), n_seed_pairs=len(prs),
-                dsuccess_pct=100 * (Sa.values.mean() - Sb.values.mean()), ci_lo=100 * lo, ci_hi=100 * hi,
+                dsuccess_pct=100 * (Sa.values.mean() - Sb.values.mean()), ci_lo=100 * lo, ci_hi=100 * hi, ci_lo_indep=100 * lo_i, ci_hi_indep=100 * hi_i,
                 per_seed_dsuccess_pct=";".join(f"{x:.1f}" for x in per_seed), seeds_a_better=int(sum(x > 0 for x in per_seed)),
                 p_success_max=max(p_s), p_final_err_max=max(p_e), dfinal_err_m=float(np.mean(Ea.values) - np.mean(Eb.values)))
 

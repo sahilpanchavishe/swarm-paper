@@ -52,6 +52,9 @@ def summ(x, rng, **tags):
 
 
 def save(df, stem, caption):
+    df = df.copy()
+    for c in [c for c in df.columns if str(c).startswith("p_")]:      # p-values: never round to 0, report <0.0001
+        df[c] = df[c].map(lambda x: x if isinstance(x, str) or x != x else ("<0.0001" if x < 1e-4 else f"{x:.4f}"))
     df = df.round(2); df.to_csv(TAB / f"{stem}.csv", index=False)
     cols = list(df.columns)
     md = [f"**{caption}**\n", "| " + " | ".join(cols) + " |", "|" + "|".join("---" for _ in cols) + "|"]
