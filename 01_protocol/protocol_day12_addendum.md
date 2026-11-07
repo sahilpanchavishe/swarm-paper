@@ -47,3 +47,6 @@ mid-episode command change (switch at 17.6 s, horizon 52.8 s; relays and GNNs wi
 ## 7. Deviations to state in the paper
 Protocol.md promised 5 training seeds for all K; K=0 and latched have 3. Day 6 test seeds were reused in exploratory work. The Day 12 engine
 reproduces Day 3/6/9 results (reported by `d12_eval.py repro`). Training data regenerated on a different machine, if that happens, must be stated.
+
+## 5a. Safety-filter selection outcome (written before safety_final)
+On the dev seeds at 25 % observability the mean collision-free success of K=2 and K=3 was 97.5 for both (dsafe, gamma) = (0.10, 10) and (0.10, 20); the written rule does not separate them. Tie-break, fixed here before any confirmatory safety run: lower mean near-contact steps on the dev seeds, which selects (0.10, 20).
