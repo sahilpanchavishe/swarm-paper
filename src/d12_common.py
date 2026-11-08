@@ -147,7 +147,7 @@ def run_episode(args):
                                 torch.tensor(know, dtype=torch.float32)[None], At)[0].numpy() * V_MAX
             else:
                 if kind == "oracle": know = np.ones(N, bool); tok = np.full(N, ci)
-                elif pol["mem"] == "none": know = obs if K == 0 else reach(A, obs, K); tok = np.full(N, ci)
+                elif pol["mem"] == "none": know = obs_e if K == 0 else reach(A, obs_e, K); tok = cn
                 else:
                     rtok, rstamp = update_registers(rtok, rstamp, obs_e, cmd, cst, A, K, pol["mem"]); know = rstamp >= 0; tok = rtok
                 tg = SL[np.where(tok >= 0, tok, 0), np.arange(N)]

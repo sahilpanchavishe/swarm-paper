@@ -123,3 +123,6 @@ Primary metric collision-free success. Anything not listed is exploratory.
 Filter: d15_pred.py (predicts current positions from delayed snapshots by finite-difference velocity, pad 0.02 m). Pad chosen on dev seeds 5000-5009 (d15_pred_dev): at delay 5 and pad 0.02 contact was 0.0% and success 85-95%; pad 0.04 lowered success to 60-70%. Dev results were seen. Suite d15_pred_conf: GNN K2, K2+latched, K3, relayD K2+mem, delay 5 and 10, 25% and 50% observability, seeds 120000-120024.
 (P1) Contact at most 2% for every policy and cell. (P2) Collision-free success at least 75% at delay 5 and at least 65% at delay 10 for every policy. (P3) Success lower at delay 10 than delay 5 for the GNN policies. The filter has no formal guarantee; the study tests it empirically.
 Primary metric collision-free success. Anything not listed is exploratory.
+
+## 14. Exploratory addition (written 9 Nov 2026 after the observer results were seen): memoryless relays under observer errors
+Suite d15_obs_nomem runs relay K2 and relayD K2 (no register memory) on the d15_obs conditions, seeds 110000-110024, to test the O1 sentence left untested in section 12b. Memoryless relays now read the imperfect observer command; behaviour is unchanged when the keys are unset. Exploratory, not confirmatory.

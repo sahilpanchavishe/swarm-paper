@@ -48,6 +48,8 @@ SUITES15["d15_pred_dev"] = dict(policies=["GNN K2", "relayD K2+mem"], model_seed
 SUITES15["d15_pred_conf"] = dict(policies=["GNN K2", "GNN K2+latched", "GNN K3", "relayD K2+mem"], model_seeds=(0, 1, 2), seed0=120000, n=25, obs=(50, 25),
                                 cfgs=[plain(delay=d, pred=0.02) for d in (5, 10)])
 
+SUITES15["d15_obs_nomem"] = dict(SUITES15["d15_obs"], policies=["relay K2", "relayD K2"])
+
 if __name__ == "__main__":
     for d in (5, 10): print(f"delay {d}: margin {1000 * margin(delay=d):.1f} mm")
     for s in (0.005, 0.01): print(f"noise {1000 * s:.0f} mm: margin {1000 * margin(noise=s):.1f} mm")
