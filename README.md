@@ -106,3 +106,26 @@ The full protocol is in `01_protocol/protocol.md`; decisions are logged in `logs
 ## 7. Licence and citation
 
 TODO: choose a licence for the code (for example MIT) and add a `LICENSE` file; add the citation once the paper has a DOI.
+
+## 3. Studies added on Day 15 (protocol: `01_protocol/protocol_day15_addendum.md`)
+
+| Study | What | Seeds | Status |
+|---|---|---|---|
+| A | Disconnected starts (`d15_A_*` suites, `src/d15_scenarios.py`) | 50000-50024 | confirmatory |
+| B | Safety filter under link loss, delay and noise (`d15_filter_dist`) | 40000-40024 | exploratory (results seen before predictions) |
+| C | Token cut-off redo with position-only readout (`src/d15_cutoff.py`) | 60000-60019 | confirmatory |
+| D | Command change replication (`d15_change`) | 70000-70024 | exploratory |
+| Drift, frontier, failure replay | `d15_drift.py`, `d15_frontier` suite, `d15_replay.py` | 80000+, 5000-5009 | exploratory |
+
+Static and velocity-dependent delay margins were tried on dev seeds 5000-5009 and failed (they remove contact by blocking the formation); the final runs use the plain filter. Delay safety is an open limitation.
+
+Run from `src/`:
+```bash
+python d12_eval.py <suite>      # d15_A_conn1, d15_A_comp2_same, d15_A_comp2_split, d15_A_comp3_same, d15_filter_dist, d15_change, d15_frontier
+python d15_cutoff.py --models ... --cuts ... --out ../results/<file>.csv    # see run_d15_rest.sh for the exact arguments
+python d15_stats_A.py; python d15_stats_B.py; python d15_stats_C.py
+python d15_drift.py; python d15_replay.py
+python d15_tables.py            # paper/tables/t15_*, paper/figs/f15_*
+python check_claims.py          # every number in the text against paper/claims.csv
+```
+`run_d15.sh`, `run_d15_B.sh`, `run_d15_rest.sh` and `run_d15_tail.sh` chain these in the order used.
