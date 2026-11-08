@@ -1,0 +1,96 @@
+== waiting for d15_pred_conf
+== P1-P3 scoring
+                                n  success  contact     cf
+policy         delay obs_pct                              
+GNN K2         5     25       300    0.917      0.0  0.917
+                     50       300    0.927      0.0  0.927
+               10    25       300    0.897      0.0  0.897
+                     50       300    0.927      0.0  0.927
+GNN K2+latched 5     25       300    0.887      0.0  0.887
+                     50       300    0.887      0.0  0.887
+               10    25       300    0.917      0.0  0.917
+                     50       300    0.923      0.0  0.923
+GNN K3         5     25       300    0.897      0.0  0.897
+                     50       300    0.920      0.0  0.920
+               10    25       300    0.913      0.0  0.913
+                     50       300    0.920      0.0  0.920
+relayD K2+mem  5     25       100    0.910      0.0  0.910
+                     50       100    0.920      0.0  0.920
+               10    25       100    0.970      0.0  0.970
+                     50       100    0.970      0.0  0.970
+[main 0813747] Day 15: delay-aware filter confirmatory results (P1-P3)
+ 3 files changed, 4041 insertions(+)
+ create mode 100644 results/d12_d15_pred_conf.csv
+ create mode 100644 results/d15_P_quick.csv
+ create mode 100644 results/log_d15_pred_conf.txt
+Current branch main is up to date.
+To https://github.com/sahilpanchavishe/swarm-paper.git
+   31b875d..0813747  main -> main
+== no-memory relay under observer errors (exploratory addition)
+[main d21fa01] Day 15: memoryless relay under observer errors, specified before running
+ 3 files changed, 6 insertions(+), 1 deletion(-)
+To https://github.com/sahilpanchavishe/swarm-paper.git
+   0813747..d21fa01  main -> main
+suite d15_obs_nomem: 12 units, 0 already done, 12 to run = 2400 episodes, seeds 110000..110024, 7 workers
+[1/12] relay K2|sNone|contra=False|miss=0.0|wrong=0.0|n25|b110000: success  91.5%  contact   1.0%  (41 s; elapsed 1 min, about 8 min left)
+[2/12] relay K2|sNone|contra=False|miss=0.3|wrong=0.0|n25|b110000: success  89.5%  contact   0.5%  (43 s; elapsed 1 min, about 7 min left)
+[3/12] relay K2|sNone|contra=False|miss=0.6|wrong=0.0|n25|b110000: success  58.5%  contact   0.0%  (43 s; elapsed 2 min, about 6 min left)
+[4/12] relay K2|sNone|contra=False|miss=0.0|wrong=0.1|n25|b110000: success  92.5%  contact   0.0%  (45 s; elapsed 3 min, about 6 min left)
+[5/12] relay K2|sNone|contra=False|miss=0.0|wrong=0.3|n25|b110000: success  94.0%  contact   0.0%  (45 s; elapsed 4 min, about 5 min left)
+[6/12] relay K2|sNone|contra=True|miss=0.0|wrong=0.0|n25|b110000: success   6.5%  contact   0.0%  (45 s; elapsed 4 min, about 4 min left)
+[7/12] relayD K2|sNone|contra=False|miss=0.0|wrong=0.0|n25|b110000: success  93.0%  contact   1.0%  (45 s; elapsed 5 min, about 4 min left)
+[8/12] relayD K2|sNone|contra=False|miss=0.3|wrong=0.0|n25|b110000: success  92.0%  contact   0.0%  (45 s; elapsed 6 min, about 3 min left)
+[9/12] relayD K2|sNone|contra=False|miss=0.6|wrong=0.0|n25|b110000: success  50.0%  contact   0.0%  (44 s; elapsed 7 min, about 2 min left)
+[10/12] relayD K2|sNone|contra=False|miss=0.0|wrong=0.1|n25|b110000: success  93.0%  contact   0.0%  (45 s; elapsed 7 min, about 1 min left)
+[11/12] relayD K2|sNone|contra=False|miss=0.0|wrong=0.3|n25|b110000: success  89.5%  contact   0.0%  (45 s; elapsed 8 min, about 1 min left)
+[12/12] relayD K2|sNone|contra=True|miss=0.0|wrong=0.0|n25|b110000: success   6.0%  contact   0.0%  (44 s; elapsed 9 min, about 0 min left)
+
+saved /Users/yshvrdhn/Developer/swarm-paper/results/d12_d15_obs_nomem.csv
+                               n  success  contact
+cond      policy    obs_pct                       
+clean     relay K2  25       100     0.84     0.01
+                    50       100     0.99     0.01
+          relayD K2 25       100     0.86     0.01
+                    50       100     1.00     0.01
+contra    relay K2  25       100     0.09     0.00
+                    50       100     0.04     0.00
+          relayD K2 25       100     0.08     0.00
+                    50       100     0.04     0.00
+miss 0.3  relay K2  25       100     0.80     0.00
+                    50       100     0.99     0.01
+          relayD K2 25       100     0.84     0.00
+                    50       100     1.00     0.00
+miss 0.6  relay K2  25       100     0.34     0.00
+                    50       100     0.83     0.00
+          relayD K2 25       100     0.23     0.00
+                    50       100     0.77     0.00
+wrong 0.1 relay K2  25       100     0.85     0.00
+                    50       100     1.00     0.00
+          relayD K2 25       100     0.86     0.00
+                    50       100     1.00     0.00
+wrong 0.3 relay K2  25       100     0.88     0.00
+                    50       100     1.00     0.00
+          relayD K2 25       100     0.79     0.00
+                    50       100     1.00     0.00
+== tables
+wrote t15_1_A_descriptive 64 rows
+wrote t15_2_A_paired 40 rows
+wrote t15_3_B_descriptive 48 rows
+wrote t15_4_B_paired 48 rows
+wrote t15_5_C_descriptive 40 rows
+wrote t15_6_change_EXPLORATORY 38 rows
+wrote t15_7_drift_EXPLORATORY 7 rows
+wrote t15_8_frontier_EXPLORATORY 40 rows
+wrote t15_9_replay_EXPLORATORY 12 rows
+wrote t15_10_Bconf_descriptive 48 rows
+wrote t15_12_observers 48 rows
+wrote t15_13_observers_nomem_EXPLORATORY 24 rows
+wrote t15_14_delay_filter 16 rows
+wrote t15_15_probe_EXPLORATORY 7 rows
+wrote t15_16_failure_classes_EXPLORATORY 44 rows
+wrote t15_11_Bconf_paired 48 rows
+wrote t15_17_change_confirmatory 38 rows
+OK   A_gnn_k2_conn1_25 | Results, Study A | text 96.0 | table 96.0
+OK   A_relayD_comp3_25 | Results, Study A | text 100.0 | table 100.0
+
+2/2 claims verified

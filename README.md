@@ -129,3 +129,13 @@ python d15_tables.py            # paper/tables/t15_*, paper/figs/f15_*
 python check_claims.py          # every number in the text against paper/claims.csv
 ```
 `run_d15.sh`, `run_d15_B.sh`, `run_d15_rest.sh` and `run_d15_tail.sh` chain these in the order used.
+
+## 4. Studies added on 8-9 Nov (protocol sections 9-14)
+| Study | Suite / script | Seeds | Status |
+|---|---|---|---|
+| D replication | `d15_change_conf` | 90000-90024 | confirmatory |
+| B replication | `d15_filter_dist_conf` | 100000-100024 | confirmatory |
+| Observer errors | `d15_obs`, `d15_obs_nomem` | 110000-110024 | confirmatory / exploratory (nomem) |
+| Delay-aware filter | `d15_pred_conf`, `d15_pred.py` | 120000-120024 | confirmatory (pad chosen on dev seeds 5000-5009) |
+| Failure classification, learned probe | `d15_classify.py`, `d15_probe.py` | earlier runs | exploratory |
+Stats: `d15_stats_Bconf.py`, `d15_stats_O.py`. Tables: `python src/d15_tables.py`.

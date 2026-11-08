@@ -47,3 +47,13 @@ B = load("d15_B_descriptive.csv")
 if B is not None:
     x = B[B.obs_pct == 25].pivot_table(index="cond", columns="policy", values="contact_pct"); ax = x.plot.bar(figsize=(8, 3)); ax.set_ylabel("episodes with contact (%)")
     ax.figure.tight_layout(); ax.figure.savefig(FIG / "f15_filter_disturbance.pdf"); plt.close("all")
+
+# ---- added 9 Nov: observers, delay filter, probe, failure classes, confirmatory B and D
+for n, st in (("d15_Bconf_descriptive.csv","t15_10_Bconf_descriptive"), ("d15_O_descriptive.csv","t15_12_observers"), ("d15_Onomem_descriptive.csv","t15_13_observers_nomem_EXPLORATORY"),
+              ("d15_P_quick.csv","t15_14_delay_filter"), ("d15_probe.csv","t15_15_probe_EXPLORATORY"), ("d15_failure_classes.csv","t15_16_failure_classes_EXPLORATORY")):
+    x = load(n)
+    if x is not None: save(x, st)
+x = load("d15_Bconf_paired.csv")
+if x is not None: save(x[[c for c in PC if c in x]], "t15_11_Bconf_paired")
+x = load("d12_d15_change_conf_summary.csv")
+if x is not None: save(x, "t15_17_change_confirmatory")

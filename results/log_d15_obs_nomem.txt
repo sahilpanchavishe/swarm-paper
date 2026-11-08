@@ -1,0 +1,15 @@
+suite d15_obs_nomem: 12 units, 0 already done, 12 to run = 2400 episodes, seeds 110000..110024, 7 workers
+[1/12] relay K2|sNone|contra=False|miss=0.0|wrong=0.0|n25|b110000: success  91.5%  contact   1.0%  (41 s; elapsed 1 min, about 8 min left)
+[2/12] relay K2|sNone|contra=False|miss=0.3|wrong=0.0|n25|b110000: success  89.5%  contact   0.5%  (43 s; elapsed 1 min, about 7 min left)
+[3/12] relay K2|sNone|contra=False|miss=0.6|wrong=0.0|n25|b110000: success  58.5%  contact   0.0%  (43 s; elapsed 2 min, about 6 min left)
+[4/12] relay K2|sNone|contra=False|miss=0.0|wrong=0.1|n25|b110000: success  92.5%  contact   0.0%  (45 s; elapsed 3 min, about 6 min left)
+[5/12] relay K2|sNone|contra=False|miss=0.0|wrong=0.3|n25|b110000: success  94.0%  contact   0.0%  (45 s; elapsed 4 min, about 5 min left)
+[6/12] relay K2|sNone|contra=True|miss=0.0|wrong=0.0|n25|b110000: success   6.5%  contact   0.0%  (45 s; elapsed 4 min, about 4 min left)
+[7/12] relayD K2|sNone|contra=False|miss=0.0|wrong=0.0|n25|b110000: success  93.0%  contact   1.0%  (45 s; elapsed 5 min, about 4 min left)
+[8/12] relayD K2|sNone|contra=False|miss=0.3|wrong=0.0|n25|b110000: success  92.0%  contact   0.0%  (45 s; elapsed 6 min, about 3 min left)
+[9/12] relayD K2|sNone|contra=False|miss=0.6|wrong=0.0|n25|b110000: success  50.0%  contact   0.0%  (44 s; elapsed 7 min, about 2 min left)
+[10/12] relayD K2|sNone|contra=False|miss=0.0|wrong=0.1|n25|b110000: success  93.0%  contact   0.0%  (45 s; elapsed 7 min, about 1 min left)
+[11/12] relayD K2|sNone|contra=False|miss=0.0|wrong=0.3|n25|b110000: success  89.5%  contact   0.0%  (45 s; elapsed 8 min, about 1 min left)
+[12/12] relayD K2|sNone|contra=True|miss=0.0|wrong=0.0|n25|b110000: success   6.0%  contact   0.0%  (44 s; elapsed 9 min, about 0 min left)
+
+saved /Users/yshvrdhn/Developer/swarm-paper/results/d12_d15_obs_nomem.csv
