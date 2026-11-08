@@ -102,3 +102,11 @@ Same suite as d15_filter_dist (plain filter, link loss 0.3 and 0.5, delay 5 and 
 (B2) Noise 5 mm: contact at most 1%. Noise 10 mm: contact at most 6%.
 (B3) Delay: contact at least 25% for every policy at 5 steps and at least 80% at 10 steps. The filter is not expected to be safe under delay.
 Primary metric collision-free success, statistics as Study A. Anything not listed is exploratory.
+
+## 12. Observer imperfection study (written 8 Nov 2026, before any code or run)
+Design (all conditions use the plain filter off, wide-box off, start box 0.5, 25% and 50% observability, fresh seeds 110000-110024, four formations, policies as in Study A: GNN K2, GNN K2+latched, relayD K2+mem, relay K2+mem):
+(O1) Missed command: at every control step each observer independently fails to read the command with probability p in {0.3, 0.6}.
+(O2) Wrong command: at every control step each observer independently reads a uniformly random wrong formation with probability p in {0.1, 0.3}.
+(O3) Contradiction: half of the observers (rounded down, at least one) read a different, fixed wrong formation for the whole episode; at 25% observability this is one of two observers.
+Success is measured against the true formation. Old behaviour is unchanged when none of these keys is set.
+Predictions (TODO(you): write 3 or 4 sentences in your own words before the run, for example which policy you expect to degrade most under O2 and O3, and whether latching helps or hurts when observers are wrong, since a latched wrong token cannot be corrected).
