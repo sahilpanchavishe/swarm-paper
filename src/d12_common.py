@@ -117,21 +117,28 @@ def run_episode(args):
     obs = np.zeros(N, bool); obs[np.random.default_rng([seed, 99]).choice(N, {100: 8, 50: 4, 25: 2}[obs_pct], replace=False)] = True
     if obs_sc is not None: obs = obs_sc
     rl, rn = np.random.default_rng([seed, 77]), np.random.default_rng([seed, 78])
+    ro = np.random.default_rng([seed, 88]); n_con = max(1, int(obs.sum()) // 2); wrong_f = (fi + 1 + int(np.random.default_rng([seed, 66]).integers(0, 3))) % 4
     T = cfg["T_change"] if cfg["change"] else cfg["T"]
     env.reset(p, th); p, th = env.poses(); init_comp = n_components(S.comm_adjacency(p, R_COMM))
     rtok, rstamp = np.full(N, -1), np.full(N, -1); hist = []; e_old, e_new, minc = [], [], []; know = obs
     with torch.no_grad():
         for t in range(T):
             sw = cfg["change"] and t >= cfg["t_switch"]; ci, cst = (fi1, 1) if sw else (fi, 0)
+            obs_e, cn = obs, np.full(N, ci)      # observer imperfections (O1 miss, O2 wrong, O3 contra); no effect when the keys are unset
+            if cfg.get("miss") or cfg.get("wrong") or cfg.get("contra"):
+                obs_e = obs & (ro.random(N) >= cfg.get("miss", 0.0))
+                if cfg.get("wrong"): cn = np.where(ro.random(N) < cfg["wrong"], (ci + 1 + ro.integers(0, 3, N)) % 4, cn)
+                if cfg.get("contra"): cn[np.nonzero(obs)[0][:n_con]] = wrong_f
+            cmd = cn[obs_e]
             hist.append(p.copy()); pc = hist[max(0, len(hist) - 1 - cfg["delay"])]
             if cfg["noise"] > 0: pc = pc + rn.normal(0.0, cfg["noise"], pc.shape)
             A = S.comm_adjacency(p, R_COMM); M = None
             if cfg["loss"] > 0:
                 keep = np.triu(rl.random((N, N)) >= cfg["loss"], 1); M = keep | keep.T; A = A & M
             if kind == "gnn":
-                if pol["reg"] == "none": know = obs; tok = np.full(N, ci)
+                if pol["reg"] == "none": know = obs_e; tok = cn
                 else:
-                    rtok, rstamp = update_registers(rtok, rstamp, obs, ci, cst, A, max(K, 1), pol["reg"]); know = rstamp >= 0; tok = rtok
+                    rtok, rstamp = update_registers(rtok, rstamp, obs_e, cmd, cst, A, max(K, 1), pol["reg"]); know = rstamp >= 0; tok = rtok
                 oh = np.zeros((N, 4), np.float32); ix = np.nonzero(know)[0]; oh[ix, tok[ix]] = 1.0
                 Pt = torch.tensor(p, dtype=torch.float32)[None]; D = (Pt[:, :, None] - Pt[:, None]).norm(dim=-1)
                 At = ((D <= R_COMM) & (D > 0)).float()
@@ -142,7 +149,7 @@ def run_episode(args):
                 if kind == "oracle": know = np.ones(N, bool); tok = np.full(N, ci)
                 elif pol["mem"] == "none": know = obs if K == 0 else reach(A, obs, K); tok = np.full(N, ci)
                 else:
-                    rtok, rstamp = update_registers(rtok, rstamp, obs, ci, cst, A, K, pol["mem"]); know = rstamp >= 0; tok = rtok
+                    rtok, rstamp = update_registers(rtok, rstamp, obs_e, cmd, cst, A, K, pol["mem"]); know = rstamp >= 0; tok = rtok
                 tg = SL[np.where(tok >= 0, tok, 0), np.arange(N)]
                 u = S.expert_velocity_vector(pc, np.where(know[:, None], tg, pc if pol["default"] == "hold" else DEFAULT))
             if cfg["safety"]: u = (__import__("d15_filter").safety_filter_vm(u, pc, cfg["dsafe"], cfg["gamma"], cfg["sense"], cfg["delay"] * S.DT * cfg["vmargin"]) if cfg.get("vmargin") else safety_filter(u, pc, cfg["dsafe"], cfg["gamma"], cfg["sense"]))
@@ -155,6 +162,6 @@ def run_episode(args):
                collision=bool(minc.min() < CONTACT), min_clearance=float(minc.min()), contact_steps=int((minc < CONTACT).sum()),
                near_steps=int((minc < NEAR).sum()), t_converge_s=((bad[-1] + 1 if len(bad) else 0) * S.DT) if ok else np.nan,
                informed_final=float(np.mean(know)), init_comp=init_comp,
-               **{c: cfg[c] for c in COND_COLS}, **{k: cfg[k] for k in ("scenario", "vmargin") if cfg.get(k)})
+               **{c: cfg[c] for c in COND_COLS}, **{k: cfg[k] for k in ("scenario", "vmargin") if cfg.get(k)}, **{k: cfg[k] for k in ("miss", "wrong", "contra") if k in cfg})
     if cfg["change"]: row.update(err_pre_switch=float(e_old[cfg["t_switch"] - 1]), old_final_err=float(e_old[-1]), new_formation=FORMS[fi1])
     return row
