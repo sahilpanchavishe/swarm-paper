@@ -37,6 +37,8 @@ SUITES15["d15_frontier"] = dict(policies=["GNN K2", "GNN K2+latched", "relayD K2
 
 SUITES15["d15_change_conf"] = dict(SUITES15["d15_change"], seed0=90000)    # fresh block for the confirmatory replication of the command change
 
+SUITES15["d15_filter_dist_conf"] = dict(SUITES15["d15_filter_dist"], seed0=100000)    # confirmatory replication of Study B
+
 if __name__ == "__main__":
     for d in (5, 10): print(f"delay {d}: margin {1000 * margin(delay=d):.1f} mm")
     for s in (0.005, 0.01): print(f"noise {1000 * s:.0f} mm: margin {1000 * margin(noise=s):.1f} mm")

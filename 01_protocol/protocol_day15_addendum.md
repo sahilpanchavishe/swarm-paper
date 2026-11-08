@@ -95,3 +95,10 @@ Primary metric collision-free success; same statistics as Study A. Anything not 
 ## 10. Exploratory analyses added 8 Nov 2026 (specified before running)
 - Failure classification: re-simulate all failing filtered wide-box memoryless-GNN episodes (d15_replay.py --max 100) and label the worst robot at the end: held_by_filter (filter altered its command in more than 50% of the last 100 steps), still_moving (speed at least 20 mm/s), stopped_isolated (nearest neighbour more than 100 mm), otherwise stopped_in_crowd. Thresholds are arbitrary and fixed here.
 - Learned probe (d15_probe.py): logistic regression on rotation-free features (sorted distances to the centroid and sorted pairwise distances) of the swarm positions at the cut, K2 flagoff runs of d15_cutoff_primary.csv, 5-fold cross-validation grouped by start seed, to test whether positions alone identify the formation.
+
+## 11. Study B confirmatory replication (written 8 Nov 2026 before any run on seeds 100000-100024)
+Same suite as d15_filter_dist (plain filter, link loss 0.3 and 0.5, delay 5 and 10 steps, noise 5 and 10 mm), fresh seeds. Thresholds from the exploratory run, which was seen.
+(B1) Link loss: contact at most 1% for every policy and level. Collision-free success at least 80% for every policy except memoryless GNN K2 at 25% observability and loss 0.5, which is expected between 80% and 90%.
+(B2) Noise 5 mm: contact at most 1%. Noise 10 mm: contact at most 6%.
+(B3) Delay: contact at least 25% for every policy at 5 steps and at least 80% at 10 steps. The filter is not expected to be safe under delay.
+Primary metric collision-free success, statistics as Study A. Anything not listed is exploratory.
