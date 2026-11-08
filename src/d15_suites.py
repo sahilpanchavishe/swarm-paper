@@ -35,6 +35,8 @@ SUITES15["d15_vm_dev"] = dict(policies=["GNN K2", "GNN K2+latched", "relayD K2+m
 SUITES15["d15_frontier"] = dict(policies=["GNN K2", "GNN K2+latched", "relayD K2+mem", "relay K2+mem"], model_seeds=(0, 1, 2), seed0=5000, n=10, obs=(50, 25),
                                 cfgs=[plain(start_half=h) for h in (0.5, 0.7, 0.9, 1.1, 1.3)])
 
+SUITES15["d15_change_conf"] = dict(SUITES15["d15_change"], seed0=90000)    # fresh block for the confirmatory replication of the command change
+
 if __name__ == "__main__":
     for d in (5, 10): print(f"delay {d}: margin {1000 * margin(delay=d):.1f} mm")
     for s in (0.005, 0.01): print(f"noise {1000 * s:.0f} mm: margin {1000 * margin(noise=s):.1f} mm")

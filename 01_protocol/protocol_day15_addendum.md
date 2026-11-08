@@ -82,3 +82,16 @@ Interpretation rule: if success after removal tracks how well the template reado
 - Frontier sweep (suite d15_frontier): filtered runs on dev seeds 5000-5009 with start-box half-width 0.5, 0.7, 0.9, 1.1 and 1.3, to see where the engineered relay or the GNN stops reaching the formation. The GNN divides positions by 1.1, so 1.3 is outside its input range and any GNN drop there is partly an input-scaling effect.
 - Drift measurement (d15_drift.py, seeds 80000-80019, wide box, 25% observability, no filter): distance of uninformed robots to the formation centre and number of communication components over time for GNN K2. Tests whether the memoryless GNN brings uninformed robots together on its own.
 - Failure replay (d15_replay.py): the 12 worst failing filtered wide-box memoryless-GNN episodes, re-simulated; reports speed and filter activity of the worst robot. Reports nothing if the replay does not reproduce the saved errors.
+
+## 9. Study D confirmatory replication (written 8 Nov 2026 before any run on seeds 90000-90024)
+Exploratory reference: d15_change (seeds 70000-70024), whose results were seen. This is a fresh replication (suite d15_change_conf), same policies and conditions, with and without the filter, switch at step 550, horizon 1650.
+Predictions, thresholds taken from the exploratory reference:
+(D1) naive latching fails: GNN K2+latched/naive and relay K2+naive reach at most 5% success in every condition.
+(D2) versioned latching works: GNN K2+latched/ver, relay K2+ver and relay K3+ver reach at least 93% success at 25% observability and at least 98% at 50%.
+(D3) with the filter on, contact is at most 1% for every policy.
+(D4) memoryless GNN K2 reaches at least 85% at 25% and at least 95% at 50% observability.
+Primary metric collision-free success; same statistics as Study A. Anything not listed is exploratory.
+
+## 10. Exploratory analyses added 8 Nov 2026 (specified before running)
+- Failure classification: re-simulate all failing filtered wide-box memoryless-GNN episodes (d15_replay.py --max 100) and label the worst robot at the end: held_by_filter (filter altered its command in more than 50% of the last 100 steps), still_moving (speed at least 20 mm/s), stopped_isolated (nearest neighbour more than 100 mm), otherwise stopped_in_crowd. Thresholds are arbitrary and fixed here.
+- Learned probe (d15_probe.py): logistic regression on rotation-free features (sorted distances to the centroid and sorted pairwise distances) of the swarm positions at the cut, K2 flagoff runs of d15_cutoff_primary.csv, 5-fold cross-validation grouped by start seed, to test whether positions alone identify the formation.
