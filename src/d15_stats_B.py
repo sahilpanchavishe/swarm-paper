@@ -6,7 +6,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import d6_analysis as A6
 import d12_stats as S12
 ROOT = S12.ROOT
-fs = [f for f in sorted(glob.glob(str(ROOT / "results" / "*d15_filter_dist*.csv"))) if "summary" not in f and "paired" not in f and "descriptive" not in f]
+fs = [f for f in sorted(glob.glob(str(ROOT / "results" / "*d15_filter_dist.csv"))) if "summary" not in f and "paired" not in f and "descriptive" not in f]
 d = pd.concat([pd.read_csv(f) for f in fs], ignore_index=True)
 d["cf"] = d.success.astype(bool) & ~d.collision.astype(bool)
 d["cond"] = [f"loss {l}" if l > 0 else f"delay {int(dl)}" if dl > 0 else f"noise {int(round(1000 * n))} mm" for l, dl, n in zip(d.loss, d.delay, d.noise)]
