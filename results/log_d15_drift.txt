@@ -1,0 +1,10 @@
+240 episodes, success 94.2%, mean initial components 3.70, mean slot radius 407 mm
+   t  uninformed_radius_mm  observer_radius_mm  mean_components  pct_connected
+   0                 653.7               661.1              3.7            0.0
+ 100                 450.2               427.1              2.0           29.2
+ 200                 343.0               327.4              1.2           81.2
+ 300                 353.7               361.1              1.2           80.0
+ 500                 404.5               408.2              1.3           74.2
+ 700                 405.6               410.6              1.3           75.0
+1099                 405.9               409.8              1.3           75.0
+saved /Users/yshvrdhn/Developer/swarm-paper/results/d15_drift.csv

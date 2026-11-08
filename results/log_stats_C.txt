@@ -1,0 +1,47 @@
+        policy variant  t_cut  train_seeds   n  success_pct  seed_min  seed_max  err_at_cut_mm  template_ok_at_cut_pct  success_if_template_ok  success_if_template_wrong
+        GNN K1 flagoff      0            3 240         15.4      11.2      18.8          563.2                    25.0                     8.3                       17.8
+        GNN K1 flagoff    300            3 240         52.1      48.8      55.0          116.4                    94.2                    52.7                       42.9
+        GNN K1 flagoff    700            3 240         59.2      57.5      61.3           34.5                    99.6                    59.4                        0.0
+        GNN K1 flagoff   1100            3 240         72.9      71.2      73.8           26.0                    99.6                    73.2                        0.0
+        GNN K1  flagon      0            3 240          1.2       0.0       3.8          563.2                    25.0                     0.0                        1.7
+        GNN K1  flagon    300            3 240          2.5       0.0       6.2          116.4                    94.2                     2.7                        0.0
+        GNN K1  flagon    700            3 240          3.3       1.2       6.2           34.5                    99.6                     3.3                        0.0
+        GNN K2 flagoff      0            5 400         23.2      20.0      25.0          563.2                    25.0                    12.0                       27.0
+        GNN K2 flagoff    100            5 400         61.3      55.0      68.8          292.5                    60.8                    54.3                       72.0
+        GNN K2 flagoff    200            5 400         73.8      66.2      87.5          133.7                    90.0                    72.8                       82.5
+        GNN K2 flagoff    300            5 400         76.8      67.5      95.0           44.5                    99.8                    76.7                      100.0
+        GNN K2 flagoff    500            5 400         78.8      71.2      98.8            4.7                   100.0                    78.8                        NaN
+        GNN K2 flagoff    700            5 400         78.2      71.2      97.5            2.9                   100.0                    78.2                        NaN
+        GNN K2 flagoff   1100            5 400         97.2      96.2      97.5            2.9                   100.0                    97.2                        NaN
+        GNN K2  flagon      0            5 400          3.0       0.0       6.2          563.2                    25.0                     1.0                        3.7
+        GNN K2  flagon    100            5 400          5.8       0.0      18.8          292.5                    60.8                     5.3                        6.4
+        GNN K2  flagon    200            5 400          8.2       0.0      25.0          133.7                    90.0                     8.3                        7.5
+        GNN K2  flagon    300            5 400          8.5       0.0      25.0           44.5                    99.8                     8.5                        0.0
+        GNN K2  flagon    500            5 400          8.8       0.0      26.2            4.7                   100.0                     8.8                        NaN
+        GNN K2  flagon    700            5 400          8.2       0.0      26.2            2.9                   100.0                     8.2                        NaN
+GNN K2+latched flagoff      0            3 240          0.0       0.0       0.0          563.2                    25.0                     0.0                        0.0
+GNN K2+latched flagoff    100            3 240          0.0       0.0       0.0          283.1                    60.0                     0.0                        0.0
+GNN K2+latched flagoff    200            3 240          0.0       0.0       0.0          109.0                    94.6                     0.0                        0.0
+GNN K2+latched flagoff    300            3 240          0.0       0.0       0.0           23.6                   100.0                     0.0                        NaN
+GNN K2+latched flagoff    500            3 240          0.0       0.0       0.0            1.2                   100.0                     0.0                        NaN
+GNN K2+latched flagoff    700            3 240          0.0       0.0       0.0            1.2                   100.0                     0.0                        NaN
+GNN K2+latched flagoff   1100            3 240        100.0     100.0     100.0            1.1                   100.0                   100.0                        NaN
+GNN K2+latched  flagon      0            3 240          0.0       0.0       0.0          563.2                    25.0                     0.0                        0.0
+GNN K2+latched  flagon    100            3 240          0.0       0.0       0.0          283.1                    60.0                     0.0                        0.0
+GNN K2+latched  flagon    200            3 240          0.0       0.0       0.0          109.0                    94.6                     0.0                        0.0
+GNN K2+latched  flagon    300            3 240          0.0       0.0       0.0           23.6                   100.0                     0.0                        NaN
+GNN K2+latched  flagon    500            3 240          0.0       0.0       0.0            1.2                   100.0                     0.0                        NaN
+GNN K2+latched  flagon    700            3 240          0.0       0.0       0.0            1.2                   100.0                     0.0                        NaN
+        GNN K3 flagoff      0            3 240         24.6      23.8      25.0          563.2                    25.0                    15.0                       27.8
+        GNN K3 flagoff    300            3 240         75.0      75.0      75.0           29.4                   100.0                    75.0                        NaN
+        GNN K3 flagoff    700            3 240         75.0      75.0      75.0            1.7                   100.0                    75.0                        NaN
+        GNN K3 flagoff   1100            3 240         99.2      98.8     100.0            1.7                   100.0                    99.2                        NaN
+        GNN K3  flagon      0            3 240          9.6       2.5      13.8          563.2                    25.0                     0.0                       12.8
+        GNN K3  flagon    300            3 240         22.1       5.0      36.2           29.4                   100.0                    22.1                        NaN
+        GNN K3  flagon    700            3 240         22.9       6.2      37.5            1.7                   100.0                    22.9                        NaN
+
+Default-formation check (flagoff): which formation do runs end nearest to, and do failures go there?
+GNN K1: at t_cut=0, 43% end nearest to 'circle'; of 278 failures at t_cut>0, 36% end nearest to it
+GNN K2: at t_cut=0, 41% end nearest to 'circle'; of 536 failures at t_cut>0, 7% end nearest to it
+GNN K2+latched: at t_cut=0, 97% end nearest to 'cluster'; of 1200 failures at t_cut>0, 98% end nearest to it
+GNN K3: at t_cut=0, 48% end nearest to 'circle'; of 122 failures at t_cut>0, 1% end nearest to it

@@ -1,0 +1,41 @@
+comparison,dsuccess_pct,ci_lo,ci_hi,seeds_a_better,p_success_max,p_success_holm
+comp2_same: GNN K2 vs relayD K2+mem (25% obs),-3.3,-7.3,-0.7,0,0.5000,1.0000
+comp2_same: latched GNN K2 vs relayD K2+mem (25% obs),0.0,0.0,0.0,0,1.0000,1.0000
+comp2_same: relayD K2+mem vs hold-still relay K2+mem (25% obs),24.0,16.0,33.0,1,<0.0001,<0.0001
+comp2_same: GNN K2 vs memoryless relay K2 (25% obs),38.7,28.3,49.3,3,<0.0001,<0.0001
+comp2_same: latched GNN K2 vs memoryless GNN K2 (25% obs),3.3,0.7,7.3,3,0.5000,1.0000
+comp2_same: GNN K2 vs relayD K2+mem (50% obs),-2.0,-4.7,0.0,0,0.5000,1.0000
+comp2_same: latched GNN K2 vs relayD K2+mem (50% obs),0.0,0.0,0.0,0,1.0000,1.0000
+comp2_same: relayD K2+mem vs hold-still relay K2+mem (50% obs),26.0,18.0,35.0,1,<0.0001,<0.0001
+comp2_same: GNN K2 vs memoryless relay K2 (50% obs),31.0,21.7,41.0,3,<0.0001,<0.0001
+comp2_same: latched GNN K2 vs memoryless GNN K2 (50% obs),2.0,0.0,4.7,3,0.5000,1.0000
+comp2_split: GNN K2 vs relayD K2+mem (25% obs),-3.7,-7.0,-1.0,0,0.2500,1.0000
+comp2_split: latched GNN K2 vs relayD K2+mem (25% obs),0.0,0.0,0.0,0,1.0000,1.0000
+comp2_split: relayD K2+mem vs hold-still relay K2+mem (25% obs),0.0,0.0,0.0,0,1.0000,1.0000
+comp2_split: GNN K2 vs memoryless relay K2 (25% obs),16.3,8.3,25.0,3,0.0007,0.0226
+comp2_split: latched GNN K2 vs memoryless GNN K2 (25% obs),3.7,1.0,7.0,3,0.2500,1.0000
+comp2_split: GNN K2 vs relayD K2+mem (50% obs),-3.3,-8.0,0.0,0,1.0000,1.0000
+comp2_split: latched GNN K2 vs relayD K2+mem (50% obs),0.0,0.0,0.0,0,1.0000,1.0000
+comp2_split: relayD K2+mem vs hold-still relay K2+mem (50% obs),0.0,0.0,0.0,0,1.0000,1.0000
+comp2_split: GNN K2 vs memoryless relay K2 (50% obs),0.7,-4.7,6.0,1,1.0000,1.0000
+comp2_split: latched GNN K2 vs memoryless GNN K2 (50% obs),3.3,0.0,8.0,2,1.0000,1.0000
+comp3_same: GNN K2 vs relayD K2+mem (25% obs),-8.0,-13.0,-3.3,0,0.0312,0.9375
+comp3_same: latched GNN K2 vs relayD K2+mem (25% obs),0.0,0.0,0.0,0,1.0000,1.0000
+comp3_same: relayD K2+mem vs hold-still relay K2+mem (25% obs),36.0,27.0,46.0,1,<0.0001,<0.0001
+comp3_same: GNN K2 vs memoryless relay K2 (25% obs),58.0,48.3,67.7,3,<0.0001,<0.0001
+comp3_same: latched GNN K2 vs memoryless GNN K2 (25% obs),8.0,3.3,13.0,3,0.0312,0.9375
+comp3_same: GNN K2 vs relayD K2+mem (50% obs),-3.3,-7.0,-0.7,0,0.5000,1.0000
+comp3_same: latched GNN K2 vs relayD K2+mem (50% obs),0.0,0.0,0.0,0,1.0000,1.0000
+comp3_same: relayD K2+mem vs hold-still relay K2+mem (50% obs),38.0,29.0,48.0,1,<0.0001,<0.0001
+comp3_same: GNN K2 vs memoryless relay K2 (50% obs),50.7,41.0,61.0,3,<0.0001,<0.0001
+comp3_same: latched GNN K2 vs memoryless GNN K2 (50% obs),3.3,0.7,7.0,3,0.5000,1.0000
+conn1: GNN K2 vs relayD K2+mem (25% obs),-4.0,-7.7,-1.0,0,0.2500,1.0000
+conn1: latched GNN K2 vs relayD K2+mem (25% obs),0.0,0.0,0.0,0,1.0000,1.0000
+conn1: relayD K2+mem vs hold-still relay K2+mem (25% obs),0.0,0.0,0.0,0,1.0000,1.0000
+conn1: GNN K2 vs memoryless relay K2 (25% obs),30.0,20.0,39.3,3,<0.0001,<0.0001
+conn1: latched GNN K2 vs memoryless GNN K2 (25% obs),4.0,1.0,7.7,3,0.2500,1.0000
+conn1: GNN K2 vs relayD K2+mem (50% obs),-1.7,-5.0,0.0,0,1.0000,1.0000
+conn1: latched GNN K2 vs relayD K2+mem (50% obs),0.0,0.0,0.0,0,1.0000,1.0000
+conn1: relayD K2+mem vs hold-still relay K2+mem (50% obs),0.0,0.0,0.0,0,1.0000,1.0000
+conn1: GNN K2 vs memoryless relay K2 (50% obs),0.3,-3.7,4.0,2,1.0000,1.0000
+conn1: latched GNN K2 vs memoryless GNN K2 (50% obs),1.7,0.0,5.0,2,1.0000,1.0000
