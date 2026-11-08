@@ -1,0 +1,3 @@
+id,where,value,file,query,column,tol
+A_gnn_k2_conn1_25,"Results, Study A",96.0,results/d15_A_descriptive.csv,scenario=='conn1' and obs_pct==25 and policy=='GNN K2',cf_success_pct,0.05
+A_relayD_comp3_25,"Results, Study A",100.0,results/d15_A_descriptive.csv,scenario=='comp3_same' and obs_pct==25 and policy=='relayD K2+mem',cf_success_pct,0.05
