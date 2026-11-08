@@ -152,7 +152,11 @@ def run_episode(args):
                     rtok, rstamp = update_registers(rtok, rstamp, obs_e, cmd, cst, A, K, pol["mem"]); know = rstamp >= 0; tok = rtok
                 tg = SL[np.where(tok >= 0, tok, 0), np.arange(N)]
                 u = S.expert_velocity_vector(pc, np.where(know[:, None], tg, pc if pol["default"] == "hold" else DEFAULT))
-            if cfg["safety"]: u = (__import__("d15_filter").safety_filter_vm(u, pc, cfg["dsafe"], cfg["gamma"], cfg["sense"], cfg["delay"] * S.DT * cfg["vmargin"]) if cfg.get("vmargin") else safety_filter(u, pc, cfg["dsafe"], cfg["gamma"], cfg["sense"]))
+            if cfg["safety"] and cfg.get("pred"):
+                _m = __import__("d15_pred"); hh = [hist[max(0, len(hist) - 1 - cfg["delay"])]] if len(hist) < 2 + cfg["delay"] else [hist[-2 - cfg["delay"]], hist[-1 - cfg["delay"]]]
+                pp = _m.predict([h_ + (pc - hist[max(0, len(hist) - 1 - cfg["delay"])]) for h_ in hh], cfg["delay"], S.DT)
+                u = _m.safety_filter_pred(u, pp, cfg["dsafe"], cfg["gamma"], cfg["sense"], cfg["pred"])
+            elif cfg["safety"]: u = (__import__("d15_filter").safety_filter_vm(u, pc, cfg["dsafe"], cfg["gamma"], cfg["sense"], cfg["delay"] * S.DT * cfg["vmargin"]) if cfg.get("vmargin") else safety_filter(u, pc, cfg["dsafe"], cfg["gamma"], cfg["sense"]))
             v, w = S.to_unicycle(u, th); p, th = env.step(v, w)
             e1 = S.formation_error(p, SL[fi1]); e_new.append(e1); e_old.append(S.formation_error(p, SL[fi]) if cfg["change"] else e1)
             minc.append(S.min_clearance(p))
@@ -162,6 +166,6 @@ def run_episode(args):
                collision=bool(minc.min() < CONTACT), min_clearance=float(minc.min()), contact_steps=int((minc < CONTACT).sum()),
                near_steps=int((minc < NEAR).sum()), t_converge_s=((bad[-1] + 1 if len(bad) else 0) * S.DT) if ok else np.nan,
                informed_final=float(np.mean(know)), init_comp=init_comp,
-               **{c: cfg[c] for c in COND_COLS}, **{k: cfg[k] for k in ("scenario", "vmargin") if cfg.get(k)}, **{k: cfg[k] for k in ("miss", "wrong", "contra") if k in cfg})
+               **{c: cfg[c] for c in COND_COLS}, **{k: cfg[k] for k in ("scenario", "vmargin", "pred") if cfg.get(k)}, **{k: cfg[k] for k in ("miss", "wrong", "contra") if k in cfg})
     if cfg["change"]: row.update(err_pre_switch=float(e_old[cfg["t_switch"] - 1]), old_final_err=float(e_old[-1]), new_formation=FORMS[fi1])
     return row

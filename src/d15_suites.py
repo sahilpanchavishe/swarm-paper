@@ -42,6 +42,12 @@ SUITES15["d15_filter_dist_conf"] = dict(SUITES15["d15_filter_dist"], seed0=10000
 SUITES15["d15_obs"] = dict(policies=["GNN K2", "GNN K2+latched", "relayD K2+mem", "relay K2+mem"], model_seeds=(0, 1, 2), seed0=110000, n=25, obs=(50, 25),
                            cfgs=[{**dict(miss=0.0, wrong=0.0, contra=False), **kw} for kw in (dict(), dict(miss=0.3), dict(miss=0.6), dict(wrong=0.1), dict(wrong=0.3), dict(contra=True))])   # filter off; clean = control
 
+SUITES15["d15_pred_dev"] = dict(policies=["GNN K2", "relayD K2+mem"], model_seeds=(0, 1, 2), seed0=5000, n=10, obs=(25,),
+                                cfgs=[plain(delay=d, pred=pd_) for d in (5, 10) for pd_ in (0.02, 0.04)])
+
+SUITES15["d15_pred_conf"] = dict(policies=["GNN K2", "GNN K2+latched", "GNN K3", "relayD K2+mem"], model_seeds=(0, 1, 2), seed0=120000, n=25, obs=(50, 25),
+                                cfgs=[plain(delay=d, pred=0.02) for d in (5, 10)])
+
 if __name__ == "__main__":
     for d in (5, 10): print(f"delay {d}: margin {1000 * margin(delay=d):.1f} mm")
     for s in (0.005, 0.01): print(f"noise {1000 * s:.0f} mm: margin {1000 * margin(noise=s):.1f} mm")

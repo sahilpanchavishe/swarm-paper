@@ -113,3 +113,8 @@ Predictions (written 8 Nov 2026 before any observer run; no pilot data, threshol
 
 ## 12b. Observer study implementation notes (written 8 Nov 2026 before any run)
 Suite d15_obs: the six conditions are clean (control), miss 0.3 and 0.6, wrong 0.1 and 0.3, contra; filter off; seeds 110000-110024. The imperfections act on policies that read observers through the registers (GNN K2, GNN K2+latched, relayD K2+mem, relay K2+mem). A memoryless relay without memory is not run, so the O1 sentence about it is not tested. Contradiction uses one observer at 25% and two at 50%, drawn in observer order, and its wrong formation is fixed per episode.
+
+## 13. Delay-aware filter, confirmatory (written 9 Nov 2026 before any run on seeds 120000-120024)
+Filter: d15_pred.py (predicts current positions from delayed snapshots by finite-difference velocity, pad 0.02 m). Pad chosen on dev seeds 5000-5009 (d15_pred_dev): at delay 5 and pad 0.02 contact was 0.0% and success 85-95%; pad 0.04 lowered success to 60-70%. Dev results were seen. Suite d15_pred_conf: GNN K2, K2+latched, K3, relayD K2+mem, delay 5 and 10, 25% and 50% observability, seeds 120000-120024.
+(P1) Contact at most 2% for every policy and cell. (P2) Collision-free success at least 75% at delay 5 and at least 65% at delay 10 for every policy. (P3) Success lower at delay 10 than delay 5 for the GNN policies. The filter has no formal guarantee; the study tests it empirically.
+Primary metric collision-free success. Anything not listed is exploratory.
