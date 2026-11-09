@@ -156,3 +156,6 @@ Disclosure: when this section was written, the delay-free results of d15_obs_saf
 (T4) For the GNN policies, C beats A on collision-free success by at least 30 points. For relayD K2+mem, C and A are within 10 points of each other, because the relay already has high collision-free success without a filter.
 (T5) The predictor filter costs at most 10 points of plain success relative to arm A for every policy.
 Anything not listed is exploratory. Misses are recorded in paper/misses_d15.md.
+
+## 16a. Clarification of T4 (written 10 Nov 2026, before any run of arms A and B)
+T4 says "the GNN policies". It is read as memoryless GNN K2 and GNN K3. GNN K2+latched is not scored in T4. In the delay-free, filter-off results of section 15 that policy already had about 95% collision-free success and 4-6% contact, so a gain of 30 points from a filter was not possible. This was visible when section 16 was written, so the original wording of T4 was a mistake. GNN K2+latched is reported without a threshold. T1, T2, T3 and T5 are unchanged.
