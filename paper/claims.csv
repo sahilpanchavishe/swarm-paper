@@ -1,3 +1,28 @@
 id,where,value,file,query,column,tol
 A_gnn_k2_conn1_25,"Results, Study A",96.0,results/d15_A_descriptive.csv,scenario=='conn1' and obs_pct==25 and policy=='GNN K2',cf_success_pct,0.05
 A_relayD_comp3_25,"Results, Study A",100.0,results/d15_A_descriptive.csv,scenario=='comp3_same' and obs_pct==25 and policy=='relayD K2+mem',cf_success_pct,0.05
+A_relay_comp2_25,Study A,76.0,results/d15_A_descriptive.csv,scenario=='comp2_same' and obs_pct==25 and policy=='relay K2+mem',cf_success_pct,0.5
+O_clean_gnnk2_25,Observers,98.0,results/d15_O_descriptive.csv,cond=='clean' and obs_pct==25 and policy=='GNN K2',success_pct,0.05
+O_miss06_gnnk2_25,Observers,71.3,results/d15_O_descriptive.csv,cond=='miss 0.6' and obs_pct==25 and policy=='GNN K2',success_pct,0.05
+O_wrong03_gnnk2_25,Observers,98.0,results/d15_O_descriptive.csv,cond=='wrong 0.3' and obs_pct==25 and policy=='GNN K2',success_pct,0.05
+O_wrong03_latched_25,Observers,47.0,results/d15_O_descriptive.csv,cond=='wrong 0.3' and obs_pct==25 and policy=='GNN K2+latched',success_pct,0.05
+O_wrong03_relay_25,Observers,48.0,results/d15_O_descriptive.csv,cond=='wrong 0.3' and obs_pct==25 and policy=='relay K2+mem',success_pct,0.05
+O_wrong01_latched_25,Observers,65.7,results/d15_O_descriptive.csv,cond=='wrong 0.1' and obs_pct==25 and policy=='GNN K2+latched',success_pct,0.05
+O_contra_gnnk2_25,Observers,2.7,results/d15_O_descriptive.csv,cond=='contra' and obs_pct==25 and policy=='GNN K2',success_pct,0.05
+O_contra_gnnk2_50,Observers,0.7,results/d15_O_descriptive.csv,cond=='contra' and obs_pct==50 and policy=='GNN K2',success_pct,0.05
+Onm_relay_miss06_25,No-memory relay,0.34,results/d15_Onomem_descriptive.csv,cond=='miss 0.6' and obs_pct==25 and policy=='relay K2',success,0.0005
+Onm_relayD_miss06_25,No-memory relay,0.23,results/d15_Onomem_descriptive.csv,cond=='miss 0.6' and obs_pct==25 and policy=='relayD K2',success,0.0005
+P_gnnk2_d5_25,Delay filter,0.917,results/d15_P_quick.csv,policy=='GNN K2' and delay==5 and obs_pct==25,cf,0.0005
+P_gnnk2_d10_25,Delay filter,0.897,results/d15_P_quick.csv,policy=='GNN K2' and delay==10 and obs_pct==25,cf,0.0005
+P_latched_d5_25,Delay filter,0.887,results/d15_P_quick.csv,policy=='GNN K2+latched' and delay==5 and obs_pct==25,cf,0.0005
+P_relayD_d10_25,Delay filter,0.97,results/d15_P_quick.csv,policy=='relayD K2+mem' and delay==10 and obs_pct==25,cf,0.0005
+P_contact_gnnk2_d5_25,Delay filter,0.0,results/d15_P_quick.csv,policy=='GNN K2' and delay==5 and obs_pct==25,contact,0.0005
+B_loss05_gnnk2_25,Study B conf,84.3,results/d15_Bconf_descriptive.csv,cond=='loss 0.5' and obs_pct==25 and policy=='GNN K2',success_pct,0.05
+B_delay10_gnnk2_contact,Study B conf,88.7,results/d15_Bconf_descriptive.csv,cond=='delay 10' and obs_pct==25 and policy=='GNN K2',contact_pct,0.05
+B_delay10_gnnk2_cf,Study B conf,10.7,results/d15_Bconf_descriptive.csv,cond=='delay 10' and obs_pct==25 and policy=='GNN K2',cf_success_pct,0.05
+B_noise10_latched_contact,Study B conf,4.0,results/d15_Bconf_descriptive.csv,cond=='noise 10 mm' and obs_pct==25 and policy=='GNN K2+latched',contact_pct,0.05
+C_k2_flagoff_cut0,Study C,23.25,results/d15_C_descriptive.csv,policy=='GNN K2' and variant=='flagoff' and t_cut==0,success_pct,0.05
+C_k2_flagoff_cut1100,Study C,97.2,results/d15_C_descriptive.csv,policy=='GNN K2' and variant=='flagoff' and t_cut==1100,success_pct,0.05
+C_k2_flagoff_cut300,Study C,76.8,results/d15_C_descriptive.csv,policy=='GNN K2' and variant=='flagoff' and t_cut==300,success_pct,0.05
+C_k3_flagon_cut300,Study C miss,22.1,results/d15_C_descriptive.csv,policy=='GNN K3' and variant=='flagon' and t_cut==300,success_pct,0.05
+C_k3_flagon_cut700,Study C miss,22.9,results/d15_C_descriptive.csv,policy=='GNN K3' and variant=='flagon' and t_cut==700,success_pct,0.05
