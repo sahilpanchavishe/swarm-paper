@@ -139,3 +139,10 @@ python check_claims.py          # every number in the text against paper/claims.
 | Delay-aware filter | `d15_pred_conf`, `d15_pred.py` | 120000-120024 | confirmatory (pad chosen on dev seeds 5000-5009) |
 | Failure classification, learned probe | `d15_classify.py`, `d15_probe.py` | earlier runs | exploratory |
 Stats: `d15_stats_Bconf.py`, `d15_stats_O.py`. Tables: `python src/d15_tables.py`.
+
+## 5. Paper support files
+- `paper/facts_d15.md`: all new tables in one file (generated from `paper/tables/t15_*.md`).
+- `paper/misses_d15.md`: predictions that were not met (D4, C3, O2, P3) and study labels.
+- `paper/claims.csv` and `src/check_claims.py`: every quoted number checked against a result file.
+- `src/release_check.sh`: claims, old d8/d9 checks, clean-git check and fresh-clone rebuild. Run before tagging `v1.0`.
+- `src/d15_stats_final.py`: paired comparisons (joint seed bootstrap, Holm) for observers and the delay filter.

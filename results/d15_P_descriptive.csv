@@ -1,0 +1,5 @@
+cond,obs_pct,policy,episodes,success_pct,contact_pct,cf_success_pct,median_clearance_mm
+delay 10,25,GNN K2,100,89.0,0.0,89.0,94.09315435873222
+delay 10,50,GNN K2,100,89.0,0.0,89.0,94.72393345754406
+delay 5,25,GNN K2,100,93.0,0.0,93.0,110.49126204106852
+delay 5,50,GNN K2,100,89.0,0.0,89.0,109.20950935767902

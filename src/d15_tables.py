@@ -57,3 +57,8 @@ x = load("d15_Bconf_paired.csv")
 if x is not None: save(x[[c for c in PC if c in x]], "t15_11_Bconf_paired")
 x = load("d12_d15_change_conf_summary.csv")
 if x is not None: save(x, "t15_17_change_confirmatory")
+
+# ---- paired comparisons for observers and delay filter
+for n, st in (("d15_Pfinal_paired.csv", "t15_18_delay_filter_paired"), ("d15_Ofinal_paired.csv", "t15_19_observers_paired")):
+    x = load(n)
+    if x is not None: save(x.rename(columns={"p_boot": "p_boot", "p_holm": "p_holm"}), st)

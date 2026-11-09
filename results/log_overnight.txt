@@ -94,3 +94,25 @@ OK   A_gnn_k2_conn1_25 | Results, Study A | text 96.0 | table 96.0
 OK   A_relayD_comp3_25 | Results, Study A | text 100.0 | table 100.0
 
 2/2 claims verified
+[main 02fb452] Day 15: tables, README and exploratory no-memory observer run
+ 25 files changed, 3127 insertions(+)
+ create mode 100644 paper/tables/t15_10_Bconf_descriptive.csv
+ create mode 100644 paper/tables/t15_10_Bconf_descriptive.md
+ create mode 100644 paper/tables/t15_11_Bconf_paired.csv
+ create mode 100644 paper/tables/t15_11_Bconf_paired.md
+ create mode 100644 paper/tables/t15_12_observers.csv
+ create mode 100644 paper/tables/t15_12_observers.md
+ create mode 100644 paper/tables/t15_13_observers_nomem_EXPLORATORY.csv
+ create mode 100644 paper/tables/t15_13_observers_nomem_EXPLORATORY.md
+ create mode 100644 paper/tables/t15_14_delay_filter.csv
+ create mode 100644 paper/tables/t15_14_delay_filter.md
+ create mode 100644 paper/tables/t15_15_probe_EXPLORATORY.csv
+ create mode 100644 paper/tables/t15_15_probe_EXPLORATORY.md
+ create mode 100644 paper/tables/t15_16_failure_classes_EXPLORATORY.csv
+ create mode 100644 paper/tables/t15_16_failure_classes_EXPLORATORY.md
+ create mode 100644 paper/tables/t15_17_change_confirmatory.csv
+ create mode 100644 paper/tables/t15_17_change_confirmatory.md
+ create mode 100644 results/d12_d15_obs_nomem.csv
+ create mode 100644 results/d15_Onomem_descriptive.csv
+ create mode 100644 results/log_d15_obs_nomem.txt
+ create mode 100644 results/log_overnight.txt
