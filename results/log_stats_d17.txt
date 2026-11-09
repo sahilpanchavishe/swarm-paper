@@ -1,0 +1,45 @@
+=== collision-free success (%)
+cond                      C0     C1     C2     C3
+rule                                             
+GNN K2+latched         100.0    4.0    4.0    4.0
+relay count-by-source  100.0  100.0  100.0  100.0
+relay first-token      100.0    4.0    4.0    4.0
+relay max-confidence   100.0    4.0    0.0  100.0
+=== success (%)
+cond                      C0     C1     C2     C3
+rule                                             
+GNN K2+latched         100.0    4.0    4.0    4.0
+relay count-by-source  100.0  100.0  100.0  100.0
+relay first-token      100.0    4.0    4.0    4.0
+relay max-confidence   100.0    4.0    0.0  100.0
+=== contact (%)
+cond                    C0   C1   C2   C3
+rule                                     
+GNN K2+latched         0.0  0.0  0.0  0.0
+relay count-by-source  0.0  0.0  0.0  0.0
+relay first-token      0.0  0.0  0.0  0.0
+relay max-confidence   0.0  0.0  0.0  0.0
+
+=== paired on collision-free success: 16 comparisons, 10000 draws, Holm<0.05: 9 (p floor 1/10000)
+cond                                    comparison  d_cf_pct  ci_lo  ci_hi  p_boot  p_holm
+  C0    relay count-by-source vs relay first-token       0.0    0.0    0.0   1.000   1.000
+  C0 relay count-by-source vs relay max-confidence       0.0    0.0    0.0   1.000   1.000
+  C0     relay max-confidence vs relay first-token       0.0    0.0    0.0   1.000   1.000
+  C0       relay count-by-source vs GNN K2+latched       0.0    0.0    0.0   1.000   1.000
+  C1    relay count-by-source vs relay first-token      96.0   92.0   99.0   0.000   0.002
+  C1 relay count-by-source vs relay max-confidence      96.0   92.0   99.0   0.000   0.002
+  C1     relay max-confidence vs relay first-token       0.0    0.0    0.0   1.000   1.000
+  C1       relay count-by-source vs GNN K2+latched      96.0   92.0   99.0   0.000   0.002
+  C2    relay count-by-source vs relay first-token      96.0   92.0   99.0   0.000   0.002
+  C2 relay count-by-source vs relay max-confidence     100.0  100.0  100.0   0.000   0.002
+  C2     relay max-confidence vs relay first-token      -4.0   -8.0   -1.0   0.033   0.228
+  C2       relay count-by-source vs GNN K2+latched      96.0   92.0   99.0   0.000   0.002
+  C3    relay count-by-source vs relay first-token      96.0   92.0   99.0   0.000   0.002
+  C3 relay count-by-source vs relay max-confidence       0.0    0.0    0.0   1.000   1.000
+  C3     relay max-confidence vs relay first-token      96.0   92.0   99.0   0.000   0.002
+  C3       relay count-by-source vs GNN K2+latched      96.0   92.0   99.0   0.000   0.002
+
+=== predictions (section 17)
+V1 PASS
+V2 PASS
+V3 PASS

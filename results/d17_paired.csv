@@ -1,0 +1,17 @@
+cond,comparison,d_cf_pct,ci_lo,ci_hi,p_boot,p_holm
+C0,relay count-by-source vs relay first-token,0.0,0.0,0.0,1.0,1.0
+C0,relay count-by-source vs relay max-confidence,0.0,0.0,0.0,1.0,1.0
+C0,relay max-confidence vs relay first-token,0.0,0.0,0.0,1.0,1.0
+C0,relay count-by-source vs GNN K2+latched,0.0,0.0,0.0,1.0,1.0
+C1,relay count-by-source vs relay first-token,96.0,92.0,99.0,0.0001,0.0016
+C1,relay count-by-source vs relay max-confidence,96.0,92.0,99.0,0.0001,0.0016
+C1,relay max-confidence vs relay first-token,0.0,0.0,0.0,1.0,1.0
+C1,relay count-by-source vs GNN K2+latched,96.0,92.0,99.0,0.0001,0.0016
+C2,relay count-by-source vs relay first-token,96.0,92.0,99.0,0.0001,0.0016
+C2,relay count-by-source vs relay max-confidence,100.0,100.0,100.0,0.0001,0.0016
+C2,relay max-confidence vs relay first-token,-4.0,-8.0,-1.0,0.0326,0.2282
+C2,relay count-by-source vs GNN K2+latched,96.0,92.0,99.0,0.0001,0.0016
+C3,relay count-by-source vs relay first-token,96.0,92.0,99.0,0.0001,0.0016
+C3,relay count-by-source vs relay max-confidence,0.0,0.0,0.0,1.0,1.0
+C3,relay max-confidence vs relay first-token,96.0,92.0,99.0,0.0001,0.0016
+C3,relay count-by-source vs GNN K2+latched,96.0,92.0,99.0,0.0001,0.0016

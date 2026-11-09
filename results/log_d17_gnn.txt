@@ -1,0 +1,15 @@
+suite d17_gnn: 12 units, 0 already done, 12 to run = 1200 episodes, seeds 140000..140024, 7 workers
+[1/12] GNN K2+latched|s0|conf_bad=0.7|conf_ok=0.7|contra=False|contra_n=1|contra_rand=True|dsafe=0.1|fusion=first|gamma=20.0|miss=0.0|safety=True|wrong=0.0|n25|b140000: success 100.0%  contact   0.0%  (32 s; elapsed 1 min, about 6 min left)
+[2/12] GNN K2+latched|s0|conf_bad=0.7|conf_ok=0.7|contra=True|contra_n=1|contra_rand=True|dsafe=0.1|fusion=first|gamma=20.0|miss=0.0|safety=True|wrong=0.0|n25|b140000: success   4.0%  contact   0.0%  (30 s; elapsed 1 min, about 5 min left)
+[3/12] GNN K2+latched|s0|conf_bad=0.9|conf_ok=0.5|contra=True|contra_n=1|contra_rand=True|dsafe=0.1|fusion=first|gamma=20.0|miss=0.0|safety=True|wrong=0.0|n25|b140000: success   4.0%  contact   0.0%  (30 s; elapsed 2 min, about 5 min left)
+[4/12] GNN K2+latched|s0|conf_bad=0.3|conf_ok=0.9|contra=True|contra_n=1|contra_rand=True|dsafe=0.1|fusion=first|gamma=20.0|miss=0.0|safety=True|wrong=0.0|n25|b140000: success   4.0%  contact   0.0%  (30 s; elapsed 2 min, about 4 min left)
+[5/12] GNN K2+latched|s1|conf_bad=0.7|conf_ok=0.7|contra=False|contra_n=1|contra_rand=True|dsafe=0.1|fusion=first|gamma=20.0|miss=0.0|safety=True|wrong=0.0|n25|b140000: success 100.0%  contact   0.0%  (30 s; elapsed 3 min, about 4 min left)
+[6/12] GNN K2+latched|s1|conf_bad=0.7|conf_ok=0.7|contra=True|contra_n=1|contra_rand=True|dsafe=0.1|fusion=first|gamma=20.0|miss=0.0|safety=True|wrong=0.0|n25|b140000: success   4.0%  contact   0.0%  (30 s; elapsed 3 min, about 3 min left)
+[7/12] GNN K2+latched|s1|conf_bad=0.9|conf_ok=0.5|contra=True|contra_n=1|contra_rand=True|dsafe=0.1|fusion=first|gamma=20.0|miss=0.0|safety=True|wrong=0.0|n25|b140000: success   4.0%  contact   0.0%  (30 s; elapsed 4 min, about 3 min left)
+[8/12] GNN K2+latched|s1|conf_bad=0.3|conf_ok=0.9|contra=True|contra_n=1|contra_rand=True|dsafe=0.1|fusion=first|gamma=20.0|miss=0.0|safety=True|wrong=0.0|n25|b140000: success   4.0%  contact   0.0%  (30 s; elapsed 4 min, about 2 min left)
+[9/12] GNN K2+latched|s2|conf_bad=0.7|conf_ok=0.7|contra=False|contra_n=1|contra_rand=True|dsafe=0.1|fusion=first|gamma=20.0|miss=0.0|safety=True|wrong=0.0|n25|b140000: success 100.0%  contact   0.0%  (30 s; elapsed 5 min, about 2 min left)
+[10/12] GNN K2+latched|s2|conf_bad=0.7|conf_ok=0.7|contra=True|contra_n=1|contra_rand=True|dsafe=0.1|fusion=first|gamma=20.0|miss=0.0|safety=True|wrong=0.0|n25|b140000: success   4.0%  contact   0.0%  (30 s; elapsed 5 min, about 1 min left)
+[11/12] GNN K2+latched|s2|conf_bad=0.9|conf_ok=0.5|contra=True|contra_n=1|contra_rand=True|dsafe=0.1|fusion=first|gamma=20.0|miss=0.0|safety=True|wrong=0.0|n25|b140000: success   4.0%  contact   0.0%  (30 s; elapsed 6 min, about 1 min left)
+[12/12] GNN K2+latched|s2|conf_bad=0.3|conf_ok=0.9|contra=True|contra_n=1|contra_rand=True|dsafe=0.1|fusion=first|gamma=20.0|miss=0.0|safety=True|wrong=0.0|n25|b140000: success   4.0%  contact   0.0%  (30 s; elapsed 6 min, about 0 min left)
+
+saved /Users/yshvrdhn/Developer/swarm-paper/results/d12_d17_gnn.csv

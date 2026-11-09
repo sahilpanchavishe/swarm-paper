@@ -1,0 +1,17 @@
+rule,cond,n,success,contact,cf,t_converge_median_s
+GNN K2+latched,C0,300,100.0,0.0,100.0,8.288
+GNN K2+latched,C1,300,4.0,0.0,4.0,8.544
+GNN K2+latched,C2,300,4.0,0.0,4.0,8.544
+GNN K2+latched,C3,300,4.0,0.0,4.0,8.544
+relay count-by-source,C0,100,100.0,0.0,100.0,8.432
+relay count-by-source,C1,100,100.0,0.0,100.0,8.4
+relay count-by-source,C2,100,100.0,0.0,100.0,8.4
+relay count-by-source,C3,100,100.0,0.0,100.0,8.4
+relay first-token,C0,100,100.0,0.0,100.0,8.432
+relay first-token,C1,100,4.0,0.0,4.0,8.24
+relay first-token,C2,100,4.0,0.0,4.0,8.24
+relay first-token,C3,100,4.0,0.0,4.0,8.24
+relay max-confidence,C0,100,100.0,0.0,100.0,8.432
+relay max-confidence,C1,100,4.0,0.0,4.0,8.24
+relay max-confidence,C2,100,0.0,0.0,0.0,
+relay max-confidence,C3,100,100.0,0.0,100.0,8.384
