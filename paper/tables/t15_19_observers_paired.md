@@ -1,0 +1,50 @@
+| cond | obs_pct | comparison | dsuccess_pct | ci_lo | ci_hi | p_boot | p_holm |
+|---|---|---|---|---|---|---|---|
+| clean | 25 | GNN K2 vs relayD K2+mem | -2.0 | -4.7 | 0.0 | 0.0842 | 1.0000 |
+| clean | 25 | GNN K2+latched vs relayD K2+mem | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| clean | 25 | GNN K2+latched vs GNN K2 | 2.0 | 0.0 | 5.0 | 0.0825 | 1.0000 |
+| clean | 25 | relay K2+mem vs relayD K2+mem | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| clean | 50 | GNN K2 vs relayD K2+mem | -2.7 | -6.0 | -0.3 | 0.0438 | 1.0000 |
+| clean | 50 | GNN K2+latched vs relayD K2+mem | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| clean | 50 | GNN K2+latched vs GNN K2 | 2.7 | 0.3 | 6.0 | 0.0434 | 1.0000 |
+| clean | 50 | relay K2+mem vs relayD K2+mem | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| contra | 25 | GNN K2 vs relayD K2+mem | 0.7 | -3.3 | 5.0 | 0.8154 | 1.0000 |
+| contra | 25 | GNN K2+latched vs relayD K2+mem | -0.3 | -2.0 | 0.0 | 1.0000 | 1.0000 |
+| contra | 25 | GNN K2+latched vs GNN K2 | -1.0 | -5.0 | 3.0 | 0.6939 | 1.0000 |
+| contra | 25 | relay K2+mem vs relayD K2+mem | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| contra | 50 | GNN K2 vs relayD K2+mem | 0.7 | 0.0 | 2.3 | 0.5698 | 1.0000 |
+| contra | 50 | GNN K2+latched vs relayD K2+mem | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| contra | 50 | GNN K2+latched vs GNN K2 | -0.7 | -2.0 | 0.0 | 0.5714 | 1.0000 |
+| contra | 50 | relay K2+mem vs relayD K2+mem | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| miss 0.3 | 25 | GNN K2 vs relayD K2+mem | -1.7 | -4.0 | 0.0 | 0.1403 | 1.0000 |
+| miss 0.3 | 25 | GNN K2+latched vs relayD K2+mem | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| miss 0.3 | 25 | GNN K2+latched vs GNN K2 | 1.7 | 0.0 | 4.0 | 0.1443 | 1.0000 |
+| miss 0.3 | 25 | relay K2+mem vs relayD K2+mem | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| miss 0.3 | 50 | GNN K2 vs relayD K2+mem | -1.0 | -3.3 | 0.0 | 0.4468 | 1.0000 |
+| miss 0.3 | 50 | GNN K2+latched vs relayD K2+mem | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| miss 0.3 | 50 | GNN K2+latched vs GNN K2 | 1.0 | 0.0 | 3.3 | 0.4508 | 1.0000 |
+| miss 0.3 | 50 | relay K2+mem vs relayD K2+mem | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| miss 0.6 | 25 | GNN K2 vs relayD K2+mem | -28.7 | -37.7 | -20.3 | <0.0001 | 0.0024 |
+| miss 0.6 | 25 | GNN K2+latched vs relayD K2+mem | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| miss 0.6 | 25 | GNN K2+latched vs GNN K2 | 28.7 | 20.3 | 37.7 | <0.0001 | 0.0024 |
+| miss 0.6 | 25 | relay K2+mem vs relayD K2+mem | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| miss 0.6 | 50 | GNN K2 vs relayD K2+mem | -2.0 | -5.0 | 0.0 | 0.1702 | 1.0000 |
+| miss 0.6 | 50 | GNN K2+latched vs relayD K2+mem | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| miss 0.6 | 50 | GNN K2+latched vs GNN K2 | 2.0 | 0.0 | 5.0 | 0.1591 | 1.0000 |
+| miss 0.6 | 50 | relay K2+mem vs relayD K2+mem | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| wrong 0.1 | 25 | GNN K2 vs relayD K2+mem | 33.3 | 23.7 | 43.0 | <0.0001 | 0.0024 |
+| wrong 0.1 | 25 | GNN K2+latched vs relayD K2+mem | 0.7 | -2.3 | 4.0 | 0.8079 | 1.0000 |
+| wrong 0.1 | 25 | GNN K2+latched vs GNN K2 | -32.7 | -42.0 | -23.3 | <0.0001 | 0.0024 |
+| wrong 0.1 | 25 | relay K2+mem vs relayD K2+mem | 1.0 | -2.0 | 5.0 | 0.7777 | 1.0000 |
+| wrong 0.1 | 50 | GNN K2 vs relayD K2+mem | 23.0 | 14.3 | 32.0 | <0.0001 | 0.0024 |
+| wrong 0.1 | 50 | GNN K2+latched vs relayD K2+mem | 1.7 | -1.7 | 5.7 | 0.4167 | 1.0000 |
+| wrong 0.1 | 50 | GNN K2+latched vs GNN K2 | -21.3 | -29.7 | -13.3 | <0.0001 | 0.0024 |
+| wrong 0.1 | 50 | relay K2+mem vs relayD K2+mem | 1.0 | -2.0 | 5.0 | 0.7894 | 1.0000 |
+| wrong 0.3 | 25 | GNN K2 vs relayD K2+mem | 50.0 | 40.0 | 60.3 | <0.0001 | 0.0024 |
+| wrong 0.3 | 25 | GNN K2+latched vs relayD K2+mem | -1.0 | -3.0 | 0.0 | 0.4223 | 1.0000 |
+| wrong 0.3 | 25 | GNN K2+latched vs GNN K2 | -51.0 | -61.3 | -41.0 | <0.0001 | 0.0024 |
+| wrong 0.3 | 25 | relay K2+mem vs relayD K2+mem | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| wrong 0.3 | 50 | GNN K2 vs relayD K2+mem | 48.7 | 37.0 | 60.0 | <0.0001 | 0.0024 |
+| wrong 0.3 | 50 | GNN K2+latched vs relayD K2+mem | 1.0 | -1.0 | 3.3 | 0.4810 | 1.0000 |
+| wrong 0.3 | 50 | GNN K2+latched vs GNN K2 | -47.7 | -59.0 | -35.7 | <0.0001 | 0.0024 |
+| wrong 0.3 | 50 | relay K2+mem vs relayD K2+mem | 2.0 | 0.0 | 5.0 | 0.2691 | 1.0000 |

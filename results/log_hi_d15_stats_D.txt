@@ -1,0 +1,80 @@
+
+=== metric: success
+policy          GNN K1  GNN K2  GNN K2+latched/naive  GNN K2+latched/ver  GNN K3  oracle  relay K2  relay K2+naive  relay K2+ver  relay K3+ver
+safety obs_pct                                                                                                                                
+False  25         62.0    86.3                   0.0                94.0    88.3     NaN      85.0             0.0          94.0          94.0
+       50         73.7    97.3                   0.0               100.0    99.7     NaN      99.0             0.0         100.0         100.0
+       100         NaN     NaN                   NaN                 NaN     NaN   100.0       NaN             NaN           NaN           NaN
+True   25         68.0    84.3                   0.0                94.0    87.3     NaN      82.0             0.0          94.0          94.0
+       50         84.0    97.3                   0.0               100.0   100.0     NaN      99.0             0.0         100.0         100.0
+       100         NaN     NaN                   NaN                 NaN     NaN   100.0       NaN             NaN           NaN           NaN
+d15_Dfinal_paired.csv 28 comparisons; Holm<0.05: 9
+ safety  obs_pct                                 comparison  n_scen  d_pct  ci_lo  ci_hi  p_boot  p_holm
+  False       25         GNN K2+latched/ver vs relay K2+ver     100   0.00   0.00   0.00    1.00    1.00
+  False       25               GNN K2+latched/ver vs GNN K2     100   7.67   2.00  14.67    0.01    0.19
+  False       25                     GNN K2 vs relay K2+ver     100  -7.67 -14.67  -2.00    0.01    0.19
+  False       25 GNN K2+latched/ver vs GNN K2+latched/naive     100  94.00  89.00  98.00    0.00    0.00
+  False       25                           GNN K3 vs GNN K2     100   2.00  -3.67   8.67    0.53    1.00
+  False       25               relay K3+ver vs relay K2+ver     100   0.00   0.00   0.00    1.00    1.00
+  False       25                           GNN K2 vs GNN K1     100  24.33  12.00  38.00    0.00    0.00
+  False       50         GNN K2+latched/ver vs relay K2+ver     100   0.00   0.00   0.00    1.00    1.00
+  False       50               GNN K2+latched/ver vs GNN K2     100   2.67   0.33   6.00    0.03    0.51
+  False       50                     GNN K2 vs relay K2+ver     100  -2.67  -5.67  -0.33    0.03    0.51
+  False       50 GNN K2+latched/ver vs GNN K2+latched/naive     100 100.00 100.00 100.00    0.00    0.00
+  False       50                           GNN K3 vs GNN K2     100   2.33  -0.33   5.67    0.13    1.00
+  False       50               relay K3+ver vs relay K2+ver     100   0.00   0.00   0.00    1.00    1.00
+  False       50                           GNN K2 vs GNN K1     100  23.67  12.33  37.67    0.00    0.00
+   True       25         GNN K2+latched/ver vs relay K2+ver     100   0.00   0.00   0.00    1.00    1.00
+   True       25               GNN K2+latched/ver vs GNN K2     100   9.67   3.67  17.00    0.00    0.01
+   True       25                     GNN K2 vs relay K2+ver     100  -9.67 -17.00  -3.67    0.00    0.02
+   True       25 GNN K2+latched/ver vs GNN K2+latched/naive     100  94.00  89.00  98.00    0.00    0.00
+   True       25                           GNN K3 vs GNN K2     100   3.00  -3.67  11.00    0.45    1.00
+   True       25               relay K3+ver vs relay K2+ver     100   0.00   0.00   0.00    1.00    1.00
+   True       25                           GNN K2 vs GNN K1     100  16.33   2.33  33.00    0.02    0.35
+   True       50         GNN K2+latched/ver vs relay K2+ver     100   0.00   0.00   0.00    1.00    1.00
+   True       50               GNN K2+latched/ver vs GNN K2     100   2.67   0.33   6.00    0.04    0.57
+   True       50                     GNN K2 vs relay K2+ver     100  -2.67  -6.00  -0.33    0.04    0.57
+   True       50 GNN K2+latched/ver vs GNN K2+latched/naive     100 100.00 100.00 100.00    0.00    0.00
+   True       50                           GNN K3 vs GNN K2     100   2.67   0.33   6.00    0.04    0.57
+   True       50               relay K3+ver vs relay K2+ver     100   0.00   0.00   0.00    1.00    1.00
+   True       50                           GNN K2 vs GNN K1     100  13.33   6.00  22.00    0.00    0.01
+
+=== metric: cf
+policy          GNN K1  GNN K2  GNN K2+latched/naive  GNN K2+latched/ver  GNN K3  oracle  relay K2  relay K2+naive  relay K2+ver  relay K3+ver
+safety obs_pct                                                                                                                                
+False  25          0.7    16.3                   0.0                83.0    54.0     NaN      85.0             0.0          94.0          94.0
+       50          2.0    20.7                   0.0                87.3    71.0     NaN      99.0             0.0         100.0         100.0
+       100         NaN     NaN                   NaN                 NaN     NaN   100.0       NaN             NaN           NaN           NaN
+True   25         68.0    84.3                   0.0                94.0    87.3     NaN      82.0             0.0          94.0          94.0
+       50         84.0    97.3                   0.0               100.0   100.0     NaN      99.0             0.0         100.0         100.0
+       100         NaN     NaN                   NaN                 NaN     NaN   100.0       NaN             NaN           NaN           NaN
+d15_Dcf_paired.csv 28 comparisons; Holm<0.05: 17
+ safety  obs_pct                                 comparison  n_scen  d_pct  ci_lo  ci_hi  p_boot  p_holm
+  False       25         GNN K2+latched/ver vs relay K2+ver     100 -11.00 -17.00  -6.00    0.00    0.00
+  False       25               GNN K2+latched/ver vs GNN K2     100  66.67  56.67  75.33    0.00    0.00
+  False       25                     GNN K2 vs relay K2+ver     100 -77.67 -85.33 -69.33    0.00    0.00
+  False       25 GNN K2+latched/ver vs GNN K2+latched/naive     100  83.00  75.67  89.67    0.00    0.00
+  False       25                           GNN K3 vs GNN K2     100  37.67  25.00  49.67    0.00    0.00
+  False       25               relay K3+ver vs relay K2+ver     100   0.00   0.00   0.00    1.00    1.00
+  False       25                           GNN K2 vs GNN K1     100  15.67   9.33  22.67    0.00    0.00
+  False       50         GNN K2+latched/ver vs relay K2+ver     100 -12.67 -20.00  -6.33    0.00    0.00
+  False       50               GNN K2+latched/ver vs GNN K2     100  66.67  52.33  79.00    0.00    0.00
+  False       50                     GNN K2 vs relay K2+ver     100 -79.33 -88.00 -69.00    0.00    0.00
+  False       50 GNN K2+latched/ver vs GNN K2+latched/naive     100  87.33  80.00  93.67    0.00    0.00
+  False       50                           GNN K3 vs GNN K2     100  50.33  39.00  62.00    0.00    0.00
+  False       50               relay K3+ver vs relay K2+ver     100   0.00   0.00   0.00    1.00    1.00
+  False       50                           GNN K2 vs GNN K1     100  18.67  10.00  28.67    0.00    0.00
+   True       25         GNN K2+latched/ver vs relay K2+ver     100   0.00   0.00   0.00    1.00    1.00
+   True       25               GNN K2+latched/ver vs GNN K2     100   9.67   3.67  16.67    0.00    0.01
+   True       25                     GNN K2 vs relay K2+ver     100  -9.67 -17.00  -3.67    0.00    0.02
+   True       25 GNN K2+latched/ver vs GNN K2+latched/naive     100  94.00  89.00  98.00    0.00    0.00
+   True       25                           GNN K3 vs GNN K2     100   3.00  -3.67  11.00    0.44    1.00
+   True       25               relay K3+ver vs relay K2+ver     100   0.00   0.00   0.00    1.00    1.00
+   True       25                           GNN K2 vs GNN K1     100  16.33   2.67  33.00    0.02    0.19
+   True       50         GNN K2+latched/ver vs relay K2+ver     100   0.00   0.00   0.00    1.00    1.00
+   True       50               GNN K2+latched/ver vs GNN K2     100   2.67   0.33   6.00    0.04    0.40
+   True       50                     GNN K2 vs relay K2+ver     100  -2.67  -6.00  -0.33    0.04    0.40
+   True       50 GNN K2+latched/ver vs GNN K2+latched/naive     100 100.00 100.00 100.00    0.00    0.00
+   True       50                           GNN K3 vs GNN K2     100   2.67   0.33   6.00    0.04    0.40
+   True       50               relay K3+ver vs relay K2+ver     100   0.00   0.00   0.00    1.00    1.00
+   True       50                           GNN K2 vs GNN K1     100  13.33   6.00  22.00    0.00    0.01

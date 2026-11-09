@@ -1,61 +1,61 @@
 cond,obs_pct,filter,comparison,d_pct,ci_lo,ci_hi,p_boot,p_holm
-clean,25,False,GNN K2 vs relayD K2+mem,-64.0,-78.0,-47.6583333333333,0.00025,0.03
-clean,25,False,GNN K2+latched vs relayD K2+mem,-5.333333333333334,-9.333333333333337,-2.0000000000000018,0.002,0.192
-clean,25,False,GNN K2+latched vs GNN K2,58.666666666666664,40.0,74.0,0.00025,0.03
+clean,25,False,GNN K2 vs relayD K2+mem,-64.0,-78.0,-47.0,5e-05,0.006
+clean,25,False,GNN K2+latched vs relayD K2+mem,-5.333333333333334,-9.333333333333337,-2.0000000000000018,0.002,0.19
+clean,25,False,GNN K2+latched vs GNN K2,58.666666666666664,40.0,74.0,5e-05,0.006
 clean,25,False,relay K2+mem vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-clean,25,True,GNN K2 vs relayD K2+mem,-3.6666666666666625,-6.999999999999995,-1.0000000000000009,0.007,0.616
+clean,25,True,GNN K2 vs relayD K2+mem,-3.6666666666666625,-6.999999999999995,-1.0000000000000009,0.0096,0.8351999999999999
 clean,25,True,GNN K2+latched vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-clean,25,True,GNN K2+latched vs GNN K2,3.6666666666666625,1.0000000000000009,6.999999999999995,0.01,0.87
+clean,25,True,GNN K2+latched vs GNN K2,3.6666666666666625,1.0000000000000009,6.999999999999995,0.0093,0.8183999999999999
 clean,25,True,relay K2+mem vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-clean,25,on-off,GNN K2: filter on vs off,60.333333333333336,43.99166666666666,75.0,0.00025,0.03
-clean,25,on-off,GNN K2+latched: filter on vs off,5.333333333333334,2.0000000000000018,8.999999999999996,0.0025,0.23750000000000002
+clean,25,on-off,GNN K2: filter on vs off,60.333333333333336,43.00000000000001,75.0,5e-05,0.006
+clean,25,on-off,GNN K2+latched: filter on vs off,5.333333333333334,2.0000000000000018,9.333333333333337,0.0022,0.2068
 clean,25,on-off,relayD K2+mem: filter on vs off,0.0,0.0,0.0,1.0,1.0
 clean,25,on-off,relay K2+mem: filter on vs off,0.0,0.0,0.0,1.0,1.0
-clean,50,False,GNN K2 vs relayD K2+mem,-67.0,-78.0,-56.00000000000001,0.00025,0.03
-clean,50,False,GNN K2+latched vs relayD K2+mem,-4.0000000000000036,-7.9999999999999964,-1.0000000000000009,0.013,1.0
-clean,50,False,GNN K2+latched vs GNN K2,62.999999999999986,50.33333333333334,75.0,0.00025,0.03
+clean,50,False,GNN K2 vs relayD K2+mem,-67.0,-78.0,-56.00000000000001,5e-05,0.006
+clean,50,False,GNN K2+latched vs relayD K2+mem,-4.0000000000000036,-7.9999999999999964,-1.0000000000000009,0.0097,0.8351999999999999
+clean,50,False,GNN K2+latched vs GNN K2,62.999999999999986,51.0,75.0,5e-05,0.006
 clean,50,False,relay K2+mem vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-clean,50,True,GNN K2 vs relayD K2+mem,-1.3333333333333308,-3.6666666666666625,0.0,0.2205,1.0
+clean,50,True,GNN K2 vs relayD K2+mem,-1.3333333333333308,-4.0000000000000036,0.0,0.2298,1.0
 clean,50,True,GNN K2+latched vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-clean,50,True,GNN K2+latched vs GNN K2,1.3333333333333308,0.0,3.6666666666666625,0.2105,1.0
+clean,50,True,GNN K2+latched vs GNN K2,1.3333333333333308,0.0,4.0000000000000036,0.2243,1.0
 clean,50,True,relay K2+mem vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-clean,50,on-off,GNN K2: filter on vs off,65.66666666666667,54.99999999999999,76.0,0.00025,0.03
-clean,50,on-off,GNN K2+latched: filter on vs off,4.0000000000000036,1.0000000000000009,7.9999999999999964,0.0115,0.989
+clean,50,on-off,GNN K2: filter on vs off,65.66666666666667,55.00000000000001,76.66666666666666,5e-05,0.006
+clean,50,on-off,GNN K2+latched: filter on vs off,4.0000000000000036,1.0000000000000009,7.9999999999999964,0.0109,0.9265
 clean,50,on-off,relayD K2+mem: filter on vs off,0.0,0.0,0.0,1.0,1.0
 clean,50,on-off,relay K2+mem: filter on vs off,0.0,0.0,0.0,1.0,1.0
-contra1,25,False,GNN K2 vs relayD K2+mem,-2.0,-5.0,0.0,0.2705,1.0
+contra1,25,False,GNN K2 vs relayD K2+mem,-2.0,-5.0,0.0,0.2679,1.0
 contra1,25,False,GNN K2+latched vs relayD K2+mem,-0.33333333333333337,-1.9999999999999998,0.0,1.0,1.0
-contra1,25,False,GNN K2+latched vs GNN K2,1.6666666666666667,0.0,4.666666666666667,0.288,1.0
+contra1,25,False,GNN K2+latched vs GNN K2,1.6666666666666667,0.0,4.666666666666667,0.2783,1.0
 contra1,25,False,relay K2+mem vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
 contra1,25,True,GNN K2 vs relayD K2+mem,0.0,-3.0,2.666666666666667,1.0,1.0
 contra1,25,True,GNN K2+latched vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-contra1,25,True,GNN K2+latched vs GNN K2,0.0,-2.6666666666666665,3.0,1.0,1.0
+contra1,25,True,GNN K2+latched vs GNN K2,0.0,-2.666666666666667,3.0,1.0,1.0
 contra1,25,True,relay K2+mem vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-contra1,25,on-off,GNN K2: filter on vs off,2.0,0.0,4.341666666666697,0.068,1.0
-contra1,25,on-off,GNN K2+latched: filter on vs off,0.33333333333333337,0.0,1.3333333333333335,1.0,1.0
+contra1,25,on-off,GNN K2: filter on vs off,2.0,0.0,4.333333333333334,0.0663,1.0
+contra1,25,on-off,GNN K2+latched: filter on vs off,0.33333333333333337,0.0,1.9999999999999998,1.0,1.0
 contra1,25,on-off,relayD K2+mem: filter on vs off,0.0,0.0,0.0,1.0,1.0
 contra1,25,on-off,relay K2+mem: filter on vs off,0.0,0.0,0.0,1.0,1.0
-contra1,50,False,GNN K2 vs relayD K2+mem,-3.0,-8.0,1.9999999999999998,0.2395,1.0
-contra1,50,False,GNN K2+latched vs relayD K2+mem,-1.6666666666666663,-5.0,0.0,0.2045,1.0
-contra1,50,False,GNN K2+latched vs GNN K2,1.3333333333333335,-2.3333333333333335,5.666666666666667,0.601,1.0
+contra1,50,False,GNN K2 vs relayD K2+mem,-3.0,-8.0,1.666666666666667,0.2378,1.0
+contra1,50,False,GNN K2+latched vs relayD K2+mem,-1.6666666666666663,-5.0,0.0,0.212,1.0
+contra1,50,False,GNN K2+latched vs GNN K2,1.3333333333333335,-2.3333333333333335,5.666666666666667,0.5797,1.0
 contra1,50,False,relay K2+mem vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-contra1,50,True,GNN K2 vs relayD K2+mem,9.333333333333334,3.0,16.666666666666664,0.0055,0.5005
-contra1,50,True,GNN K2+latched vs relayD K2+mem,0.0,-1.3333333333333344,1.3333333333333335,1.0,1.0
-contra1,50,True,GNN K2+latched vs GNN K2,-9.333333333333334,-16.333333333333332,-3.0000000000000004,0.0045,0.414
+contra1,50,True,GNN K2 vs relayD K2+mem,9.333333333333334,3.0,16.333333333333332,0.0062,0.5579999999999999
+contra1,50,True,GNN K2+latched vs relayD K2+mem,0.0,-1.6666666666666667,1.6666666666666663,1.0,1.0
+contra1,50,True,GNN K2+latched vs GNN K2,-9.333333333333334,-16.0,-3.0,0.0054,0.4968
 contra1,50,True,relay K2+mem vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-contra1,50,on-off,GNN K2: filter on vs off,11.333333333333334,5.666666666666667,18.0,0.00025,0.03
-contra1,50,on-off,GNN K2+latched: filter on vs off,0.6666666666666667,0.0,2.333333333333333,0.5535,1.0
-contra1,50,on-off,relayD K2+mem: filter on vs off,-0.9999999999999996,-3.0000000000000004,0.0,0.746,1.0
-contra1,50,on-off,relay K2+mem: filter on vs off,-0.9999999999999996,-3.0000000000000004,0.0,0.7305,1.0
+contra1,50,on-off,GNN K2: filter on vs off,11.333333333333334,6.0,17.666666666666668,5e-05,0.006
+contra1,50,on-off,GNN K2+latched: filter on vs off,0.6666666666666667,0.0,2.333333333333333,0.5755,1.0
+contra1,50,on-off,relayD K2+mem: filter on vs off,-0.9999999999999996,-3.0000000000000004,0.0,0.7323,1.0
+contra1,50,on-off,relay K2+mem: filter on vs off,-0.9999999999999996,-3.0000000000000004,0.0,0.7245,1.0
 contraHalf,25,False,GNN K2 vs relayD K2+mem,-2.0,-5.0,0.0,0.2615,1.0
-contraHalf,25,False,GNN K2+latched vs relayD K2+mem,-0.33333333333333337,-1.666666666666667,0.0,1.0,1.0
-contraHalf,25,False,GNN K2+latched vs GNN K2,1.6666666666666667,0.0,4.333333333333334,0.289,1.0
+contraHalf,25,False,GNN K2+latched vs relayD K2+mem,-0.33333333333333337,-1.9999999999999998,0.0,1.0,1.0
+contraHalf,25,False,GNN K2+latched vs GNN K2,1.6666666666666667,0.0,4.666666666666667,0.2804,1.0
 contraHalf,25,False,relay K2+mem vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-contraHalf,25,True,GNN K2 vs relayD K2+mem,0.0,-3.0,2.6666666666666665,1.0,1.0
+contraHalf,25,True,GNN K2 vs relayD K2+mem,0.0,-3.0,2.666666666666667,1.0,1.0
 contraHalf,25,True,GNN K2+latched vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-contraHalf,25,True,GNN K2+latched vs GNN K2,0.0,-2.3333333333333335,3.0,1.0,1.0
+contraHalf,25,True,GNN K2+latched vs GNN K2,0.0,-2.666666666666667,3.0,1.0,1.0
 contraHalf,25,True,relay K2+mem vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-contraHalf,25,on-off,GNN K2: filter on vs off,2.0,0.0,4.333333333333334,0.07,1.0
+contraHalf,25,on-off,GNN K2: filter on vs off,2.0,0.0,4.333333333333334,0.0702,1.0
 contraHalf,25,on-off,GNN K2+latched: filter on vs off,0.33333333333333337,0.0,1.9999999999999998,1.0,1.0
 contraHalf,25,on-off,relayD K2+mem: filter on vs off,0.0,0.0,0.0,1.0,1.0
 contraHalf,25,on-off,relay K2+mem: filter on vs off,0.0,0.0,0.0,1.0,1.0
@@ -63,59 +63,59 @@ contraHalf,50,False,GNN K2 vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
 contraHalf,50,False,GNN K2+latched vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
 contraHalf,50,False,GNN K2+latched vs GNN K2,0.0,0.0,0.0,1.0,1.0
 contraHalf,50,False,relay K2+mem vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-contraHalf,50,True,GNN K2 vs relayD K2+mem,0.6666666666666667,0.0,3.0,0.7865,1.0
+contraHalf,50,True,GNN K2 vs relayD K2+mem,0.6666666666666667,0.0,3.0,0.7809,1.0
 contraHalf,50,True,GNN K2+latched vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-contraHalf,50,True,GNN K2+latched vs GNN K2,-0.6666666666666667,-2.666666666666667,0.0,0.791,1.0
+contraHalf,50,True,GNN K2+latched vs GNN K2,-0.6666666666666667,-2.666666666666667,0.0,0.7858,1.0
 contraHalf,50,True,relay K2+mem vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-contraHalf,50,on-off,GNN K2: filter on vs off,0.6666666666666667,0.0,3.0,0.79,1.0
+contraHalf,50,on-off,GNN K2: filter on vs off,0.6666666666666667,0.0,3.0,0.7867,1.0
 contraHalf,50,on-off,GNN K2+latched: filter on vs off,0.0,0.0,0.0,1.0,1.0
 contraHalf,50,on-off,relayD K2+mem: filter on vs off,0.0,0.0,0.0,1.0,1.0
 contraHalf,50,on-off,relay K2+mem: filter on vs off,0.0,0.0,0.0,1.0,1.0
-miss0.6,25,False,GNN K2 vs relayD K2+mem,-75.33333333333333,-86.0,-64.0,0.00025,0.03
-miss0.6,25,False,GNN K2+latched vs relayD K2+mem,-5.333333333333334,-9.333333333333337,-2.0000000000000018,0.003,0.28200000000000003
-miss0.6,25,False,GNN K2+latched vs GNN K2,70.0,57.00000000000001,80.33333333333333,0.00025,0.03
+miss0.6,25,False,GNN K2 vs relayD K2+mem,-75.33333333333333,-85.66666666666667,-63.66666666666667,5e-05,0.006
+miss0.6,25,False,GNN K2+latched vs relayD K2+mem,-5.333333333333334,-8.999999999999996,-2.0000000000000018,0.0009,0.0864
+miss0.6,25,False,GNN K2+latched vs GNN K2,70.0,57.33333333333333,81.0,5e-05,0.006
 miss0.6,25,False,relay K2+mem vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-miss0.6,25,True,GNN K2 vs relayD K2+mem,-21.333333333333336,-30.000000000000004,-13.33333333333333,0.00025,0.03
+miss0.6,25,True,GNN K2 vs relayD K2+mem,-21.333333333333336,-30.000000000000004,-13.33333333333333,5e-05,0.006
 miss0.6,25,True,GNN K2+latched vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-miss0.6,25,True,GNN K2+latched vs GNN K2,21.333333333333336,13.33333333333333,30.00833333333337,0.00025,0.03
+miss0.6,25,True,GNN K2+latched vs GNN K2,21.333333333333336,13.33333333333333,30.000000000000004,5e-05,0.006
 miss0.6,25,True,relay K2+mem vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-miss0.6,25,on-off,GNN K2: filter on vs off,53.99999999999999,40.0,67.33333333333333,0.00025,0.03
-miss0.6,25,on-off,GNN K2+latched: filter on vs off,5.333333333333334,2.0000000000000018,8.999999999999996,0.001,0.098
+miss0.6,25,on-off,GNN K2: filter on vs off,53.99999999999999,39.666666666666664,67.0,5e-05,0.006
+miss0.6,25,on-off,GNN K2+latched: filter on vs off,5.333333333333334,2.0000000000000018,8.999999999999996,0.0008,0.0776
 miss0.6,25,on-off,relayD K2+mem: filter on vs off,0.0,0.0,0.0,1.0,1.0
 miss0.6,25,on-off,relay K2+mem: filter on vs off,0.0,0.0,0.0,1.0,1.0
-miss0.6,50,False,GNN K2 vs relayD K2+mem,-65.33333333333333,-78.675,-51.0,0.00025,0.03
-miss0.6,50,False,GNN K2+latched vs relayD K2+mem,-4.666666666666663,-8.999999999999996,-1.3333333333333308,0.004,0.372
-miss0.6,50,False,GNN K2+latched vs GNN K2,60.66666666666667,45.0,75.0,0.00025,0.03
+miss0.6,50,False,GNN K2 vs relayD K2+mem,-65.33333333333333,-78.0,-51.0,5e-05,0.006
+miss0.6,50,False,GNN K2+latched vs relayD K2+mem,-4.666666666666663,-8.999999999999996,-1.3333333333333308,0.0075,0.6675
+miss0.6,50,False,GNN K2+latched vs GNN K2,60.66666666666667,44.666666666666664,75.33333333333333,5e-05,0.006
 miss0.6,50,False,relay K2+mem vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-miss0.6,50,True,GNN K2 vs relayD K2+mem,-2.3333333333333317,-6.000000000000005,0.0,0.135,1.0
+miss0.6,50,True,GNN K2 vs relayD K2+mem,-2.3333333333333317,-6.000000000000005,0.0,0.1169,1.0
 miss0.6,50,True,GNN K2+latched vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-miss0.6,50,True,GNN K2+latched vs GNN K2,2.3333333333333317,0.0,6.000000000000005,0.1135,1.0
+miss0.6,50,True,GNN K2+latched vs GNN K2,2.3333333333333317,0.0,6.000000000000005,0.1213,1.0
 miss0.6,50,True,relay K2+mem vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-miss0.6,50,on-off,GNN K2: filter on vs off,63.0,49.00000000000001,76.33333333333333,0.00025,0.03
-miss0.6,50,on-off,GNN K2+latched: filter on vs off,4.666666666666663,1.3333333333333308,8.999999999999996,0.0055,0.5005
+miss0.6,50,on-off,GNN K2: filter on vs off,63.0,48.33333333333333,76.66666666666667,5e-05,0.006
+miss0.6,50,on-off,GNN K2+latched: filter on vs off,4.666666666666663,1.3333333333333308,8.999999999999996,0.005,0.465
 miss0.6,50,on-off,relayD K2+mem: filter on vs off,0.0,0.0,0.0,1.0,1.0
 miss0.6,50,on-off,relay K2+mem: filter on vs off,0.0,0.0,0.0,1.0,1.0
-wrong0.3,25,False,GNN K2 vs relayD K2+mem,-19.33333333333333,-35.0,-3.9916666666666343,0.0175,1.0
-wrong0.3,25,False,GNN K2+latched vs relayD K2+mem,-4.666666666666663,-8.999999999999996,-1.0000000000000009,0.028,1.0
-wrong0.3,25,False,GNN K2+latched vs GNN K2,14.666666666666666,-2.3333333333333317,30.333333333333336,0.0985,1.0
-wrong0.3,25,False,relay K2+mem vs relayD K2+mem,1.0000000000000009,0.0,3.0000000000000027,0.751,1.0
-wrong0.3,25,True,GNN K2 vs relayD K2+mem,47.66666666666667,37.33333333333334,57.341666666666704,0.00025,0.03
-wrong0.3,25,True,GNN K2+latched vs relayD K2+mem,-0.6666666666666654,-4.0000000000000036,2.0000000000000018,0.7615,1.0
-wrong0.3,25,True,GNN K2+latched vs GNN K2,-48.333333333333336,-58.333333333333336,-38.0,0.00025,0.03
+wrong0.3,25,False,GNN K2 vs relayD K2+mem,-19.33333333333333,-34.66666666666667,-2.9999999999999973,0.0219,1.0
+wrong0.3,25,False,GNN K2+latched vs relayD K2+mem,-4.666666666666663,-8.666666666666673,-0.9999999999999953,0.0282,1.0
+wrong0.3,25,False,GNN K2+latched vs GNN K2,14.666666666666666,-2.0000000000000018,30.666666666666664,0.0883,1.0
+wrong0.3,25,False,relay K2+mem vs relayD K2+mem,1.0000000000000009,0.0,3.0000000000000027,0.7377,1.0
+wrong0.3,25,True,GNN K2 vs relayD K2+mem,47.66666666666667,37.66666666666666,57.666666666666664,5e-05,0.006
+wrong0.3,25,True,GNN K2+latched vs relayD K2+mem,-0.6666666666666654,-4.0000000000000036,2.0000000000000018,0.7616,1.0
+wrong0.3,25,True,GNN K2+latched vs GNN K2,-48.333333333333336,-58.666666666666664,-38.0,5e-05,0.006
 wrong0.3,25,True,relay K2+mem vs relayD K2+mem,0.0,0.0,0.0,1.0,1.0
-wrong0.3,25,on-off,GNN K2: filter on vs off,67.0,54.0,79.66666666666666,0.00025,0.03
-wrong0.3,25,on-off,GNN K2+latched: filter on vs off,3.9999999999999982,1.0000000000000009,7.666666666666666,0.0065,0.5785
-wrong0.3,25,on-off,relayD K2+mem: filter on vs off,0.0,-2.9999999999999973,2.9999999999999973,1.0,1.0
-wrong0.3,25,on-off,relay K2+mem: filter on vs off,-1.0000000000000009,-3.0000000000000027,0.0,0.7365,1.0
-wrong0.3,50,False,GNN K2 vs relayD K2+mem,-28.333333333333332,-44.33333333333333,-12.0,0.0005,0.0495
-wrong0.3,50,False,GNN K2+latched vs relayD K2+mem,1.0000000000000009,-1.6666666666666718,4.999999999999993,0.643,1.0
-wrong0.3,50,False,GNN K2+latched vs GNN K2,29.333333333333332,13.0,46.0,0.001,0.098
-wrong0.3,50,False,relay K2+mem vs relayD K2+mem,2.0000000000000018,-2.0000000000000018,6.0,0.4505,1.0
-wrong0.3,50,True,GNN K2 vs relayD K2+mem,30.333333333333336,18.000000000000004,42.0,0.00025,0.03
-wrong0.3,50,True,GNN K2+latched vs relayD K2+mem,3.0000000000000027,0.0,7.333333333333325,0.096,1.0
-wrong0.3,50,True,GNN K2+latched vs GNN K2,-27.333333333333332,-39.0,-15.000000000000002,0.00025,0.03
-wrong0.3,50,True,relay K2+mem vs relayD K2+mem,3.0000000000000027,-1.0000000000000009,7.9999999999999964,0.247,1.0
-wrong0.3,50,on-off,GNN K2: filter on vs off,58.666666666666664,42.0,76.0,0.00025,0.03
-wrong0.3,50,on-off,GNN K2+latched: filter on vs off,2.0000000000000018,0.0,4.333333333333339,0.0725,1.0
+wrong0.3,25,on-off,GNN K2: filter on vs off,67.0,54.0,80.0,5e-05,0.006
+wrong0.3,25,on-off,GNN K2+latched: filter on vs off,3.9999999999999982,1.0000000000000009,7.666666666666661,0.0059,0.5368999999999999
+wrong0.3,25,on-off,relayD K2+mem: filter on vs off,0.0,-3.0000000000000027,3.0000000000000027,1.0,1.0
+wrong0.3,25,on-off,relay K2+mem: filter on vs off,-1.0000000000000009,-3.0000000000000027,0.0,0.7293,1.0
+wrong0.3,50,False,GNN K2 vs relayD K2+mem,-28.333333333333332,-44.00000000000001,-12.333333333333336,0.0005,0.049
+wrong0.3,50,False,GNN K2+latched vs relayD K2+mem,1.0000000000000009,-1.9999999999999907,4.666666666666669,0.6599,1.0
+wrong0.3,50,False,GNN K2+latched vs GNN K2,29.333333333333332,13.0,45.66666666666667,0.0003,0.029699999999999997
+wrong0.3,50,False,relay K2+mem vs relayD K2+mem,2.0000000000000018,-2.0000000000000018,6.000000000000005,0.436,1.0
+wrong0.3,50,True,GNN K2 vs relayD K2+mem,30.333333333333336,17.666666666666675,42.33333333333334,5e-05,0.006
+wrong0.3,50,True,GNN K2+latched vs relayD K2+mem,3.0000000000000027,0.0,7.33333333333333,0.0823,1.0
+wrong0.3,50,True,GNN K2+latched vs GNN K2,-27.333333333333332,-38.99999999999999,-15.000000000000002,5e-05,0.006
+wrong0.3,50,True,relay K2+mem vs relayD K2+mem,3.0000000000000027,-1.0000000000000009,7.000000000000006,0.2466,1.0
+wrong0.3,50,on-off,GNN K2: filter on vs off,58.666666666666664,42.0,76.33333333333334,5e-05,0.006
+wrong0.3,50,on-off,GNN K2+latched: filter on vs off,2.0000000000000018,0.0,4.666666666666663,0.0715,1.0
 wrong0.3,50,on-off,relayD K2+mem: filter on vs off,0.0,0.0,0.0,1.0,1.0
-wrong0.3,50,on-off,relay K2+mem: filter on vs off,1.0000000000000009,0.0,3.0000000000000027,0.726,1.0
+wrong0.3,50,on-off,relay K2+mem: filter on vs off,1.0000000000000009,0.0,3.0000000000000027,0.7352,1.0

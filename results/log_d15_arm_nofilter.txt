@@ -1,0 +1,23 @@
+suite d15_arm_nofilter: 20 units, 0 already done, 20 to run = 4000 episodes, seeds 120000..120024, 7 workers
+[1/20] GNN K2|s0|delay=5|n25|b120000: success  98.0%  contact  84.5%  (62 s; elapsed 1 min, about 20 min left)
+[2/20] GNN K2|s0|delay=10|n25|b120000: success  98.5%  contact  92.5%  (87 s; elapsed 2 min, about 22 min left)
+[3/20] GNN K2|s1|delay=5|n25|b120000: success 100.0%  contact  73.0%  (81 s; elapsed 4 min, about 22 min left)
+[4/20] GNN K2|s1|delay=10|n25|b120000: success  99.0%  contact  92.0%  (83 s; elapsed 5 min, about 21 min left)
+[5/20] GNN K2|s2|delay=5|n25|b120000: success  99.0%  contact  86.5%  (79 s; elapsed 7 min, about 20 min left)
+[6/20] GNN K2|s2|delay=10|n25|b120000: success  99.0%  contact  92.0%  (78 s; elapsed 8 min, about 18 min left)
+[7/20] GNN K2+latched|s0|delay=5|n25|b120000: success 100.0%  contact  71.5%  (84 s; elapsed 9 min, about 17 min left)
+[8/20] GNN K2+latched|s0|delay=10|n25|b120000: success  97.5%  contact  90.5%  (89 s; elapsed 11 min, about 16 min left)
+[9/20] GNN K2+latched|s1|delay=5|n25|b120000: success 100.0%  contact  70.5%  (86 s; elapsed 12 min, about 15 min left)
+[10/20] GNN K2+latched|s1|delay=10|n25|b120000: success  99.0%  contact  92.0%  (89 s; elapsed 14 min, about 14 min left)
+[11/20] GNN K2+latched|s2|delay=5|n25|b120000: success  99.0%  contact  75.0%  (69 s; elapsed 15 min, about 12 min left)
+[12/20] GNN K2+latched|s2|delay=10|n25|b120000: success  98.5%  contact  93.5%  (66 s; elapsed 16 min, about 11 min left)
+[13/20] GNN K3|s0|delay=5|n25|b120000: success 100.0%  contact  73.5%  (59 s; elapsed 17 min, about 9 min left)
+[14/20] GNN K3|s0|delay=10|n25|b120000: success 100.0%  contact  93.0%  (61 s; elapsed 18 min, about 8 min left)
+[15/20] GNN K3|s1|delay=5|n25|b120000: success 100.0%  contact  74.0%  (60 s; elapsed 19 min, about 6 min left)
+[16/20] GNN K3|s1|delay=10|n25|b120000: success  99.0%  contact  90.5%  (60 s; elapsed 20 min, about 5 min left)
+[17/20] GNN K3|s2|delay=5|n25|b120000: success  99.5%  contact  70.0%  (60 s; elapsed 21 min, about 4 min left)
+[18/20] GNN K3|s2|delay=10|n25|b120000: success  99.5%  contact  91.0%  (60 s; elapsed 22 min, about 2 min left)
+[19/20] relayD K2+mem|sNone|delay=5|n25|b120000: success  99.5%  contact  72.0%  (43 s; elapsed 23 min, about 1 min left)
+[20/20] relayD K2+mem|sNone|delay=10|n25|b120000: success  97.0%  contact  92.0%  (44 s; elapsed 23 min, about 0 min left)
+
+saved /Users/yshvrdhn/Developer/swarm-paper/results/d12_d15_arm_nofilter.csv

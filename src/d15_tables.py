@@ -62,3 +62,9 @@ if x is not None: save(x, "t15_17_change_confirmatory")
 for n, st in (("d15_Pfinal_paired.csv", "t15_18_delay_filter_paired"), ("d15_Ofinal_paired.csv", "t15_19_observers_paired")):
     x = load(n)
     if x is not None: save(x.rename(columns={"p_boot": "p_boot", "p_holm": "p_holm"}), st)
+
+# ---- added 10 Nov: safety-on observers, Study D paired, three-arm delay study
+for n, st in (("d15_Osafe_paired.csv", "t15_20_obs_safe_paired"), ("d15_Dfinal_paired.csv", "t15_21_D_paired"), ("d15_Dcf_paired.csv", "t15_22_D_cf_paired_POSTHOC"),
+              ("d15_3arm_descriptive.csv", "t15_23_three_arm"), ("d15_3arm_paired.csv", "t15_24_three_arm_paired")):
+    x = load(n)
+    if x is not None: save(x, st)

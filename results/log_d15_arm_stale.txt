@@ -1,0 +1,23 @@
+suite d15_arm_stale: 20 units, 0 already done, 20 to run = 4000 episodes, seeds 120000..120024, 7 workers
+[1/20] GNN K2|s0|delay=5|dsafe=0.1|gamma=20.0|safety=True|n25|b120000: success  99.0%  contact  49.5%  (64 s; elapsed 1 min, about 20 min left)
+[2/20] GNN K2|s0|delay=10|dsafe=0.1|gamma=20.0|safety=True|n25|b120000: success  98.0%  contact  92.5%  (64 s; elapsed 2 min, about 19 min left)
+[3/20] GNN K2|s1|delay=5|dsafe=0.1|gamma=20.0|safety=True|n25|b120000: success 100.0%  contact  49.0%  (60 s; elapsed 3 min, about 18 min left)
+[4/20] GNN K2|s1|delay=10|dsafe=0.1|gamma=20.0|safety=True|n25|b120000: success  99.0%  contact  89.0%  (62 s; elapsed 4 min, about 17 min left)
+[5/20] GNN K2|s2|delay=5|dsafe=0.1|gamma=20.0|safety=True|n25|b120000: success 100.0%  contact  47.5%  (60 s; elapsed 5 min, about 16 min left)
+[6/20] GNN K2|s2|delay=10|dsafe=0.1|gamma=20.0|safety=True|n25|b120000: success  98.5%  contact  91.0%  (62 s; elapsed 6 min, about 14 min left)
+[7/20] GNN K2+latched|s0|delay=5|dsafe=0.1|gamma=20.0|safety=True|n25|b120000: success  98.0%  contact  58.5%  (61 s; elapsed 7 min, about 13 min left)
+[8/20] GNN K2+latched|s0|delay=10|dsafe=0.1|gamma=20.0|safety=True|n25|b120000: success  95.0%  contact  87.5%  (64 s; elapsed 8 min, about 12 min left)
+[9/20] GNN K2+latched|s1|delay=5|dsafe=0.1|gamma=20.0|safety=True|n25|b120000: success  98.5%  contact  61.5%  (62 s; elapsed 9 min, about 11 min left)
+[10/20] GNN K2+latched|s1|delay=10|dsafe=0.1|gamma=20.0|safety=True|n25|b120000: success  93.5%  contact  91.0%  (64 s; elapsed 10 min, about 10 min left)
+[11/20] GNN K2+latched|s2|delay=5|dsafe=0.1|gamma=20.0|safety=True|n25|b120000: success 100.0%  contact  61.5%  (61 s; elapsed 11 min, about 9 min left)
+[12/20] GNN K2+latched|s2|delay=10|dsafe=0.1|gamma=20.0|safety=True|n25|b120000: success  94.0%  contact  92.5%  (64 s; elapsed 12 min, about 8 min left)
+[13/20] GNN K3|s0|delay=5|dsafe=0.1|gamma=20.0|safety=True|n25|b120000: success  99.5%  contact  56.5%  (65 s; elapsed 14 min, about 7 min left)
+[14/20] GNN K3|s0|delay=10|dsafe=0.1|gamma=20.0|safety=True|n25|b120000: success  98.5%  contact  91.0%  (66 s; elapsed 15 min, about 6 min left)
+[15/20] GNN K3|s1|delay=5|dsafe=0.1|gamma=20.0|safety=True|n25|b120000: success  99.5%  contact  53.0%  (65 s; elapsed 16 min, about 5 min left)
+[16/20] GNN K3|s1|delay=10|dsafe=0.1|gamma=20.0|safety=True|n25|b120000: success  99.5%  contact  90.0%  (66 s; elapsed 17 min, about 4 min left)
+[17/20] GNN K3|s2|delay=5|dsafe=0.1|gamma=20.0|safety=True|n25|b120000: success  98.5%  contact  57.5%  (64 s; elapsed 18 min, about 3 min left)
+[18/20] GNN K3|s2|delay=10|dsafe=0.1|gamma=20.0|safety=True|n25|b120000: success  96.0%  contact  90.5%  (70 s; elapsed 19 min, about 2 min left)
+[19/20] relayD K2+mem|sNone|delay=5|dsafe=0.1|gamma=20.0|safety=True|n25|b120000: success  94.0%  contact  28.0%  (50 s; elapsed 20 min, about 1 min left)
+[20/20] relayD K2+mem|sNone|delay=10|dsafe=0.1|gamma=20.0|safety=True|n25|b120000: success  93.0%  contact  88.5%  (51 s; elapsed 21 min, about 0 min left)
+
+saved /Users/yshvrdhn/Developer/swarm-paper/results/d12_d15_arm_stale.csv

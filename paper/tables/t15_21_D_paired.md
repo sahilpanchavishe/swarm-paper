@@ -1,0 +1,30 @@
+| safety | obs_pct | comparison | n_scen | d_pct | ci_lo | ci_hi | p_boot | p_holm |
+|---|---|---|---|---|---|---|---|---|
+| False | 25 | GNN K2+latched/ver vs relay K2+ver | 100 | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| False | 25 | GNN K2+latched/ver vs GNN K2 | 100 | 7.7 | 2.0 | 14.7 | 0.0103 | 0.1900 |
+| False | 25 | GNN K2 vs relay K2+ver | 100 | -7.7 | -14.7 | -2.0 | 0.0100 | 0.1900 |
+| False | 25 | GNN K2+latched/ver vs GNN K2+latched/naive | 100 | 94.0 | 89.0 | 98.0 | <0.0001 | 0.0014 |
+| False | 25 | GNN K3 vs GNN K2 | 100 | 2.0 | -3.7 | 8.7 | 0.5262 | 1.0000 |
+| False | 25 | relay K3+ver vs relay K2+ver | 100 | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| False | 25 | GNN K2 vs GNN K1 | 100 | 24.3 | 12.0 | 38.0 | <0.0001 | 0.0014 |
+| False | 50 | GNN K2+latched/ver vs relay K2+ver | 100 | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| False | 50 | GNN K2+latched/ver vs GNN K2 | 100 | 2.7 | 0.3 | 6.0 | 0.0320 | 0.5120 |
+| False | 50 | GNN K2 vs relay K2+ver | 100 | -2.7 | -5.7 | -0.3 | 0.0320 | 0.5120 |
+| False | 50 | GNN K2+latched/ver vs GNN K2+latched/naive | 100 | 100.0 | 100.0 | 100.0 | <0.0001 | 0.0014 |
+| False | 50 | GNN K3 vs GNN K2 | 100 | 2.3 | -0.3 | 5.7 | 0.1283 | 1.0000 |
+| False | 50 | relay K3+ver vs relay K2+ver | 100 | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| False | 50 | GNN K2 vs GNN K1 | 100 | 23.7 | 12.3 | 37.7 | <0.0001 | 0.0014 |
+| True | 25 | GNN K2+latched/ver vs relay K2+ver | 100 | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| True | 25 | GNN K2+latched/ver vs GNN K2 | 100 | 9.7 | 3.7 | 17.0 | 0.0005 | 0.0110 |
+| True | 25 | GNN K2 vs relay K2+ver | 100 | -9.7 | -17.0 | -3.7 | 0.0011 | 0.0220 |
+| True | 25 | GNN K2+latched/ver vs GNN K2+latched/naive | 100 | 94.0 | 89.0 | 98.0 | <0.0001 | 0.0014 |
+| True | 25 | GNN K3 vs GNN K2 | 100 | 3.0 | -3.7 | 11.0 | 0.4503 | 1.0000 |
+| True | 25 | relay K3+ver vs relay K2+ver | 100 | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| True | 25 | GNN K2 vs GNN K1 | 100 | 16.3 | 2.3 | 33.0 | 0.0207 | 0.3519 |
+| True | 50 | GNN K2+latched/ver vs relay K2+ver | 100 | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| True | 50 | GNN K2+latched/ver vs GNN K2 | 100 | 2.7 | 0.3 | 6.0 | 0.0407 | 0.5698 |
+| True | 50 | GNN K2 vs relay K2+ver | 100 | -2.7 | -6.0 | -0.3 | 0.0422 | 0.5698 |
+| True | 50 | GNN K2+latched/ver vs GNN K2+latched/naive | 100 | 100.0 | 100.0 | 100.0 | <0.0001 | 0.0014 |
+| True | 50 | GNN K3 vs GNN K2 | 100 | 2.7 | 0.3 | 6.0 | 0.0425 | 0.5698 |
+| True | 50 | relay K3+ver vs relay K2+ver | 100 | 0.0 | 0.0 | 0.0 | 1.0000 | 1.0000 |
+| True | 50 | GNN K2 vs GNN K1 | 100 | 13.3 | 6.0 | 22.0 | 0.0005 | 0.0110 |

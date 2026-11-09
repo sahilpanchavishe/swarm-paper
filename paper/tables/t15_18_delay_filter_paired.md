@@ -1,0 +1,18 @@
+| cond | obs_pct | comparison | dsuccess_pct | ci_lo | ci_hi | p_boot | p_holm |
+|---|---|---|---|---|---|---|---|
+| delay 10 | 25 | GNN K2 vs relayD K2+mem | -7.3 | -13.0 | -2.0 | 0.0066 | 0.1056 |
+| delay 10 | 25 | GNN K2+latched vs relayD K2+mem | -5.3 | -10.7 | -0.7 | 0.0304 | 0.4560 |
+| delay 10 | 25 | GNN K2+latched vs GNN K2 | 2.0 | -3.7 | 8.0 | 0.5361 | 1.0000 |
+| delay 10 | 25 | GNN K3 vs GNN K2 | 1.7 | -2.7 | 6.0 | 0.4740 | 1.0000 |
+| delay 10 | 50 | GNN K2 vs relayD K2+mem | -4.3 | -10.7 | 1.7 | 0.1625 | 1.0000 |
+| delay 10 | 50 | GNN K2+latched vs relayD K2+mem | -4.7 | -10.0 | 0.0 | 0.0522 | 0.7308 |
+| delay 10 | 50 | GNN K2+latched vs GNN K2 | -0.3 | -7.0 | 6.7 | 0.9451 | 1.0000 |
+| delay 10 | 50 | GNN K3 vs GNN K2 | -0.7 | -4.3 | 3.3 | 0.7546 | 1.0000 |
+| delay 5 | 25 | GNN K2 vs relayD K2+mem | 0.7 | -4.7 | 6.0 | 0.8682 | 1.0000 |
+| delay 5 | 25 | GNN K2+latched vs relayD K2+mem | -2.3 | -8.0 | 3.0 | 0.4213 | 1.0000 |
+| delay 5 | 25 | GNN K2+latched vs GNN K2 | -3.0 | -9.0 | 3.3 | 0.3533 | 1.0000 |
+| delay 5 | 25 | GNN K3 vs GNN K2 | -2.0 | -7.3 | 3.0 | 0.4731 | 1.0000 |
+| delay 5 | 50 | GNN K2 vs relayD K2+mem | 0.7 | -6.3 | 7.7 | 0.9024 | 1.0000 |
+| delay 5 | 50 | GNN K2+latched vs relayD K2+mem | -3.3 | -8.0 | 1.0 | 0.1728 | 1.0000 |
+| delay 5 | 50 | GNN K2+latched vs GNN K2 | -4.0 | -12.0 | 4.0 | 0.3390 | 1.0000 |
+| delay 5 | 50 | GNN K3 vs GNN K2 | -0.7 | -7.0 | 5.7 | 0.8774 | 1.0000 |
