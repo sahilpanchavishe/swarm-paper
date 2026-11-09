@@ -1,0 +1,105 @@
+rows 16000 | per (filter, cond, obs, policy) n = [300 100]
+
+=== cf (%)
+policy                    GNN K2  GNN K2+latched  relay K2+mem  relayD K2+mem
+filt  cond       obs_pct                                                     
+False clean      25         36.0            94.7         100.0          100.0
+                 50         33.0            96.0         100.0          100.0
+      contra1    25          0.0             1.7           2.0            2.0
+                 50          3.0             4.3           6.0            6.0
+      contraHalf 25          0.0             1.7           2.0            2.0
+                 50          0.0             0.0           0.0            0.0
+      miss0.6    25         24.7            94.7         100.0          100.0
+                 50         34.7            95.3         100.0          100.0
+      wrong0.3   25         29.7            44.3          50.0           49.0
+                 50         22.7            52.0          53.0           51.0
+True  clean      25         96.3           100.0         100.0          100.0
+                 50         98.7           100.0         100.0          100.0
+      contra1    25          2.0             2.0           2.0            2.0
+                 50         14.3             5.0           5.0            5.0
+      contraHalf 25          2.0             2.0           2.0            2.0
+                 50          0.7             0.0           0.0            0.0
+      miss0.6    25         78.7           100.0         100.0          100.0
+                 50         97.7           100.0         100.0          100.0
+      wrong0.3   25         96.7            48.3          49.0           49.0
+                 50         81.3            54.0          54.0           51.0
+
+=== success (%)
+policy                    GNN K2  GNN K2+latched  relay K2+mem  relayD K2+mem
+filt  cond       obs_pct                                                     
+False clean      25         97.3           100.0         100.0          100.0
+                 50         97.7           100.0         100.0          100.0
+      contra1    25          1.3             2.0           2.0            2.0
+                 50         14.3             4.7           6.0            6.0
+      contraHalf 25          1.3             2.0           2.0            2.0
+                 50          0.7             0.0           0.0            0.0
+      miss0.6    25         76.0           100.0         100.0          100.0
+                 50         97.7           100.0         100.0          100.0
+      wrong0.3   25         97.7            48.3          50.0           49.0
+                 50         80.0            54.0          53.0           51.0
+True  clean      25         96.3           100.0         100.0          100.0
+                 50         98.7           100.0         100.0          100.0
+      contra1    25          2.0             2.0           2.0            2.0
+                 50         14.3             5.0           5.0            5.0
+      contraHalf 25          2.0             2.0           2.0            2.0
+                 50          0.7             0.0           0.0            0.0
+      miss0.6    25         78.7           100.0         100.0          100.0
+                 50         97.7           100.0         100.0          100.0
+      wrong0.3   25         96.7            48.3          49.0           49.0
+                 50         81.3            54.0          54.0           51.0
+
+=== contact (%)
+policy                    GNN K2  GNN K2+latched  relay K2+mem  relayD K2+mem
+filt  cond       obs_pct                                                     
+False clean      25         63.3             5.3           0.0            0.0
+                 50         66.0             4.0           0.0            0.0
+      contra1    25         74.3             5.0           0.0            0.0
+                 50         71.0             5.0           0.0            0.0
+      contraHalf 25         74.3             5.0           0.0            0.0
+                 50         77.0             6.3           0.0            0.0
+      miss0.6    25         66.7             5.3           0.0            0.0
+                 50         64.0             4.7           0.0            0.0
+      wrong0.3   25         69.7             6.3           0.0            0.0
+                 50         72.3             3.7           0.0            0.0
+True  clean      25          0.0             0.0           0.0            0.0
+                 50          0.0             0.0           0.0            0.0
+      contra1    25          0.0             0.0           0.0            0.0
+                 50          0.0             0.0           0.0            0.0
+      contraHalf 25          0.0             0.0           0.0            0.0
+                 50          0.0             0.0           0.0            0.0
+      miss0.6    25          0.0             0.0           0.0            0.0
+                 50          0.0             0.0           0.0            0.0
+      wrong0.3   25          0.0             0.0           0.0            0.0
+                 50          0.0             0.0           0.0            0.0
+
+=== Predictions (filter on)
+S1 contact <=2% all policies, clean/miss0.6/wrong0.3: PASS
+S2 K2 exceeds latched and relay K2+mem by >=20 at wrong0.3: PASS [(25, np.float64(48.400000000000006)), (25, np.float64(47.7)), (50, np.float64(27.299999999999997)), (50, np.float64(27.299999999999997))]
+S3 miss0.6@25: memory >=95 and K2 <=80: PASS [np.float64(100.0), np.float64(100.0), np.float64(100.0)] 78.7
+S4 contra1@50: no policy reaches 50: PASS max 14.3
+S5 contraHalf: all <=10: PASS max 2.0
+
+d15_Osafe_paired.csv 120 comparisons; Holm<0.05: 22
+    cond  obs_pct filter               comparison  d_pct  ci_lo  ci_hi  p_boot  p_holm
+   clean       25  False  GNN K2 vs relayD K2+mem -64.00 -78.00 -47.66     0.0    0.03
+   clean       25  False GNN K2+latched vs GNN K2  58.67  40.00  74.00     0.0    0.03
+   clean       25 on-off GNN K2: filter on vs off  60.33  43.99  75.00     0.0    0.03
+   clean       50  False  GNN K2 vs relayD K2+mem -67.00 -78.00 -56.00     0.0    0.03
+   clean       50  False GNN K2+latched vs GNN K2  63.00  50.33  75.00     0.0    0.03
+   clean       50 on-off GNN K2: filter on vs off  65.67  55.00  76.00     0.0    0.03
+ contra1       50 on-off GNN K2: filter on vs off  11.33   5.67  18.00     0.0    0.03
+ miss0.6       25  False  GNN K2 vs relayD K2+mem -75.33 -86.00 -64.00     0.0    0.03
+ miss0.6       25  False GNN K2+latched vs GNN K2  70.00  57.00  80.33     0.0    0.03
+ miss0.6       25   True  GNN K2 vs relayD K2+mem -21.33 -30.00 -13.33     0.0    0.03
+ miss0.6       25   True GNN K2+latched vs GNN K2  21.33  13.33  30.01     0.0    0.03
+ miss0.6       25 on-off GNN K2: filter on vs off  54.00  40.00  67.33     0.0    0.03
+ miss0.6       50  False  GNN K2 vs relayD K2+mem -65.33 -78.68 -51.00     0.0    0.03
+ miss0.6       50  False GNN K2+latched vs GNN K2  60.67  45.00  75.00     0.0    0.03
+ miss0.6       50 on-off GNN K2: filter on vs off  63.00  49.00  76.33     0.0    0.03
+wrong0.3       25   True  GNN K2 vs relayD K2+mem  47.67  37.33  57.34     0.0    0.03
+wrong0.3       25   True GNN K2+latched vs GNN K2 -48.33 -58.33 -38.00     0.0    0.03
+wrong0.3       25 on-off GNN K2: filter on vs off  67.00  54.00  79.67     0.0    0.03
+wrong0.3       50  False  GNN K2 vs relayD K2+mem -28.33 -44.33 -12.00     0.0    0.05
+wrong0.3       50   True  GNN K2 vs relayD K2+mem  30.33  18.00  42.00     0.0    0.03
+wrong0.3       50   True GNN K2+latched vs GNN K2 -27.33 -39.00 -15.00     0.0    0.03
+wrong0.3       50 on-off GNN K2: filter on vs off  58.67  42.00  76.00     0.0    0.03
