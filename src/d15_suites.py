@@ -61,6 +61,16 @@ SUITES15["d15_arm_nofilter"] = dict(policies=POL3, model_seeds=(0, 1, 2), seed0=
 SUITES15["d15_arm_stale"] = dict(policies=POL3, model_seeds=(0, 1, 2), seed0=120000, n=25, obs=(50, 25),
                                  cfgs=[plain(delay=d) for d in (5, 10)])                         # arm B: filter on the delayed positions, no prediction
 
+def _d17cfg(fusion, cond):
+    ck = dict(C0=dict(contra=False, conf_ok=0.7, conf_bad=0.7), C1=dict(contra=True, conf_ok=0.7, conf_bad=0.7),
+              C2=dict(contra=True, conf_ok=0.5, conf_bad=0.9), C3=dict(contra=True, conf_ok=0.9, conf_bad=0.3))[cond]
+    return {**plain(), **dict(miss=0.0, wrong=0.0, contra_n=1, contra_rand=True, fusion=fusion), **ck}
+
+SUITES15["d17_relay"] = dict(policies=["relay K2+mem"], model_seeds=(0,), seed0=140000, n=25, obs=(50,),
+                             cfgs=[_d17cfg(f, c) for f in ("first", "maxconf", "prov") for c in ("C0", "C1", "C2", "C3")])
+SUITES15["d17_gnn"] = dict(policies=["GNN K2+latched"], model_seeds=(0, 1, 2), seed0=140000, n=25, obs=(50,),
+                           cfgs=[_d17cfg("first", c) for c in ("C0", "C1", "C2", "C3")])
+
 if __name__ == "__main__":
     for d in (5, 10): print(f"delay {d}: margin {1000 * margin(delay=d):.1f} mm")
     for s in (0.005, 0.01): print(f"noise {1000 * s:.0f} mm: margin {1000 * margin(noise=s):.1f} mm")

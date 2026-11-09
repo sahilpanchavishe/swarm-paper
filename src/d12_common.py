@@ -120,6 +120,8 @@ def run_episode(args):
     ro = np.random.default_rng([seed, 88]); n_con = max(1, int(obs.sum()) // 2); wrong_f = (fi + 1 + int(np.random.default_rng([seed, 66]).integers(0, 3))) % 4
     con_idx = np.nonzero(obs)[0]
     con_idx = (np.random.default_rng([seed, 67]).permutation(con_idx) if cfg.get("contra_rand") else con_idx)[:int(cfg.get("contra_n") or n_con)]
+    conf_arr = np.full(N, float(cfg.get("conf_ok") or 0.7)); fz = {}      # section 17: observer confidences, fusion state
+    if cfg.get("contra") and cfg.get("conf_bad"): conf_arr[con_idx] = float(cfg["conf_bad"])
     T = cfg["T_change"] if cfg["change"] else cfg["T"]
     env.reset(p, th); p, th = env.poses(); init_comp = n_components(S.comm_adjacency(p, R_COMM))
     rtok, rstamp = np.full(N, -1), np.full(N, -1); hist = []; e_old, e_new, minc = [], [], []; know = obs
@@ -151,7 +153,7 @@ def run_episode(args):
                 if kind == "oracle": know = np.ones(N, bool); tok = np.full(N, ci)
                 elif pol["mem"] == "none": know = obs_e if K == 0 else reach(A, obs_e, K); tok = cn
                 else:
-                    rtok, rstamp = update_registers(rtok, rstamp, obs_e, cmd, cst, A, K, pol["mem"]); know = rstamp >= 0; tok = rtok
+                    rtok, rstamp = (__import__("d17_fusion").step(cfg, fz, obs_e, cmd, rtok, rstamp, A, K, conf_arr, N) if cfg.get("fusion") in ("maxconf", "prov") else update_registers(rtok, rstamp, obs_e, cmd, cst, A, K, pol["mem"])); know = rstamp >= 0; tok = rtok
                 tg = SL[np.where(tok >= 0, tok, 0), np.arange(N)]
                 u = S.expert_velocity_vector(pc, np.where(know[:, None], tg, pc if pol["default"] == "hold" else DEFAULT))
             if cfg["safety"] and cfg.get("pred"):
@@ -168,6 +170,6 @@ def run_episode(args):
                collision=bool(minc.min() < CONTACT), min_clearance=float(minc.min()), contact_steps=int((minc < CONTACT).sum()),
                near_steps=int((minc < NEAR).sum()), t_converge_s=((bad[-1] + 1 if len(bad) else 0) * S.DT) if ok else np.nan,
                informed_final=float(np.mean(know)), init_comp=init_comp,
-               **{c: cfg[c] for c in COND_COLS}, **{k: cfg[k] for k in ("scenario", "vmargin", "pred") if cfg.get(k)}, **{k: cfg[k] for k in ("miss", "wrong", "contra", "contra_n", "contra_rand") if k in cfg})
+               **{c: cfg[c] for c in COND_COLS}, **{k: cfg[k] for k in ("scenario", "vmargin", "pred") if cfg.get(k)}, **{k: cfg[k] for k in ("miss", "wrong", "contra", "contra_n", "contra_rand", "fusion", "conf_ok", "conf_bad") if k in cfg})
     if cfg["change"]: row.update(err_pre_switch=float(e_old[cfg["t_switch"] - 1]), old_final_err=float(e_old[-1]), new_formation=FORMS[fi1])
     return row
