@@ -55,6 +55,12 @@ SUITES15["d15_obs_safe"] = dict(policies=["GNN K2", "GNN K2+latched", "relayD K2
           for sf in (False, True)
           for kw in (dict(), dict(miss=0.6), dict(wrong=0.3), dict(contra=True, contra_rand=True), dict(contra=True, contra_rand=True, contra_n=1))])
 
+POL3 = ["GNN K2", "GNN K2+latched", "GNN K3", "relayD K2+mem"]   # identical to d15_pred_conf
+SUITES15["d15_arm_nofilter"] = dict(policies=POL3, model_seeds=(0, 1, 2), seed0=120000, n=25, obs=(50, 25),
+                                    cfgs=[dict(delay=d) for d in (5, 10)])                       # arm A: filter off
+SUITES15["d15_arm_stale"] = dict(policies=POL3, model_seeds=(0, 1, 2), seed0=120000, n=25, obs=(50, 25),
+                                 cfgs=[plain(delay=d) for d in (5, 10)])                         # arm B: filter on the delayed positions, no prediction
+
 if __name__ == "__main__":
     for d in (5, 10): print(f"delay {d}: margin {1000 * margin(delay=d):.1f} mm")
     for s in (0.005, 0.01): print(f"noise {1000 * s:.0f} mm: margin {1000 * margin(noise=s):.1f} mm")
