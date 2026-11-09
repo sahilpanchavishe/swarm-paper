@@ -1,0 +1,30 @@
+policy             GNN K2  GNN K2+latched  relay K2+mem  relayD K2+mem
+cond      obs_pct                                                     
+clean     25         40.7            92.3          99.0           99.0
+          50         40.7            92.7          99.0           99.0
+contra    25          1.0             1.7           2.0            2.0
+          50          0.0             0.0           0.0            0.0
+miss 0.3  25         39.0            92.3          99.0           99.0
+          50         39.0            93.3          99.0           99.0
+miss 0.6  25         34.3            95.0          99.0           99.0
+          50         42.0            93.7          99.0           99.0
+wrong 0.1 25         38.3            61.7          66.0           65.0
+          50         40.3            73.0          76.0           75.0
+wrong 0.3 25         35.7            45.7          48.0           48.0
+          50         30.7            32.3          35.0           33.0
+d15_Ocf_paired.csv 48 comparisons; Holm<0.05: 14
+     cond  obs_pct               comparison  d_pct  ci_lo  ci_hi  p_boot  p_holm
+    clean       25  GNN K2 vs relayD K2+mem -58.33 -69.00 -46.33     0.0    0.01
+    clean       25 GNN K2+latched vs GNN K2  51.67  38.00  64.00     0.0    0.01
+    clean       50  GNN K2 vs relayD K2+mem -58.33 -69.33 -47.00     0.0    0.01
+    clean       50 GNN K2+latched vs GNN K2  52.00  38.33  64.00     0.0    0.01
+ miss 0.3       25  GNN K2 vs relayD K2+mem -60.00 -72.00 -47.00     0.0    0.01
+ miss 0.3       25 GNN K2+latched vs GNN K2  53.33  40.00  65.67     0.0    0.01
+ miss 0.3       50  GNN K2 vs relayD K2+mem -60.00 -73.00 -46.00     0.0    0.01
+ miss 0.3       50 GNN K2+latched vs GNN K2  54.33  39.00  67.67     0.0    0.01
+ miss 0.6       25  GNN K2 vs relayD K2+mem -64.67 -77.00 -53.00     0.0    0.01
+ miss 0.6       25 GNN K2+latched vs GNN K2  60.67  51.00  71.33     0.0    0.01
+ miss 0.6       50  GNN K2 vs relayD K2+mem -57.00 -70.33 -44.00     0.0    0.01
+ miss 0.6       50 GNN K2+latched vs GNN K2  51.67  36.00  66.00     0.0    0.01
+wrong 0.1       50  GNN K2 vs relayD K2+mem -34.67 -48.01 -19.00     0.0    0.01
+wrong 0.1       50 GNN K2+latched vs GNN K2  32.67  16.67  47.34     0.0    0.01
