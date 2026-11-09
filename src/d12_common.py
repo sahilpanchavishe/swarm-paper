@@ -118,6 +118,8 @@ def run_episode(args):
     if obs_sc is not None: obs = obs_sc
     rl, rn = np.random.default_rng([seed, 77]), np.random.default_rng([seed, 78])
     ro = np.random.default_rng([seed, 88]); n_con = max(1, int(obs.sum()) // 2); wrong_f = (fi + 1 + int(np.random.default_rng([seed, 66]).integers(0, 3))) % 4
+    con_idx = np.nonzero(obs)[0]
+    con_idx = (np.random.default_rng([seed, 67]).permutation(con_idx) if cfg.get("contra_rand") else con_idx)[:int(cfg.get("contra_n") or n_con)]
     T = cfg["T_change"] if cfg["change"] else cfg["T"]
     env.reset(p, th); p, th = env.poses(); init_comp = n_components(S.comm_adjacency(p, R_COMM))
     rtok, rstamp = np.full(N, -1), np.full(N, -1); hist = []; e_old, e_new, minc = [], [], []; know = obs
@@ -128,7 +130,7 @@ def run_episode(args):
             if cfg.get("miss") or cfg.get("wrong") or cfg.get("contra"):
                 obs_e = obs & (ro.random(N) >= cfg.get("miss", 0.0))
                 if cfg.get("wrong"): cn = np.where(ro.random(N) < cfg["wrong"], (ci + 1 + ro.integers(0, 3, N)) % 4, cn)
-                if cfg.get("contra"): cn[np.nonzero(obs)[0][:n_con]] = wrong_f
+                if cfg.get("contra"): cn[con_idx] = wrong_f
             cmd = cn[obs_e]
             hist.append(p.copy()); pc = hist[max(0, len(hist) - 1 - cfg["delay"])]
             if cfg["noise"] > 0: pc = pc + rn.normal(0.0, cfg["noise"], pc.shape)
@@ -166,6 +168,6 @@ def run_episode(args):
                collision=bool(minc.min() < CONTACT), min_clearance=float(minc.min()), contact_steps=int((minc < CONTACT).sum()),
                near_steps=int((minc < NEAR).sum()), t_converge_s=((bad[-1] + 1 if len(bad) else 0) * S.DT) if ok else np.nan,
                informed_final=float(np.mean(know)), init_comp=init_comp,
-               **{c: cfg[c] for c in COND_COLS}, **{k: cfg[k] for k in ("scenario", "vmargin", "pred") if cfg.get(k)}, **{k: cfg[k] for k in ("miss", "wrong", "contra") if k in cfg})
+               **{c: cfg[c] for c in COND_COLS}, **{k: cfg[k] for k in ("scenario", "vmargin", "pred") if cfg.get(k)}, **{k: cfg[k] for k in ("miss", "wrong", "contra", "contra_n", "contra_rand") if k in cfg})
     if cfg["change"]: row.update(err_pre_switch=float(e_old[cfg["t_switch"] - 1]), old_final_err=float(e_old[-1]), new_formation=FORMS[fi1])
     return row

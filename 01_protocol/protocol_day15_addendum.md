@@ -126,3 +126,20 @@ Primary metric collision-free success. Anything not listed is exploratory.
 
 ## 14. Exploratory addition (written 9 Nov 2026 after the observer results were seen): memoryless relays under observer errors
 Suite d15_obs_nomem runs relay K2 and relayD K2 (no register memory) on the d15_obs conditions, seeds 110000-110024, to test the O1 sentence left untested in section 12b. Memoryless relays now read the imperfect observer command; behaviour is unchanged when the keys are unset. Exploratory, not confirmatory.
+
+## 15. Observer study with the safety filter, matched filter off/on, randomised persistent errors (written 9 Nov 2026 before any run on seeds 130000-130024)
+
+Reason. Review of the Day 15 results showed that (a) the observer study d15_obs ran with the safety filter off, so contact in it is mostly the raw policy's contact (memoryless GNN K2 reaches only 40.7% collision-free success in the clean condition), (b) its paired statistics used formation success, and a post hoc re-analysis on collision-free success (d15_Ocf_paired.csv, exploratory) changes the ranking, and (c) in the contradiction condition the corrupted observers are the lowest-indexed observers, so robot index can influence the result. miss and wrong are resampled at every step (intermittent errors); contra is fixed for the whole episode (persistent errors).
+
+Design. Suite d15_obs_safe: GNN K2, GNN K2+latched, relayD K2+mem, relay K2+mem; 3 training seeds; 25 scenarios per cell; observability 25% and 50%; seeds 130000-130024 (fresh block); every condition run with the safety filter off and on on identical scenarios (matched). Conditions: clean; miss 0.6; wrong 0.3; contra with half of the observers wrong, chosen at random (contra_rand, own generator, seed [seed,67]); contra_n=1, one persistently wrong observer chosen at random. Observers with errors are chosen per scenario, identically for every policy.
+
+Primary metric: collision-free success (formation success and contact reported alongside). Paired two-level bootstrap with joint training-seed resampling, B=4000, Holm per family, as in the earlier addenda.
+
+Predictions (filter on unless stated; observability 25% and 50% both):
+(S1) Contact at most 2% for every policy in the clean, miss 0.6 and wrong 0.3 conditions.
+(S2) wrong 0.3: collision-free success of memoryless GNN K2 exceeds that of GNN K2+latched and of relay K2+mem by at least 20 points.
+(S3) miss 0.6 at 25%: GNN K2+latched and the relays at least 95% collision-free success; memoryless GNN K2 at most 80%.
+(S4) contra_n=1 at 50% (one wrong observer of four): no policy reaches 50% collision-free success.
+(S5) contra with half of the observers wrong, randomised: every policy at most 10% collision-free success.
+
+Anything not listed is exploratory. The filter has no formal guarantee; the study tests it empirically. The matched filter-off arm tests whether the filter, not the observer errors, is responsible for the contact seen in d15_obs.
