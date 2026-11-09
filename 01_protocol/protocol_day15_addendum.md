@@ -161,3 +161,15 @@ T4 says "the GNN policies". It is read as memoryless GNN K2 and GNN K3. GNN K2+l
 
 ## 16a. Clarification of T4 (written 10 Nov 2026, before any run of arms A and B)
 T4 says "the GNN policies". It is read as memoryless GNN K2 and GNN K3. GNN K2+latched is not scored in T4. In the delay-free, filter-off results of section 15 that policy already had about 95% collision-free success and 4-6% contact, so a gain of 30 points from a filter was not possible. This was visible when section 16 was written, so the original wording of T4 was a mistake. GNN K2+latched is reported without a threshold. T1, T2, T3 and T5 are unchanged.
+
+## 17. Provenance and confidence study (written 10 Nov 2026 before any code or run; arm results of section 16 not yet seen)
+Question: can a non-learned relay that counts distinct observer sources resolve a persistently wrong observer, and does an observer's reported confidence help or hurt?
+Design: 50% observability (four observers), filter on (plain() parameters), delay 0, four formations, seeds 140000-140024, model seeds 0-2 for the GNN. Exactly one observer is persistently wrong for the whole episode (random choice per episode, own seeded generator); the other three read the true command. Every observer carries a confidence value that the policies may use.
+Conditions: (C0) control, all four correct, equal confidence 0.7. (C1) one wrong observer, all confidences 0.7. (C2, reviewer item B4) the wrong observer has confidence 0.9, the correct ones 0.5. (C3, reviewer item B5) the wrong observer has confidence 0.3, the correct ones 0.9.
+Policies: relay K2+mem (existing, keeps the first token it receives); relay K2+maxconf (adopts the token with the highest confidence it has seen); relay K2+prov (keeps, per robot, the set of distinct observer sources that vouched for each formation, forwards source identities with the message, and adopts the formation with the most distinct sources); GNN K2+latched (existing, does not use confidence).
+Not run: 25% observability, where one wrong observer out of two is a tie that no policy can resolve without outside information; this is stated as a limit, not tested.
+Primary metric: collision-free success. Secondary: success, contact rate, time to correct token at all robots if logged.
+(V1) relay K2+mem and GNN K2+latched score at most 20% in C1, C2 and C3, as the existing policies did with one wrong observer in section 15 (5% at 50%).
+(V2) relay K2+maxconf scores at most 20% in C2 and at least 70% in C3. In C1 it behaves like the existing relay (at most 20%), because equal confidences give it nothing to separate the sources.
+(V3) relay K2+prov scores at least 60% in C1, C2 and C3, because it does not use confidence and three of the four sources are correct. In C0 it scores at least 95%, so it does not lose against the existing relay when nobody is wrong.
+Anything not listed is exploratory. Misses are recorded in paper/misses_d15.md.
