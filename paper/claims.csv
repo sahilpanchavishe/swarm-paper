@@ -26,3 +26,21 @@ C_k2_flagoff_cut1100,Study C,97.2,results/d15_C_descriptive.csv,policy=='GNN K2'
 C_k2_flagoff_cut300,Study C,76.8,results/d15_C_descriptive.csv,policy=='GNN K2' and variant=='flagoff' and t_cut==300,success_pct,0.05
 C_k3_flagon_cut300,Study C miss,22.1,results/d15_C_descriptive.csv,policy=='GNN K3' and variant=='flagon' and t_cut==300,success_pct,0.05
 C_k3_flagon_cut700,Study C miss,22.9,results/d15_C_descriptive.csv,policy=='GNN K3' and variant=='flagon' and t_cut==700,success_pct,0.05
+T3_gnnk2_d10_25_CvB,Three-arm,81.0,results/d15_3arm_paired.csv,policy=='GNN K2' and delay==10 and obs_pct==25 and metric=='cf' and comparison=='C vs B',d_pct,0.05
+T3_gnnk2_d10_50_CvB,Three-arm,83.0,results/d15_3arm_paired.csv,policy=='GNN K2' and delay==10 and obs_pct==50 and metric=='cf' and comparison=='C vs B',d_pct,0.05
+T2_relayD_d10_25_BvA,Three-arm,3.0,results/d15_3arm_paired.csv,policy=='relayD K2+mem' and delay==10 and obs_pct==25 and metric=='cf' and comparison=='B vs A',d_pct,0.05
+T2_relayD_d10_50_BvA,Three-arm,4.0,results/d15_3arm_paired.csv,policy=='relayD K2+mem' and delay==10 and obs_pct==50 and metric=='cf' and comparison=='B vs A',d_pct,0.05
+T4_relayD_d10_25_CvA,Three-arm miss,89.0,results/d15_3arm_paired.csv,policy=='relayD K2+mem' and delay==10 and obs_pct==25 and metric=='cf' and comparison=='C vs A',d_pct,0.05
+T4_relayD_d10_50_CvA,Three-arm miss,89.0,results/d15_3arm_paired.csv,policy=='relayD K2+mem' and delay==10 and obs_pct==50 and metric=='cf' and comparison=='C vs A',d_pct,0.05
+T4_relayD_d5_25_CvA,Three-arm miss,64.0,results/d15_3arm_paired.csv,policy=='relayD K2+mem' and delay==5 and obs_pct==25 and metric=='cf' and comparison=='C vs A',d_pct,0.05
+T4_relayD_d5_50_CvA,Three-arm miss,63.0,results/d15_3arm_paired.csv,policy=='relayD K2+mem' and delay==5 and obs_pct==50 and metric=='cf' and comparison=='C vs A',d_pct,0.05
+T4_latched_d5_25_CvA,Three-arm,60.7,results/d15_3arm_paired.csv,policy=='GNN K2+latched' and delay==5 and obs_pct==25 and metric=='cf' and comparison=='C vs A',d_pct,0.05
+T4_latched_d10_25_CvA,Three-arm,83.7,results/d15_3arm_paired.csv,policy=='GNN K2+latched' and delay==10 and obs_pct==25 and metric=='cf' and comparison=='C vs A',d_pct,0.05
+V_prov_C1,Provenance,100.0,results/d17_descriptive.csv,rule=='relay count-by-source' and cond=='C1',cf,0.05
+V_prov_C2,Provenance,100.0,results/d17_descriptive.csv,rule=='relay count-by-source' and cond=='C2',cf,0.05
+V_prov_C3,Provenance,100.0,results/d17_descriptive.csv,rule=='relay count-by-source' and cond=='C3',cf,0.05
+V_maxconf_C2,Provenance,0.0,results/d17_descriptive.csv,rule=='relay max-confidence' and cond=='C2',cf,0.05
+V_maxconf_C3,Provenance,100.0,results/d17_descriptive.csv,rule=='relay max-confidence' and cond=='C3',cf,0.05
+V_first_C1,Provenance,4.0,results/d17_descriptive.csv,rule=='relay first-token' and cond=='C1',cf,0.05
+V_gnnlatched_C1,Provenance,4.0,results/d17_descriptive.csv,rule=='GNN K2+latched' and cond=='C1',cf,0.05
+V_prov_vs_first_C1,Provenance,96.0,results/d17_paired.csv,cond=='C1' and comparison=='relay count-by-source vs relay first-token',d_cf_pct,0.05

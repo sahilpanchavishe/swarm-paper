@@ -1,0 +1,118 @@
+== batch 2 started Tue Nov 10 01:14:10 IST 2026; waiting for batch 1
+== batch 1 finished, continuing Tue Nov 10 01:45:11 IST 2026
+== gates
+== patch and checks
+patched d12_common.py and d15_suites.py
+prov majority: True | maxconf highest confidence: True | disconnected robot informed only through its neighbour: True
+PASS
+suite d17_relay: 12 units, 0 already done, 12 to run = 1200 episodes, seeds 140000..140024, 7 workers
+suite d17_gnn: 12 units, 0 already done, 12 to run = 1200 episodes, seeds 140000..140024, 7 workers
+== regression smoke (the first-token relay with the new code must reproduce section 15 results on the same scenarios)
+
+saved /tmp/d17_smoke.csv
+matched rows: 12 | median |d final_err| mm: 0.0
+fusion   contra  conf_bad
+first    False   0.7         100.0
+         True    0.3           0.0
+                 0.7           0.0
+                 0.9           0.0
+maxconf  False   0.7         100.0
+         True    0.3         100.0
+                 0.7           0.0
+                 0.9           0.0
+prov     False   0.7         100.0
+         True    0.3         100.0
+                 0.7         100.0
+                 0.9         100.0
+== commit the code before running
+[main 55ce9a5] Day 15: code for section 17 (count-by-source and max-confidence relays), committed before the run
+ 6 files changed, 238 insertions(+), 2 deletions(-)
+ create mode 100644 src/d17_fusion.py
+ create mode 100644 src/d17_stats.py
+ create mode 100644 src/patch_d17.py
+ create mode 100755 src/run_overnight3.sh
+To https://github.com/sahilpanchavishe/swarm-paper.git
+   9da6c3d..55ce9a5  main -> main
+== runs
+-- d17_relay Tue Nov 10 01:46:39 IST 2026
+[12/12] relay K2+mem|sNone|conf_bad=0.3|conf_ok=0.9|contra=True|contra_n=1|contra_rand=True|dsafe=0.1|fusion=prov|gamma=20.0|miss=0.0|safety=True|wrong=0.0|n25|b140000: success 100.0%  contact   0.0%  (24 s; elapsed 5 min, about 0 min left)
+
+saved /Users/yshvrdhn/Developer/swarm-paper/results/d12_d17_relay.csv
+d17_relay rows: 1200 (expected 1200)
+-- d17_gnn Tue Nov 10 01:51:23 IST 2026
+[12/12] GNN K2+latched|s2|conf_bad=0.3|conf_ok=0.9|contra=True|contra_n=1|contra_rand=True|dsafe=0.1|fusion=first|gamma=20.0|miss=0.0|safety=True|wrong=0.0|n25|b140000: success   4.0%  contact   0.0%  (30 s; elapsed 6 min, about 0 min left)
+
+saved /Users/yshvrdhn/Developer/swarm-paper/results/d12_d17_gnn.csv
+d17_gnn rows: 1200 (expected 1200)
+== statistics (V1-V3 scored at the end)
+relay first-token      100.0    4.0    4.0    4.0
+relay max-confidence   100.0    4.0    0.0  100.0
+=== success (%)
+cond                      C0     C1     C2     C3
+rule                                             
+GNN K2+latched         100.0    4.0    4.0    4.0
+relay count-by-source  100.0  100.0  100.0  100.0
+relay first-token      100.0    4.0    4.0    4.0
+relay max-confidence   100.0    4.0    0.0  100.0
+=== contact (%)
+cond                    C0   C1   C2   C3
+rule                                     
+GNN K2+latched         0.0  0.0  0.0  0.0
+relay count-by-source  0.0  0.0  0.0  0.0
+relay first-token      0.0  0.0  0.0  0.0
+relay max-confidence   0.0  0.0  0.0  0.0
+
+=== paired on collision-free success: 16 comparisons, 10000 draws, Holm<0.05: 9 (p floor 1/10000)
+cond                                    comparison  d_cf_pct  ci_lo  ci_hi  p_boot  p_holm
+  C0    relay count-by-source vs relay first-token       0.0    0.0    0.0   1.000   1.000
+  C0 relay count-by-source vs relay max-confidence       0.0    0.0    0.0   1.000   1.000
+  C0     relay max-confidence vs relay first-token       0.0    0.0    0.0   1.000   1.000
+  C0       relay count-by-source vs GNN K2+latched       0.0    0.0    0.0   1.000   1.000
+  C1    relay count-by-source vs relay first-token      96.0   92.0   99.0   0.000   0.002
+  C1 relay count-by-source vs relay max-confidence      96.0   92.0   99.0   0.000   0.002
+  C1     relay max-confidence vs relay first-token       0.0    0.0    0.0   1.000   1.000
+  C1       relay count-by-source vs GNN K2+latched      96.0   92.0   99.0   0.000   0.002
+  C2    relay count-by-source vs relay first-token      96.0   92.0   99.0   0.000   0.002
+  C2 relay count-by-source vs relay max-confidence     100.0  100.0  100.0   0.000   0.002
+  C2     relay max-confidence vs relay first-token      -4.0   -8.0   -1.0   0.033   0.228
+  C2       relay count-by-source vs GNN K2+latched      96.0   92.0   99.0   0.000   0.002
+  C3    relay count-by-source vs relay first-token      96.0   92.0   99.0   0.000   0.002
+  C3 relay count-by-source vs relay max-confidence       0.0    0.0    0.0   1.000   1.000
+  C3     relay max-confidence vs relay first-token      96.0   92.0   99.0   0.000   0.002
+  C3       relay count-by-source vs GNN K2+latched      96.0   92.0   99.0   0.000   0.002
+
+=== predictions (section 17)
+V1 PASS
+V2 PASS
+V3 PASS
+== commit results (explicit paths)
+ M paper/figs/f15_cutoff.pdf
+ M paper/figs/f15_filter_disturbance.pdf
+ M paper/figs/f15_frontier.pdf
+A  results/d12_d17_gnn.csv
+A  results/d12_d17_relay.csv
+A  results/d17_descriptive.csv
+A  results/d17_paired.csv
+A  results/log_d17_gnn.txt
+A  results/log_d17_relay.txt
+A  results/log_stats_d17.txt
+?? LITERATURE_TASKS.md
+?? results/.overnight2_done
+?? results/log_overnight2.txt
+?? results/log_overnight3.txt
+?? tick.py
+[main d272b28] Day 15: provenance and confidence study results (section 17, V1-V3)
+ 7 files changed, 2511 insertions(+)
+ create mode 100644 results/d12_d17_gnn.csv
+ create mode 100644 results/d12_d17_relay.csv
+ create mode 100644 results/d17_descriptive.csv
+ create mode 100644 results/d17_paired.csv
+ create mode 100644 results/log_d17_gnn.txt
+ create mode 100644 results/log_d17_relay.txt
+ create mode 100644 results/log_stats_d17.txt
+Created autostash: 906f103
+Current branch main is up to date.
+Applied autostash.
+To https://github.com/sahilpanchavishe/swarm-paper.git
+   55ce9a5..d272b28  main -> main
+== OVERNIGHT3 DONE Tue Nov 10 01:57:39 IST 2026

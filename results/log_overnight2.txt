@@ -1,0 +1,129 @@
+== start Tue Nov 10 00:56:15 IST 2026
+== gates
+GATE FAILED: TODO(you) still in the protocol. Fix, commit, push, restart.
+== start Tue Nov 10 00:58:54 IST 2026
+== gates
+gates passed
+== arms A and B
+-- d15_arm_nofilter Tue Nov 10 00:58:55 IST 2026
+[20/20] relayD K2+mem|sNone|delay=10|n25|b120000: success  97.0%  contact  92.0%  (44 s; elapsed 23 min, about 0 min left)
+
+saved /Users/yshvrdhn/Developer/swarm-paper/results/d12_d15_arm_nofilter.csv
+d15_arm_nofilter rows: 4000 (expected 4000)
+-- d15_arm_stale Tue Nov 10 01:22:19 IST 2026
+[20/20] relayD K2+mem|sNone|delay=10|dsafe=0.1|gamma=20.0|safety=True|n25|b120000: success  93.0%  contact  88.5%  (51 s; elapsed 21 min, about 0 min left)
+
+saved /Users/yshvrdhn/Developer/swarm-paper/results/d12_d15_arm_stale.csv
+d15_arm_stale rows: 4000 (expected 4000)
+== three-arm statistics (T1-T5 scored at the end)
+ relayD K2+mem     10       25     cf     B vs A  3.000 -2.000  8.000   0.324   1.000
+ relayD K2+mem     10       25     cf     C vs B 86.000 79.000 92.000   0.000   0.010
+ relayD K2+mem     10       25     cf     C vs A 89.000 83.000 95.000   0.000   0.010
+ relayD K2+mem     10       50     cf     B vs A  4.000  0.000  9.000   0.121   1.000
+ relayD K2+mem     10       50     cf     C vs B 85.000 78.000 92.000   0.000   0.010
+ relayD K2+mem     10       50     cf     C vs A 89.000 83.000 95.000   0.000   0.010
+
+=== predictions (arm A and B are fresh; arm C was seen before section 16 was written)
+T1 FAIL [('GNN K2+latched', 5, 25, np.float64(72.0)), ('GNN K2+latched', 5, 50, np.float64(72.7)), ('GNN K2+latched', 10, 25, np.float64(92.0)), ('GNN K2+latched', 10, 50, np.float64(92.0)), ('relayD K2+mem', 5, 25, np.float64(73.0)), ('relayD K2+mem', 5, 50, np.float64(71.0)), ('relayD K2+mem', 10, 25, np.float64(92.0)), ('relayD K2+mem', 10, 50, np.float64(92.0))]
+T2 PASS | gaps [(25, np.float64(2.3)), (50, np.float64(0.3))]
+T3 PASS | all: [('GNN K2', 25, np.float64(81.0), np.float64(0.0096)), ('GNN K2', 50, np.float64(83.0), np.float64(0.0096)), ('GNN K2+latched', 25, np.float64(82.0), np.float64(0.0096)), ('GNN K2+latched', 50, np.float64(82.7), np.float64(0.0096)), ('GNN K3', 25, np.float64(81.7), np.float64(0.0096)), ('GNN K3', 50, np.float64(82.7), np.float64(0.0096))]
+   (not scored in T4, C vs A cf: [('GNN K2+latched', 5, 25, np.float64(60.7)), ('GNN K2+latched', 5, 50, np.float64(61.3)), ('GNN K2+latched', 10, 25, np.float64(83.7)), ('GNN K2+latched', 10, 50, np.float64(84.3))] )
+T4 FAIL GNN gains below 30.0: []; relayD outside +-10.0: [(5, 25, np.float64(64.0)), (5, 50, np.float64(63.0)), (10, 25, np.float64(89.0)), (10, 50, np.float64(89.0))] | relayD C-A: [(5, 25, np.float64(64.0)), (5, 50, np.float64(63.0)), (10, 25, np.float64(89.0)), (10, 50, np.float64(89.0))]
+T5 FAIL [('GNN K2+latched', 5, 25, np.float64(11.0)), ('GNN K2+latched', 5, 50, np.float64(11.0))] | max cost: 11.0
+== paired statistics again with 20000 draws (overwrites the 4000-draw CSVs; use the new numbers in the text)
+d15_stats_Osafe: rerun ok
+d15_stats_final: rerun ok
+d15_stats_D: rerun ok
+== tables and facts sheet
+wrote t15_21_D_paired 28 rows
+wrote t15_22_D_cf_paired_POSTHOC 28 rows
+wrote t15_23_three_arm 48 rows
+wrote t15_24_three_arm_paired 96 rows
+facts sheet rebuilt
+OK   C_k3_flagon_cut700 | Study C miss | text 22.9 | table 22.916666666666664
+
+27/27 claims verified
+== commit (explicit paths only)
+M  paper/facts_d15.md
+ M paper/figs/f15_cutoff.pdf
+ M paper/figs/f15_filter_disturbance.pdf
+ M paper/figs/f15_frontier.pdf
+A  paper/tables/t15_18_delay_filter_paired.csv
+A  paper/tables/t15_18_delay_filter_paired.md
+A  paper/tables/t15_19_observers_paired.csv
+A  paper/tables/t15_19_observers_paired.md
+A  paper/tables/t15_20_obs_safe_paired.csv
+A  paper/tables/t15_20_obs_safe_paired.md
+A  paper/tables/t15_21_D_paired.csv
+A  paper/tables/t15_21_D_paired.md
+A  paper/tables/t15_22_D_cf_paired_POSTHOC.csv
+A  paper/tables/t15_22_D_cf_paired_POSTHOC.md
+A  paper/tables/t15_23_three_arm.csv
+A  paper/tables/t15_23_three_arm.md
+A  paper/tables/t15_24_three_arm_paired.csv
+A  paper/tables/t15_24_three_arm_paired.md
+A  results/d12_d15_arm_nofilter.csv
+A  results/d12_d15_arm_stale.csv
+A  results/d15_3arm_descriptive.csv
+A  results/d15_3arm_paired.csv
+M  results/d15_Dcf_paired.csv
+M  results/d15_Dfinal_paired.csv
+M  results/d15_Ofinal_paired.csv
+M  results/d15_Osafe_paired.csv
+M  results/d15_Pfinal_paired.csv
+A  results/log_d15_arm_nofilter.txt
+A  results/log_d15_arm_stale.txt
+A  results/log_hi_d15_stats_D.txt
+A  results/log_hi_d15_stats_Osafe.txt
+A  results/log_hi_d15_stats_final.txt
+A  results/log_stats_3arm.txt
+M  src/d15_tables.py
+?? LITERATURE_TASKS.md
+?? results/log_overnight2.txt
+?? results/log_overnight3.txt
+?? src/d17_fusion.py
+?? src/d17_stats.py
+?? src/patch_d17.py
+?? src/run_overnight3.sh
+?? tick.py
+[main 9da6c3d] Day 15: matched three-arm delay study results, higher-precision paired statistics, tables
+ 31 files changed, 9940 insertions(+), 162 deletions(-)
+ create mode 100644 paper/tables/t15_18_delay_filter_paired.csv
+ create mode 100644 paper/tables/t15_18_delay_filter_paired.md
+ create mode 100644 paper/tables/t15_19_observers_paired.csv
+ create mode 100644 paper/tables/t15_19_observers_paired.md
+ create mode 100644 paper/tables/t15_20_obs_safe_paired.csv
+ create mode 100644 paper/tables/t15_20_obs_safe_paired.md
+ create mode 100644 paper/tables/t15_21_D_paired.csv
+ create mode 100644 paper/tables/t15_21_D_paired.md
+ create mode 100644 paper/tables/t15_22_D_cf_paired_POSTHOC.csv
+ create mode 100644 paper/tables/t15_22_D_cf_paired_POSTHOC.md
+ create mode 100644 paper/tables/t15_23_three_arm.csv
+ create mode 100644 paper/tables/t15_23_three_arm.md
+ create mode 100644 paper/tables/t15_24_three_arm_paired.csv
+ create mode 100644 paper/tables/t15_24_three_arm_paired.md
+ create mode 100644 results/d12_d15_arm_nofilter.csv
+ create mode 100644 results/d12_d15_arm_stale.csv
+ create mode 100644 results/d15_3arm_descriptive.csv
+ create mode 100644 results/d15_3arm_paired.csv
+ create mode 100644 results/log_d15_arm_nofilter.txt
+ create mode 100644 results/log_d15_arm_stale.txt
+ create mode 100644 results/log_hi_d15_stats_D.txt
+ create mode 100644 results/log_hi_d15_stats_Osafe.txt
+ create mode 100644 results/log_hi_d15_stats_final.txt
+ create mode 100644 results/log_stats_3arm.txt
+Created autostash: 246cc8f
+Current branch main is up to date.
+Applied autostash.
+To https://github.com/sahilpanchavishe/swarm-paper.git
+   9332dc8..9da6c3d  main -> main
+== release check (does not tag)
+161 numbers checked
+all quoted numbers match the results files
+
+all d9 numbers match the results files
+ M paper/figs/f15_cutoff.pdf
+ M paper/figs/f15_filter_disturbance.pdf
+ M paper/figs/f15_frontier.pdf
+UNCOMMITTED CHANGES: commit first
+== OVERNIGHT2 DONE Tue Nov 10 01:44:34 IST 2026
