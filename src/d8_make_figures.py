@@ -64,7 +64,7 @@ def table2(P, out):
         "Holm p (success)": [fmt_p(p) for p in P.p_success_holm],
         "Δ final error (mm)": [f"{1000 * x:.1f}" for x in P.dfinal_err_m],
         "Holm p (final error)": [fmt_p(p) for p in P.p_final_err_holm]})
-    md_table(t, out / "table2_paired", 1)
+    pass  # superseded by table2_paired_d13 (joint bootstrap); no longer written
 
 
 def table_validation(V, out):
