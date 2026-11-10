@@ -44,3 +44,9 @@ V_maxconf_C3,Provenance,100.0,results/d17_descriptive.csv,rule=='relay max-confi
 V_first_C1,Provenance,4.0,results/d17_descriptive.csv,rule=='relay first-token' and cond=='C1',cf,0.05
 V_gnnlatched_C1,Provenance,4.0,results/d17_descriptive.csv,rule=='GNN K2+latched' and cond=='C1',cf,0.05
 V_prov_vs_first_C1,Provenance,96.0,results/d17_paired.csv,cond=='C1' and comparison=='relay count-by-source vs relay first-token',d_cf_pct,0.05
+Osafe_w03_o25_filtON_latched_vs_K2,"Observers safe-on (S2, confirmatory)",-48.33,results/d15_Osafe_paired.csv,"cond=='wrong0.3' and obs_pct==25 and `filter` in ['True', True] and comparison=='GNN K2+latched vs GNN K2'",d_pct,0.05
+Osafe_w03_o50_filtON_latched_vs_K2,"Observers safe-on (S2, confirmatory)",-27.33,results/d15_Osafe_paired.csv,"cond=='wrong0.3' and obs_pct==50 and `filter` in ['True', True] and comparison=='GNN K2+latched vs GNN K2'",d_pct,0.05
+Osafe_w03_o25_filtOFF_latched_vs_K2,"Observers safe-on (filter-off arm, exploratory)",14.67,results/d15_Osafe_paired.csv,"cond=='wrong0.3' and obs_pct==25 and `filter` in ['False', False] and comparison=='GNN K2+latched vs GNN K2'",d_pct,0.05
+Osafe_w03_o50_filtOFF_latched_vs_K2,"Observers safe-on (filter-off arm, exploratory)",29.33,results/d15_Osafe_paired.csv,"cond=='wrong0.3' and obs_pct==50 and `filter` in ['False', False] and comparison=='GNN K2+latched vs GNN K2'",d_pct,0.05
+Osafe_w03_o50_filtOFF_p_holm,"Observers safe-on (filter-off arm, exploratory)",0.0297,results/d15_Osafe_paired.csv,"cond=='wrong0.3' and obs_pct==50 and `filter` in ['False', False] and comparison=='GNN K2+latched vs GNN K2'",p_holm,0.0005
+Osafe_w03_o25_filtOFF_p_holm,"Observers safe-on (filter-off arm, exploratory)",1.0,results/d15_Osafe_paired.csv,"cond=='wrong0.3' and obs_pct==25 and `filter` in ['False', False] and comparison=='GNN K2+latched vs GNN K2'",p_holm,0.0005
